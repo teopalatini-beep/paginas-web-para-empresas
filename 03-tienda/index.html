@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URBN Store – Ropa & Accesorios</title>
+  <meta name="description" content="Indumentaria urbana y accesorios de calidad. Envíos a todo el país. Pagá con MercadoPago o tarjeta." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="announcement-bar">
+    🚚 Envío gratis en compras mayores a $15.000 · 🔒 Pagá con MercadoPago, tarjeta o transferencia
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">URBN</a>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#nuevos">Nuevos</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#destacados">Destacados</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="search-toggle" aria-label="Buscar">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" id="cart-btn" aria-label="Carrito">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+    <div class="search-bar" id="search-bar">
+      <div class="container">
+        <input type="text" placeholder="Buscar productos..." id="search-input" />
+        <button id="search-close">✕</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-slider">
+      <div class="slide active">
+        <div class="slide-bg" style="background: linear-gradient(135deg,#0f0f0f 0%,#1a1a2e 100%)"></div>
+        <div class="container slide-content">
+          <span class="slide-tag">Nueva Colección 2024</span>
+          <h1>Estilo urbano.<br><em>Sin límites.</em></h1>
+          <p>Indumentaria premium para quienes no se conforman con lo ordinario.</p>
+          <div class="slide-actions">
+            <a href="#nuevos" class="btn btn-white">Ver colección</a>
+            <a href="#catalogo" class="btn btn-outline-white">Todo el catálogo</a>
+          </div>
+        </div>
+        <div class="slide-visual">
+          <div class="slide-img-placeholder">
+            <span>👕</span>
+            <p>Foto hero principal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-features container">
+      <div class="hero-feature">
+        <span>🚚</span>
+        <div><strong>Envío a todo el país</strong><p>En 24–48hs hábiles</p></div>
+      </div>
+      <div class="hero-feature">
+        <span>🔄</span>
+        <div><strong>Cambios gratis</strong><p>Dentro de los 30 días</p></div>
+      </div>
+      <div class="hero-feature">
+        <span>💳</span>
+        <div><strong>Hasta 12 cuotas</strong><p>Con todas las tarjetas</p></div>
+      </div>
+      <div class="hero-feature">
+        <span>🔒</span>
+        <div><strong>Compra segura</strong><p>MercadoPago / SSL</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NUEVOS ===== -->
+  <section class="section" id="nuevos">
+    <div class="container">
+      <div class="section-header-inline">
+        <div>
+          <span class="section-tag">🔥 Recién llegados</span>
+          <h2>Nuevos Ingresos</h2>
+        </div>
+        <a href="#catalogo" class="link-more">Ver todo →</a>
+      </div>
+      <div class="products-scroll">
+        <div class="product-card" data-id="1" data-name="Hoodie Oversized Negro" data-price="18500">
+          <div class="product-img">
+            <div class="product-img-placeholder">👕</div>
+            <div class="product-badges"><span class="badge new">Nuevo</span></div>
+            <button class="quick-add" data-id="1" data-name="Hoodie Oversized Negro" data-price="18500">+ Agregar</button>
+          </div>
+          <div class="product-info">
+            <p class="product-cat">Hoodies</p>
+            <h3>Hoodie Oversized Negro</h3>
+            <div class="product-price-row">
+              <span class="product-price">$18.500</span>
+              <div class="product-colors">
+                <span class="color-dot" style="background:#111" title="Negro"></span>
+                <span class="color-dot" style="background:#6b6b80" title="Gris"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-id="2" data-name="Pantalón Cargo Cargo Kaki" data-price="22000">
+          <div class="product-img">
+            <div class="product-img-placeholder">👖</div>
+            <div class="product-badges"><span class="badge new">Nuevo</span></div>
+            <button class="quick-add" data-id="2" data-name="Pantalón Cargo Kaki" data-price="22000">+ Agregar</button>
+          </div>
+          <div class="product-info">
+            <p class="product-cat">Pantalones</p>
+            <h3>Pantalón Cargo Kaki</h3>
+            <div class="product-price-row">
+              <span class="product-price">$22.000</span>
+              <div class="product-colors">
+                <span class="color-dot" style="background:#8b7355" title="Kaki"></span>
+                <span class="color-dot" style="background:#111" title="Negro"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-id="3" data-name="Remera Básica Blanca" data-price="9800">
+          <div class="product-img">
+            <div class="product-img-placeholder">👚</div>
+            <div class="product-badges"><span class="badge sale">-20%</span></div>
+            <button class="quick-add" data-id="3" data-name="Remera Básica Blanca" data-price="9800">+ Agregar</button>
+          </div>
+          <div class="product-info">
+            <p class="product-cat">Remeras</p>
+            <h3>Remera Básica Blanca</h3>
+            <div class="product-price-row">
+              <span class="product-price">$9.800</span>
+              <span class="product-price-old">$12.200</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-id="4" data-name="Campera Bomber Azul" data-price="35000">
+          <div class="product-img">
+            <div class="product-img-placeholder">🧥</div>
+            <div class="product-badges"><span class="badge hot">⭐ Hot</span></div>
+            <button class="quick-add" data-id="4" data-name="Campera Bomber Azul" data-price="35000">+ Agregar</button>
+          </div>
+          <div class="product-info">
+            <p class="product-cat">Camperas</p>
+            <h3>Campera Bomber Azul</h3>
+            <div class="product-price-row">
+              <span class="product-price">$35.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BANNER PROMO ===== -->
+  <section class="promo-banner">
+    <div class="container promo-inner">
+      <div>
+        <h2>Hasta 30% off en toda la colección de invierno</h2>
+        <p>Hasta el 31 de julio. Stock limitado.</p>
+      </div>
+      <a href="#catalogo" class="btn btn-white">Ver ofertas</a>
+    </div>
+  </section>
+
+  <!-- ===== CATÁLOGO COMPLETO ===== -->
+  <section class="section" id="catalogo">
+    <div class="container">
+      <div class="section-header-inline">
+        <div>
+          <span class="section-tag">Tienda</span>
+          <h2>Catálogo Completo</h2>
+        </div>
+      </div>
+      <div class="catalog-controls">
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">Todo</button>
+          <button class="filter-btn" data-filter="remeras">Remeras</button>
+          <button class="filter-btn" data-filter="hoodies">Hoodies</button>
+          <button class="filter-btn" data-filter="pantalones">Pantalones</button>
+          <button class="filter-btn" data-filter="camperas">Camperas</button>
+          <button class="filter-btn" data-filter="accesorios">Accesorios</button>
+        </div>
+        <select class="sort-select" id="sort-select">
+          <option value="default">Ordenar por</option>
+          <option value="price-asc">Precio: menor a mayor</option>
+          <option value="price-desc">Precio: mayor a menor</option>
+          <option value="new">Más nuevos</option>
+        </select>
+      </div>
+      <div class="catalog-grid" id="catalog-grid">
+        <!-- productos generados por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER (BREVO) ===== -->
+  <section class="newsletter">
+    <div class="container newsletter-inner">
+      <div class="newsletter-text">
+        <h2>Sumate a la comunidad URBN</h2>
+        <p>Recibí primero los nuevos ingresos, descuentos exclusivos y noticias de la tienda.</p>
+      </div>
+      <!--
+        INTEGRACIÓN BREVO:
+        1. Registrarse en brevo.com (gratis)
+        2. Ir a Email Marketing → Forms → Create a form
+        3. Crear formulario de "Newsletter" con campo email
+        4. Copiar el código embebido y reemplazar este formulario
+
+        Alternativa rápida: Mailchimp embed o ConvertKit.
+        El formulario de abajo funciona como demo.
+      -->
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" placeholder="Tu email" required id="nl-email" />
+        <button type="submit" class="btn btn-primary">Suscribirme</button>
+      </form>
+      <p id="nl-success" class="nl-success hidden">✅ ¡Te suscribiste! Revisá tu email para confirmar.</p>
+      <p class="nl-note">Sin spam. Podés darte de baja cuando quieras.</p>
+    </div>
+  </section>
+
+  <!-- ===== CARRITO LATERAL ===== -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Tu carrito</h3>
+      <button id="cart-close" class="icon-btn">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="cart-empty" id="cart-empty">
+        <span>🛍️</span>
+        <p>Tu carrito está vacío</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cart-total">$0</strong>
+      </div>
+      <div class="cart-shipping" id="cart-shipping"></div>
+
+      <!--
+        INTEGRACIÓN MERCADOPAGO:
+        ============================================================
+        Opción A – Checkout Pro (recomendada):
+        1. Crear cuenta en mercadopago.com.ar como vendedor
+        2. Ir a Developers → Credenciales → Copiar Access Token
+        3. En tu backend (Node.js/PHP/etc.) crear la preferencia de pago:
+
+           const mp = new MercadoPagoConfig({ accessToken: 'TU_ACCESS_TOKEN' });
+           const preference = new Preference(mp);
+           const result = await preference.create({ body: {
+             items: [{ title: "Pedido URBN", quantity: 1, unit_price: totalAmount }],
+             back_urls: { success: "https://tusitio.com/gracias", failure: "https://tusitio.com/error" },
+             auto_return: "approved"
+           }});
+           // Redirigir al usuario a result.init_point
+
+        Opción B – Botón de pago simple (sin backend, para un solo producto):
+        1. mercadopago.com.ar → Herramientas → Botones de pago
+        2. Configurar el producto con nombre, precio, foto
+        3. Copiar el snippet HTML y pegarlo en lugar del botón de abajo
+
+        El botón de abajo es un placeholder funcional que demuestra el flujo.
+        ============================================================
+      -->
+      <button class="btn btn-mercadopago" id="checkout-btn" onclick="window.location.href='#'">
+        <svg width="24" height="24" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="24" fill="#009EE3"/>
+          <path d="M14 20c0-5.523 4.477-10 10-10s10 4.477 10 10c0 3.5-1.79 6.59-4.5 8.39L28 34H20l-1.5-5.61C15.79 26.59 14 23.5 14 20z" fill="white"/>
+        </svg>
+        Pagar con MercadoPago
+      </button>
+      <p class="mp-note">Tarjeta de crédito, débito, dinero en cuenta o efectivo</p>
+
+      <!--
+        ALTERNATIVA STRIPE (para clientes internacionales):
+        ============================================================
+        1. Crear cuenta en stripe.com → Dashboard → API Keys
+        2. Instalar Stripe.js en el head: <script src="https://js.stripe.com/v3/"></script>
+        3. Crear una sesión de Checkout desde tu backend y redirigir al usuario.
+
+        Stripe también tiene un "Payment Link" sin backend:
+        stripe.com → Payment Links → New Payment Link
+        ============================================================
+      -->
+    </div>
+  </aside>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="section contacto" id="contacto">
+    <div class="container contacto-grid">
+      <div>
+        <span class="section-tag">Atención al cliente</span>
+        <h2>¿Tenés alguna pregunta?</h2>
+        <p>Respondemos en el día por WhatsApp o email. También podés visitarnos en nuestro local.</p>
+        <div class="contact-list">
+          <a href="https://wa.me/5491145678910" class="contact-chip whatsapp" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="mailto:hola@urbnstore.com.ar" class="contact-chip email">
+            📧 hola@urbnstore.com.ar
+          </a>
+          <div class="contact-chip location">
+            📍 Palermo Soho, CABA
+          </div>
+        </div>
+      </div>
+      <div class="horarios-card">
+        <h3>Horarios del local</h3>
+        <div class="horario-item"><span>Lunes a Viernes</span><strong>11:00 – 20:00</strong></div>
+        <div class="horario-item"><span>Sábados</span><strong>11:00 – 19:00</strong></div>
+        <div class="horario-item"><span>Domingos</span><strong>Cerrado</strong></div>
+        <div class="horario-item highlight"><span>Tienda online</span><strong>24/7 🟢</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <span class="logo">URBN</span>
+        <p>Indumentaria urbana y accesorios de calidad. Envíos a todo el país.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="Facebook">👤</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Tienda</h4>
+        <ul><li><a href="#nuevos">Nuevos ingresos</a></li><li><a href="#catalogo">Catálogo</a></li><li><a href="#catalogo">Ofertas</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ayuda</h4>
+        <ul><li><a href="#">Cómo comprar</a></li><li><a href="#">Envíos y plazos</a></li><li><a href="#">Cambios y devoluciones</a></li><li><a href="#">Preguntas frecuentes</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Medios de pago</h4>
+        <div class="payment-methods">
+          <div class="payment-icon mp">MercadoPago</div>
+          <div class="payment-icon visa">VISA</div>
+          <div class="payment-icon mc">Mastercard</div>
+          <div class="payment-icon cash">Efectivo</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 URBN Store. Todos los derechos reservados. CUIT: 30-12345678-9</p>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP ===== -->
+  <a href="https://wa.me/5491145678910?text=Hola!%20Quisiera%20consultar%20sobre%20un%20producto" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

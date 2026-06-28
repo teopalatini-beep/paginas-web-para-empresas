@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Valentina Torres – Psicóloga Clínica</title>
+  <meta name="description" content="Psicóloga clínica con 10 años de experiencia. Atención individual, de pareja y online. Turnos disponibles." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Calendly widget CSS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Dra. V. Torres</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#turnos" class="btn-nav">Pedir Turno</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="hero-tag">Psicología Clínica · Online & Presencial</span>
+        <h1>Un espacio seguro para <em>crecer</em> y sanar</h1>
+        <p>Acompañamiento psicológico individual, de pareja y grupal. Más de 10 años ayudando a personas a encontrar bienestar y claridad.</p>
+        <div class="hero-actions">
+          <a href="#turnos" class="btn btn-primary">Pedir Turno Gratis</a>
+          <a href="#sobre-mi" class="btn btn-ghost">Conocerme más</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <span class="trust-num">+500</span>
+            <span class="trust-label">pacientes acompañados</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-num">10+</span>
+            <span class="trust-label">años de experiencia</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-num">98%</span>
+            <span class="trust-label">recomendación</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo">
+          <div class="photo-placeholder">
+            <span>👩‍⚕️</span>
+            <p>Foto profesional</p>
+          </div>
+        </div>
+        <div class="hero-card floating-card">
+          <span class="card-icon">🟢</span>
+          <div>
+            <strong>Turnos disponibles</strong>
+            <p>Esta semana · Online y presencial</p>
+          </div>
+        </div>
+        <div class="hero-card floating-card2">
+          <span class="card-icon">🔒</span>
+          <div>
+            <strong>Confidencialidad total</strong>
+            <p>Sesiones 100% privadas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICIOS ===== -->
+  <section class="servicios section" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">¿Cómo puedo ayudarte?</span>
+        <h2>Mis servicios</h2>
+        <p>Cada persona es única. Por eso ofrezco distintas modalidades adaptadas a tus necesidades y posibilidades.</p>
+      </div>
+      <div class="servicios-grid">
+        <div class="servicio-card featured">
+          <div class="servicio-icon">🧠</div>
+          <h3>Terapia Individual</h3>
+          <p>Espacio personal para trabajar ansiedad, depresión, autoestima, traumas, relaciones y más. Sesiones de 50 minutos.</p>
+          <ul class="servicio-features">
+            <li>Sesiones semanales o quincenales</li>
+            <li>Modalidad presencial u online</li>
+            <li>Primer consulta orientativa gratis</li>
+          </ul>
+          <div class="servicio-precio">desde $8.000 / sesión</div>
+          <a href="#turnos" class="btn btn-primary">Reservar sesión</a>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon">💑</div>
+          <h3>Terapia de Pareja</h3>
+          <p>Trabajamos en comunicación, conflictos, intimidad y proyectos de vida compartidos. Para parejas en cualquier etapa.</p>
+          <ul class="servicio-features">
+            <li>Sesiones de 60–80 minutos</li>
+            <li>Modalidad presencial u online</li>
+            <li>Plan de trabajo personalizado</li>
+          </ul>
+          <div class="servicio-precio">desde $12.000 / sesión</div>
+          <a href="#turnos" class="btn btn-outline">Reservar sesión</a>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon">👥</div>
+          <h3>Grupos Terapéuticos</h3>
+          <p>Grupos reducidos (6-8 personas) para trabajar temáticas específicas: duelo, ansiedad, vínculos, autoestima.</p>
+          <ul class="servicio-features">
+            <li>Grupos de hasta 8 personas</li>
+            <li>Programa de 8 semanas</li>
+            <li>Costo accesible</li>
+          </ul>
+          <div class="servicio-precio">desde $4.500 / sesión</div>
+          <a href="#turnos" class="btn btn-outline">Consultar cupo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE MÍ ===== -->
+  <section class="sobre-mi section" id="sobre-mi">
+    <div class="container sobre-grid">
+      <div class="sobre-visual">
+        <div class="sobre-photo photo-placeholder">
+          <span>📸</span>
+          <p>Foto informal / consultorio</p>
+        </div>
+        <div class="sobre-credentials">
+          <div class="credential">
+            <span class="credential-icon">🎓</span>
+            <div>
+              <strong>Lic. en Psicología</strong>
+              <span>UBA – 2013</span>
+            </div>
+          </div>
+          <div class="credential">
+            <span class="credential-icon">📜</span>
+            <div>
+              <strong>Especialización en TCC</strong>
+              <span>FUNDEP – 2016</span>
+            </div>
+          </div>
+          <div class="credential">
+            <span class="credential-icon">🏥</span>
+            <div>
+              <strong>Residencia Clínica</strong>
+              <span>Hospital Italiano – 2014-2015</span>
+            </div>
+          </div>
+          <div class="credential">
+            <span class="credential-icon">🔖</span>
+            <div>
+              <strong>Mat. Prof. Nº 12345</strong>
+              <span>COPOBA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sobre-text">
+        <span class="section-tag">Mi historia</span>
+        <h2>Hola, soy <em>Valentina Torres</em></h2>
+        <p>Soy psicóloga clínica con orientación cognitivo-conductual (TCC) y más de 10 años acompañando procesos de cambio y crecimiento personal.</p>
+        <p>Me especializo en ansiedad, depresión, duelo, relaciones de pareja y crisis vitales. Creo profundamente en que cada persona tiene los recursos para transformar su vida — mi rol es acompañarte en ese camino.</p>
+        <p>Trabajo de forma empática, sin juicios y con herramientas concretas. Porque el bienestar emocional no es un lujo, es una necesidad.</p>
+        <div class="areas">
+          <span class="area-tag">Ansiedad</span>
+          <span class="area-tag">Depresión</span>
+          <span class="area-tag">Duelo</span>
+          <span class="area-tag">Autoestima</span>
+          <span class="area-tag">Relaciones</span>
+          <span class="area-tag">Trauma</span>
+          <span class="area-tag">Crisis vitales</span>
+          <span class="area-tag">Orientación vocacional</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIOS ===== -->
+  <section class="testimonios section" id="testimonios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Lo que dicen mis pacientes</span>
+        <h2>Testimonios</h2>
+        <p>Algunas personas compartieron su experiencia de forma anónima.</p>
+      </div>
+      <div class="testimonios-grid">
+        <div class="testimonio-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Después de un año de terapia con Valentina, pude reconocer mis patrones de ansiedad y manejarlos. Nunca pensé que cambiaría tanto. Totalmente recomendable."</p>
+          <div class="testimonio-autor">
+            <div class="autor-avatar">M</div>
+            <div>
+              <strong>M. G.</strong>
+              <span>Terapia individual</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"La terapia de pareja nos salvó la relación. Aprendimos a comunicarnos de verdad y a trabajar como equipo. Valentina tiene una capacidad increíble para hacer sentir a ambos escuchados."</p>
+          <div class="testimonio-autor">
+            <div class="autor-avatar">L</div>
+            <div>
+              <strong>L. y R. P.</strong>
+              <span>Terapia de pareja</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Empecé la terapia online con dudas y terminé siendo el mejor espacio de la semana. La flexibilidad del horario y la seriedad profesional hacen una combinación excelente."</p>
+          <div class="testimonio-autor">
+            <div class="autor-avatar">S</div>
+            <div>
+              <strong>S. K.</strong>
+              <span>Terapia online</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TURNOS (CALENDLY) ===== -->
+  <section class="turnos section" id="turnos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Agendá tu turno</span>
+        <h2>Primera consulta <em>sin costo</em></h2>
+        <p>30 minutos para conocernos y ver si podemos trabajar juntos. Sin compromiso.</p>
+      </div>
+
+      <!--
+        INTEGRACIÓN CALENDLY:
+        1. Crear cuenta en calendly.com (gratis)
+        2. Crear un tipo de evento "Consulta Inicial – 30 min"
+        3. Reemplazar TU_USUARIO_CALENDLY con tu nombre de usuario de Calendly
+        El widget se muestra directamente en la página sin redirigir al usuario.
+      -->
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/TU_USUARIO_CALENDLY/consulta-inicial"
+           style="min-width:320px;height:700px;">
+      </div>
+      <!-- Demo placeholder mientras no hay cuenta Calendly -->
+      <div class="calendly-placeholder" id="calendly-placeholder">
+        <div class="cp-icon">📅</div>
+        <h3>Calendly se cargará aquí</h3>
+        <p>El calendario de turnos aparece embebido directamente en esta sección.<br>El paciente elige día, hora y modalidad sin salir del sitio.</p>
+        <div class="cp-demo-slots">
+          <div class="demo-slot available">Lun 9 · 10:00hs</div>
+          <div class="demo-slot available">Lun 9 · 11:00hs</div>
+          <div class="demo-slot occupied">Mar 10 · 10:00hs</div>
+          <div class="demo-slot available">Mar 10 · 14:00hs</div>
+          <div class="demo-slot available">Mié 11 · 09:00hs</div>
+          <div class="demo-slot occupied">Mié 11 · 11:00hs</div>
+        </div>
+        <a href="#contacto" class="btn btn-primary" style="margin-top:24px">Contactar directamente</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="contacto section" id="contacto">
+    <div class="container contacto-grid">
+      <div class="contacto-info">
+        <span class="section-tag">Consultorio</span>
+        <h2>Hablemos</h2>
+        <p>Podés escribirme por cualquier canal. Respondo en menos de 24 horas.</p>
+        <div class="contacto-items">
+          <div class="contacto-item">
+            <span>📍</span>
+            <div>
+              <strong>Consultorio presencial</strong>
+              <p>Av. Santa Fe 2345, Piso 4 Of. B, CABA<br><em>A 2 cuadras del subte Bulnes (línea D)</em></p>
+            </div>
+          </div>
+          <div class="contacto-item">
+            <span>💻</span>
+            <div>
+              <strong>Sesiones online</strong>
+              <p>Vía Google Meet o Zoom<br><em>Desde cualquier lugar del mundo</em></p>
+            </div>
+          </div>
+          <div class="contacto-item">
+            <span>📱</span>
+            <div>
+              <strong>WhatsApp</strong>
+              <p>+54 11 3456-7890</p>
+            </div>
+          </div>
+          <div class="contacto-item">
+            <span>📧</span>
+            <div>
+              <strong>Email</strong>
+              <p>valentina@psicologa.com.ar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        INTEGRACIÓN BREVO:
+        Opción 1 – Formulario embebido de Brevo:
+          - Brevo → Email Marketing → Forms → Create form → Paste embed code here
+
+        Opción 2 – Formspree (más simple, gratis):
+          - Registrarse en formspree.io
+          - Crear form → copiar el endpoint
+          - Reemplazar action="https://formspree.io/f/TU_FORM_ID"
+
+        Ambas opciones mandan un email automático al profesional con cada consulta.
+      -->
+      <form class="contacto-form" id="contacto-form" action="https://formspree.io/f/TU_FORM_ID" method="POST">
+        <h3>Enviame un mensaje</h3>
+        <div class="form-group">
+          <label for="c-nombre">Nombre completo *</label>
+          <input type="text" id="c-nombre" name="nombre" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="c-email">Email *</label>
+          <input type="email" id="c-email" name="email" placeholder="tu@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="c-tel">WhatsApp / Teléfono</label>
+          <input type="tel" id="c-tel" name="telefono" placeholder="+54 11 ..." />
+        </div>
+        <div class="form-group">
+          <label for="c-servicio">¿Qué tipo de consulta te interesa?</label>
+          <select id="c-servicio" name="servicio">
+            <option value="">Seleccioná</option>
+            <option>Terapia individual</option>
+            <option>Terapia de pareja</option>
+            <option>Grupo terapéutico</option>
+            <option>No sé, quiero orientación</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="c-modalidad">Modalidad preferida</label>
+          <select id="c-modalidad" name="modalidad">
+            <option value="">Indiferente</option>
+            <option>Presencial</option>
+            <option>Online (videollamada)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="c-mensaje">Contame brevemente qué te trae</label>
+          <textarea id="c-mensaje" name="mensaje" rows="4" placeholder="En pocas palabras, ¿qué te gustaría trabajar?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Enviar consulta</button>
+        <p class="form-note">Confidencial. Respondo en menos de 24 horas.</p>
+      </form>
+      <div id="c-success" class="form-success hidden">
+        <div class="success-icon">✅</div>
+        <h3>¡Mensaje recibido!</h3>
+        <p>Te respondo en las próximas 24 horas. ¡Gracias por escribirme!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo">Dra. Valentina Torres</span>
+        <p>Psicóloga Clínica · Lic. en Psicología (UBA) · Mat. Prof. Nº 12345 COPOBA</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram" title="Instagram">📸</a>
+          <a href="#" aria-label="LinkedIn" title="LinkedIn">💼</a>
+          <a href="https://wa.me/541134567890" aria-label="WhatsApp" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#turnos">Pedir turno</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <h4>Legal</h4>
+        <p>Toda la información compartida en sesión está protegida por secreto profesional según la Ley 23.277.</p>
+        <p style="margin-top:12px">El contenido de este sitio es informativo y no reemplaza la consulta profesional.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Dra. Valentina Torres. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP BUTTON ===== -->
+  <a href="https://wa.me/541134567890?text=Hola!%20Quisiera%20consultar%20sobre%20turnos" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Calendly widget JS (carga el widget embebido) -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script src="script.js"></script>
+</body>
+</html>

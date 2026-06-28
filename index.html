@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tu Nombre – Diseño Web para Negocios</title>
+  <meta name="description" content="Diseño sitios web modernos para restaurantes, profesionales y tiendas. Formularios, turnos online y pagos integrados." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+
+    /* ============================================================
+       PORTFOLIO – Tu nombre aquí
+    ============================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0a0a0a;
+      --surface: #111111;
+      --surface2:#1a1a1a;
+      --border:  #242424;
+      --text:    #f0f0f0;
+      --muted:   #888;
+      --accent:  #6366f1;
+      --accent2: #818cf8;
+      --green:   #22c55e;
+      --font: 'Inter', system-ui, sans-serif;
+      --r: 14px;
+      --r2: 20px;
+      --t: .22s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---- Noise overlay ---- */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      opacity: .4;
+    }
+
+    /* ---- Glow ---- */
+    .glow {
+      position: fixed; pointer-events: none; z-index: 0;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(99,102,241,.12) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      transition: left .8s ease, top .8s ease;
+    }
+
+    /* ---- Navbar ---- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 16px 0;
+      border-bottom: 1px solid transparent;
+      transition: background var(--t), border-color var(--t);
+    }
+    nav.scrolled {
+      background: rgba(10,10,10,.9);
+      backdrop-filter: blur(16px);
+      border-color: var(--border);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 1rem; font-weight: 700; letter-spacing: -.01em; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: .88rem; color: var(--muted); font-weight: 500; transition: color var(--t); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent) !important;
+      color: white !important;
+      padding: 9px 18px; border-radius: 8px;
+      font-size: .85rem !important;
+    }
+    .nav-cta:hover { background: var(--accent2) !important; }
+
+    /* ---- Hero ---- */
+    .hero {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 120px 0 80px;
+    }
+    .hero-inner { max-width: 720px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(99,102,241,.1);
+      border: 1px solid rgba(99,102,241,.25);
+      color: var(--accent2);
+      padding: 6px 14px; border-radius: 999px;
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.8)} }
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 800; line-height: 1.08;
+      letter-spacing: -.03em;
+      margin-bottom: 24px;
+    }
+    .hero h1 .highlight {
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.15rem; color: var(--muted);
+      max-width: 540px; margin-bottom: 40px; line-height: 1.75;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 26px; border-radius: var(--r);
+      font-size: .95rem; font-weight: 600;
+      cursor: pointer; transition: all var(--t);
+      border: 1.5px solid transparent; font-family: var(--font);
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(99,102,241,.4); }
+    .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 56px;
+      padding-top: 40px; border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat-item {}
+    .stat-num { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; }
+    .stat-label { font-size: .82rem; color: var(--muted); font-weight: 500; margin-top: 2px; }
+
+    /* ---- Section ---- */
+    section { position: relative; z-index: 1; padding: 96px 0; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(99,102,241,.08);
+      color: var(--accent2);
+      border: 1px solid rgba(99,102,241,.2);
+      padding: 4px 12px; border-radius: 999px;
+      font-size: .75rem; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .section-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: 16px; }
+    .section-sub { color: var(--muted); max-width: 500px; }
+
+    /* ---- Works (Portfolio) ---- */
+    .works-grid { display: flex; flex-direction: column; gap: 80px; margin-top: 64px; }
+
+    .work-item {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: center;
+    }
+    .work-item.reverse { direction: rtl; }
+    .work-item.reverse > * { direction: ltr; }
+
+    .work-preview {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r2);
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      transition: transform var(--t), box-shadow var(--t);
+      cursor: pointer;
+    }
+    .work-preview:hover { transform: translateY(-6px); box-shadow: 0 24px 64px rgba(0,0,0,.5); }
+    .work-preview-inner {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px;
+    }
+    .work-preview-emoji { font-size: 4rem; }
+    .work-preview-label { font-size: .85rem; color: var(--muted); }
+    .work-preview-bar {
+      position: absolute; top: 0; left: 0; right: 0;
+      background: var(--surface2);
+      padding: 10px 14px;
+      display: flex; align-items: center; gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red   { background: #ff5f57; }
+    .dot-yellow{ background: #febc2e; }
+    .dot-green { background: #28c840; }
+    .work-preview-url {
+      flex: 1; background: rgba(255,255,255,.05);
+      border-radius: 6px; padding: 4px 10px;
+      font-size: .75rem; color: var(--muted);
+      border: 1px solid var(--border);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      text-align: center;
+    }
+    .work-preview-overlay {
+      position: absolute; inset: 0;
+      background: rgba(99,102,241,.08);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity var(--t);
+    }
+    .work-preview:hover .work-preview-overlay { opacity: 1; }
+    .overlay-btn {
+      background: var(--accent); color: white;
+      padding: 12px 22px; border-radius: var(--r);
+      font-size: .88rem; font-weight: 600;
+    }
+
+    /* Preview screenshots simulados */
+    .preview-restaurant { background: linear-gradient(180deg, #0f0d0b 0%, #1a1612 100%); }
+    .preview-restaurant .mock-hero {
+      position: absolute; inset: 48px 0 0;
+      display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+      padding: 20px 28px; gap: 8px;
+    }
+    .mock-tag { background: rgba(200,135,63,.3); border-radius: 999px; height: 8px; width: 80px; }
+    .mock-title { background: rgba(255,255,255,.8); border-radius: 4px; height: 14px; width: 60%; }
+    .mock-title2 { background: rgba(232,168,90,.6); border-radius: 4px; height: 14px; width: 40%; }
+    .mock-p { background: rgba(255,255,255,.2); border-radius: 3px; height: 6px; width: 80%; }
+    .mock-p2 { background: rgba(255,255,255,.15); border-radius: 3px; height: 6px; width: 65%; }
+    .mock-btns { display: flex; gap: 8px; margin-top: 4px; }
+    .mock-btn { background: rgba(200,135,63,.8); border-radius: 6px; height: 20px; width: 80px; }
+    .mock-btn2 { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); border-radius: 6px; height: 20px; width: 70px; }
+
+    .preview-profesional { background: linear-gradient(180deg, #eef0f9 0%, #f8f5f2 100%); }
+    .preview-profesional .mock-hero {
+      position: absolute; inset: 48px 0 0;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      padding: 16px 20px;
+    }
+    .mock-hero-left { display: flex; flex-direction: column; justify-content: center; gap: 7px; }
+    .mock-hero-right {
+      background: linear-gradient(135deg, #e8ecf8, #d5dbf0);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+    }
+    .mock-tag-blue { background: rgba(107,127,189,.25); border-radius: 999px; height: 7px; width: 70px; }
+    .mock-title-dark { background: #1a1a2e; border-radius: 3px; height: 10px; width: 90%; }
+    .mock-title-dark2 { background: rgba(107,127,189,.5); border-radius: 3px; height: 10px; width: 60%; }
+    .mock-p-gray { background: #c5c5d0; border-radius: 3px; height: 5px; width: 95%; }
+    .mock-p-gray2 { background: #d8d8e0; border-radius: 3px; height: 5px; width: 75%; }
+    .mock-btn-blue { background: #6b7fbd; border-radius: 6px; height: 18px; width: 90px; }
+
+    .preview-tienda { background: #f9f9f9; }
+    .preview-tienda .mock-hero {
+      position: absolute; inset: 48px 0 0;
+    }
+    .mock-hero-dark {
+      background: linear-gradient(135deg, #0d0d0d, #1a1a2e);
+      height: 55%; display: flex; align-items: center; padding: 16px 20px; gap: 8px;
+    }
+    .mock-hero-dark-text { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .mock-title-white { background: rgba(255,255,255,.85); border-radius: 3px; height: 10px; width: 70%; }
+    .mock-title-outline { background: transparent; border: 1.5px solid white; border-radius: 3px; height: 10px; width: 50%; }
+    .mock-hero-img { background: rgba(255,255,255,.06); border: 1px dashed rgba(255,255,255,.2); border-radius: 6px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+    .mock-products { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; padding: 10px 12px; }
+    .mock-product { background: #e5e5e5; border-radius: 6px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+
+    .work-info { }
+    .work-number { font-size: .75rem; font-weight: 700; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+    .work-title { font-size: 1.6rem; font-weight: 800; letter-spacing: -.02em; margin-bottom: 12px; }
+    .work-desc { color: var(--muted); font-size: .95rem; line-height: 1.7; margin-bottom: 24px; }
+    .work-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .work-tag {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 5px 12px; border-radius: 999px;
+      font-size: .78rem; font-weight: 500; color: var(--muted);
+    }
+    .work-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .work-feature { display: flex; align-items: center; gap: 10px; font-size: .88rem; }
+    .work-feature-icon { font-size: 1rem; width: 20px; text-align: center; }
+    .work-link { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; font-weight: 600; color: var(--accent2); border-bottom: 1px solid rgba(129,140,248,.3); padding-bottom: 2px; transition: color var(--t); }
+    .work-link:hover { color: var(--accent); }
+
+    /* ---- Services ---- */
+    .services { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 48px; background: var(--border); border: 1px solid var(--border); border-radius: var(--r2); overflow: hidden; }
+    .service-card { background: var(--surface); padding: 32px; transition: background var(--t); }
+    .service-card:hover { background: var(--surface2); }
+    .service-icon { font-size: 2rem; margin-bottom: 16px; }
+    .service-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -.01em; }
+    .service-card p { color: var(--muted); font-size: .88rem; line-height: 1.65; margin-bottom: 16px; }
+    .service-price { font-size: 1rem; font-weight: 700; color: var(--accent2); }
+    .service-price span { font-size: .78rem; color: var(--muted); font-weight: 400; }
+
+    /* ---- Process ---- */
+    .process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 48px; position: relative; }
+    .process-steps::before {
+      content: '';
+      position: absolute; top: 20px; left: 32px; right: 32px; height: 1px;
+      background: linear-gradient(90deg, var(--border), var(--accent), var(--border));
+    }
+    .process-step { text-align: center; padding-top: 4px; }
+    .step-num {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--accent);
+      color: var(--accent2); font-weight: 800; font-size: .88rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      position: relative; z-index: 1;
+    }
+    .process-step h4 { font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+    .process-step p { color: var(--muted); font-size: .82rem; line-height: 1.6; }
+
+    /* ---- CTA ---- */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(99,102,241,.12) 0%, rgba(129,140,248,.06) 100%);
+      border: 1px solid rgba(99,102,241,.2);
+      border-radius: var(--r2);
+      padding: 72px 56px;
+      text-align: center;
+      margin: 96px 0;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(99,102,241,.15) 0%, transparent 70%);
+    }
+    .cta-section h2 { font-size: clamp(2rem,4vw,3rem); font-weight: 800; letter-spacing: -.03em; margin-bottom: 16px; position: relative; }
+    .cta-section p { color: var(--muted); font-size: 1.05rem; margin-bottom: 36px; position: relative; }
+    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-whatsapp { background: #25D366; color: white; }
+    .btn-whatsapp:hover { background: #1da850; transform: translateY(-2px); }
+
+    /* ---- Footer ---- */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      position: relative; z-index: 1;
+    }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-inner p { color: var(--muted); font-size: .85rem; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: .85rem; color: var(--muted); transition: color var(--t); }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .work-item, .work-item.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .process-steps::before { display: none; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.6rem; }
+      .cta-section { padding: 48px 28px; }
+      .process-steps { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; }
+      section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow" id="glow"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <span class="nav-logo">tu<span>.</span>web</span>
+      <div class="nav-links">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto" class="nav-cta">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Disponible para nuevos proyectos
+        </div>
+        <h1>
+          Sitios web que<br>
+          <span class="highlight">hacen crecer</span><br>
+          tu negocio
+        </h1>
+        <p>
+          Diseño páginas web modernas para restaurantes, profesionales y comercios.
+          Con formularios de contacto, reservas online y pagos integrados — listas para operar desde el día uno.
+        </p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-primary">Ver mi trabajo</a>
+          <a href="#contacto" class="btn btn-ghost">Hablemos →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">3</div>
+            <div class="stat-label">sitios demo listos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5–7</div>
+            <div class="stat-label">días de entrega</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">mobile responsive</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">$0</div>
+            <div class="stat-label">consulta inicial</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section id="portfolio">
+    <div class="container">
+      <span class="section-tag">Portfolio</span>
+      <h2 class="section-title">Mis trabajos</h2>
+      <p class="section-sub">Tres demos funcionales que muestran lo que incluyo en cada proyecto.</p>
+
+      <div class="works-grid">
+
+        <!-- TRABAJO 1: Restaurante -->
+        <div class="work-item">
+          <a href="01-restaurante/index.html" target="_blank" class="work-preview preview-restaurant">
+            <div class="work-preview-bar">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="work-preview-url">laparrilladelcentro.com.ar</span>
+            </div>
+            <div class="mock-hero">
+              <div class="mock-tag"></div>
+              <div class="mock-title"></div>
+              <div class="mock-title2"></div>
+              <div class="mock-p"></div>
+              <div class="mock-p2"></div>
+              <div class="mock-btns">
+                <div class="mock-btn"></div>
+                <div class="mock-btn2"></div>
+              </div>
+            </div>
+            <div class="work-preview-overlay">
+              <span class="overlay-btn">Ver demo →</span>
+            </div>
+          </a>
+          <div class="work-info">
+            <div class="work-number">01 / Restaurante</div>
+            <h3 class="work-title">La Parrilla del Centro</h3>
+            <p class="work-desc">Sitio para restaurante o bar con menú interactivo, formulario de reservas que llega por email, ubicación en Google Maps y botón de WhatsApp.</p>
+            <div class="work-tags">
+              <span class="work-tag">Menú con pestañas</span>
+              <span class="work-tag">Reservas online</span>
+              <span class="work-tag">Google Maps</span>
+              <span class="work-tag">WhatsApp</span>
+              <span class="work-tag">Galería</span>
+            </div>
+            <div class="work-features">
+              <div class="work-feature"><span class="work-feature-icon">📧</span><span>Formulario de reservas → email automático al dueño</span></div>
+              <div class="work-feature"><span class="work-feature-icon">📱</span><span>100% responsive, se ve perfecto en el celular</span></div>
+              <div class="work-feature"><span class="work-feature-icon">✏️</span><span>Menú editable — el cliente actualiza precios solo</span></div>
+            </div>
+            <a href="01-restaurante/index.html" target="_blank" class="work-link">Ver demo en vivo →</a>
+          </div>
+        </div>
+
+        <!-- TRABAJO 2: Profesional -->
+        <div class="work-item reverse">
+          <a href="02-profesional/index.html" target="_blank" class="work-preview preview-profesional">
+            <div class="work-preview-bar">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="work-preview-url">dratorres.com.ar</span>
+            </div>
+            <div class="mock-hero">
+              <div class="mock-hero-left">
+                <div class="mock-tag-blue"></div>
+                <div class="mock-title-dark"></div>
+                <div class="mock-title-dark2"></div>
+                <div class="mock-p-gray"></div>
+                <div class="mock-p-gray2"></div>
+                <div class="mock-btn-blue" style="height:18px;width:100px;border-radius:6px;margin-top:4px"></div>
+              </div>
+              <div class="mock-hero-right">👩‍⚕️</div>
+            </div>
+            <div class="work-preview-overlay">
+              <span class="overlay-btn">Ver demo →</span>
+            </div>
+          </a>
+          <div class="work-info">
+            <div class="work-number">02 / Profesional</div>
+            <h3 class="work-title">Sitio para profesionales</h3>
+            <p class="work-desc">Ideal para psicólogos, médicos, abogados, contadores o cualquier profesional independiente. Incluye reserva de turnos integrada con Calendly.</p>
+            <div class="work-tags">
+              <span class="work-tag">Calendly embed</span>
+              <span class="work-tag">Servicios + precios</span>
+              <span class="work-tag">Testimonios</span>
+              <span class="work-tag">Credenciales</span>
+              <span class="work-tag">Formulario</span>
+            </div>
+            <div class="work-features">
+              <div class="work-feature"><span class="work-feature-icon">📅</span><span>Turnos online directamente en la página — sin ir a otra app</span></div>
+              <div class="work-feature"><span class="work-feature-icon">🔒</span><span>Genera confianza: credenciales, testimonios, matrícula</span></div>
+              <div class="work-feature"><span class="work-feature-icon">💻</span><span>Funciona 100% en online y presencial</span></div>
+            </div>
+            <a href="02-profesional/index.html" target="_blank" class="work-link">Ver demo en vivo →</a>
+          </div>
+        </div>
+
+        <!-- TRABAJO 3: Tienda -->
+        <div class="work-item">
+          <a href="03-tienda/index.html" target="_blank" class="work-preview preview-tienda">
+            <div class="work-preview-bar">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="work-preview-url">urbnstore.com.ar</span>
+            </div>
+            <div class="mock-hero">
+              <div class="mock-hero-dark">
+                <div class="mock-hero-dark-text">
+                  <div class="mock-title-white"></div>
+                  <div class="mock-title-outline"></div>
+                </div>
+                <div class="mock-hero-img">👕</div>
+              </div>
+              <div class="mock-products">
+                <div class="mock-product">👕</div>
+                <div class="mock-product">👖</div>
+                <div class="mock-product">🧥</div>
+                <div class="mock-product">👚</div>
+              </div>
+            </div>
+            <div class="work-preview-overlay">
+              <span class="overlay-btn">Ver demo →</span>
+            </div>
+          </a>
+          <div class="work-info">
+            <div class="work-number">03 / Tienda</div>
+            <h3 class="work-title">URBN Store — E-commerce</h3>
+            <p class="work-desc">Tienda online con catálogo filtrable, carrito de compras funcional y checkout con MercadoPago. Perfecta para ropa, accesorios o cualquier producto físico.</p>
+            <div class="work-tags">
+              <span class="work-tag">Catálogo filtrable</span>
+              <span class="work-tag">Carrito funcional</span>
+              <span class="work-tag">MercadoPago</span>
+              <span class="work-tag">Newsletter</span>
+              <span class="work-tag">Buscador</span>
+            </div>
+            <div class="work-features">
+              <div class="work-feature"><span class="work-feature-icon">🛒</span><span>Carrito lateral — agregar productos sin salir de la página</span></div>
+              <div class="work-feature"><span class="work-feature-icon">💳</span><span>Pago con MercadoPago (tarjeta, transferencia, efectivo)</span></div>
+              <div class="work-feature"><span class="work-feature-icon">📦</span><span>Detección de envío gratis automática</span></div>
+            </div>
+            <a href="03-tienda/index.html" target="_blank" class="work-link">Ver demo en vivo →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICIOS ===== -->
+  <section class="services" id="servicios">
+    <div class="container">
+      <span class="section-tag">Qué ofrezco</span>
+      <h2 class="section-title">Servicios</h2>
+      <p class="section-sub">Todo lo que necesita un negocio para tener presencia online real.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🍽️</div>
+          <h3>Restaurantes & Bares</h3>
+          <p>Menú online actualizable, formulario de reservas automático, galería de fotos, mapa y botón de WhatsApp.</p>
+          <div class="service-price">desde $150 USD <span>/ sitio completo</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👩‍⚕️</div>
+          <h3>Profesionales & Servicios</h3>
+          <p>Landing page de confianza con turnos online vía Calendly, servicios, testimonios y formulario de contacto.</p>
+          <div class="service-price">desde $150 USD <span>/ sitio completo</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛍️</div>
+          <h3>Tiendas & E-commerce</h3>
+          <p>Catálogo de productos, carrito de compras y pago con MercadoPago o Stripe. Newsletter incluido.</p>
+          <div class="service-price">desde $250 USD <span>/ tienda completa</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📧</div>
+          <h3>Formularios & Email</h3>
+          <p>Cada formulario envía un email automático al negocio. Confirmaciones automáticas para los clientes.</p>
+          <div class="service-price">incluido <span>en todos los planes</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Mobile-First Design</h3>
+          <p>Todos los sitios se ven perfectos en celular, tablet y computadora. No hay excepciones.</p>
+          <div class="service-price">incluido <span>en todos los planes</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚀</div>
+          <h3>Entrega & Soporte</h3>
+          <p>Entrega en 5–7 días hábiles. 2 rondas de revisiones incluidas. Soporte post-entrega por 30 días.</p>
+          <div class="service-price">incluido <span>en todos los planes</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESO ===== -->
+  <section id="proceso">
+    <div class="container">
+      <span class="section-tag">Cómo trabajo</span>
+      <h2 class="section-title">Proceso simple, sin sorpresas</h2>
+      <p class="section-sub">De la idea al sitio online en menos de 2 semanas.</p>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h4>Consulta gratis</h4>
+          <p>Hablamos por WhatsApp o llamada. Me contás tu negocio y lo que necesitás.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h4>Propuesta</h4>
+          <p>Te envío un presupuesto detallado y un demo similar al sitio que haría para vos.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h4>Diseño & desarrollo</h4>
+          <p>Construyo el sitio en 5–7 días. Te muestro el progreso a mitad del proceso.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h4>Entrega online</h4>
+          <p>Publicamos el sitio con tu dominio. Te enseño a actualizar los contenidos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <div class="container" id="contacto">
+    <div class="cta-section">
+      <h2>¿Tu negocio necesita una web?</h2>
+      <p>La primera consulta es gratis. Hablemos por WhatsApp y en 24hs te mando una propuesta.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/5491100000000?text=Hola!%20Vi%20tu%20portfolio%20y%20quiero%20consultar%20sobre%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" class="btn btn-whatsapp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escribime por WhatsApp
+        </a>
+        <a href="mailto:tu@email.com" class="btn btn-ghost">Mandar un email</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2024 · Diseño web para negocios · Hecho con 💜</p>
+      <div class="footer-links">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Glow follow mouse
+    const glow = document.getElementById('glow');
+    window.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top  = e.clientY + 'px';
+    });
+
+    // Animate on scroll
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.work-item, .service-card, .process-step').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = `opacity .5s ease ${i * 0.08}s, transform .5s ease ${i * 0.08}s`;
+      io.observe(el);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) {
+          e.preventDefault();
+          window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
