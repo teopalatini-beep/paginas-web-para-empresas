@@ -233,6 +233,17 @@ em { font-style: italic; color: var(--clr-accent2); }
   border: 2px dashed var(--clr-border);
 }
 .nosotros-photo { min-height: 400px; }
+
+/* ---- Contenedores con foto real ---- */
+.img-placeholder.has-photo,
+.galeria-item.has-photo,
+.menu-card-img.has-photo {
+  background-size: cover;
+  background-position: center;
+  border: none;
+  font-size: 0;
+  color: transparent;
+}
 .nosotros-stat-card {
   position: absolute; bottom: -24px; right: -24px;
   background: var(--clr-accent);

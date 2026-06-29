@@ -31,35 +31,39 @@ tabBtns.forEach(btn => {
   });
 });
 
-// ---- Reservation form ----
+/* ============================================================
+   CONFIGURACIÓN DEL NEGOCIO
+   👉 EDITÁ estos datos por los del cliente real:
+   - WHATSAPP_NUMERO: número en formato internacional, sin +, espacios ni guiones.
+     Ej: Argentina +54 9 11 1234-5678  →  '5491112345678'
+   ============================================================ */
+const WHATSAPP_NUMERO = '5491145678910';
+
+// ---- Reservation form → envía la reserva por WhatsApp ----
 const form        = document.getElementById('reservas-form');
 const formSuccess = document.getElementById('form-success');
 
 if (form) {
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const submitBtn = form.querySelector('[type="submit"]');
-    submitBtn.textContent = 'Enviando...';
-    submitBtn.disabled = true;
+    const d = Object.fromEntries(new FormData(form).entries());
 
-    try {
-      // Uncomment and replace TU_FORM_ID to use Formspree:
-      // const response = await fetch(form.action, {
-      //   method: 'POST',
-      //   body: new FormData(form),
-      //   headers: { 'Accept': 'application/json' }
-      // });
-      // if (!response.ok) throw new Error('Error en el envío');
+    const texto =
+`*Nueva reserva — La Parrilla del Centro*
 
-      // Demo: simulate async submission
-      await new Promise(r => setTimeout(r, 1200));
+*Nombre:* ${d.nombre || ''} ${d.apellido || ''}
+*Email:* ${d.email || '-'}
+*Teléfono:* ${d.telefono || '-'}
+*Fecha:* ${d.fecha || ''}   *Hora:* ${d.hora || ''}
+*Personas:* ${d.personas || ''}
+*Ocasión:* ${d.ocasion || '-'}
+*Comentarios:* ${d.comentarios || '-'}`;
 
-      form.classList.add('hidden');
-      formSuccess.classList.remove('hidden');
-    } catch {
-      submitBtn.textContent = 'Error — Intentá de nuevo';
-      submitBtn.disabled = false;
-    }
+    const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(texto)}`;
+    window.open(url, '_blank');
+
+    form.classList.add('hidden');
+    formSuccess.classList.remove('hidden');
   });
 }
 
