@@ -2,6 +2,26 @@
    URBN STORE – JavaScript
    ============================================================ */
 
+/* ---- Botón de pago Mercado Pago (DEMO — no cobra) ----
+   Muestra un aviso de demostración. Para activar pagos reales,
+   usar la plantilla en ~/Dev/plantillas/mercadopago/ */
+function mpDemo() {
+  document.getElementById('mp-demo-toast')?.remove();
+  const t = document.createElement('div');
+  t.id = 'mp-demo-toast';
+  t.innerHTML = '<strong>🔒 Demo de pago</strong><br>En el sitio real, este botón abre el checkout seguro de <b>Mercado Pago</b> (tarjeta, débito, dinero en cuenta o efectivo).';
+  Object.assign(t.style, {
+    position: 'fixed', left: '50%', bottom: '28px', transform: 'translateX(-50%)',
+    maxWidth: '360px', background: '#fff', color: '#1a1a2e',
+    borderLeft: '5px solid #009EE3', borderRadius: '12px', padding: '16px 20px',
+    boxShadow: '0 12px 40px rgba(0,0,0,.25)', font: '14px/1.55 system-ui, sans-serif',
+    zIndex: '99999', opacity: '0', transition: 'opacity .3s ease',
+  });
+  document.body.appendChild(t);
+  requestAnimationFrame(() => { t.style.opacity = '1'; });
+  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 4500);
+}
+
 // ---- Catalog data ----
 const PRODUCTS = [
   { id: 1,  name: 'Hoodie Oversized Negro',   cat: 'hoodies',    price: 18500, emoji: '👕', badge: 'new',  badgeText: 'Nuevo' },

@@ -234,6 +234,29 @@ em { font-style: italic; color: var(--clr-accent2); }
 }
 .nosotros-photo { min-height: 400px; }
 
+/* ---- Pago de seña (Mercado Pago) ---- */
+.sena-box {
+  margin: 24px 0;
+  padding: 22px;
+  background: var(--clr-surface2);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+.sena-box p { margin-bottom: 14px; }
+.btn-mercadopago {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #009EE3; color: #fff;
+  border: none; border-radius: 10px;
+  padding: 14px 22px; font-size: 1rem; font-weight: 600;
+  font-family: inherit; cursor: pointer;
+  transition: filter .2s ease, transform .2s ease;
+}
+.btn-mercadopago:hover { filter: brightness(1.08); transform: translateY(-2px); }
+.mp-demo-tag {
+  display: block; margin-top: 10px;
+  font-size: .8rem; color: var(--clr-text-muted);
+}
+
 /* ---- Contenedores con foto real ---- */
 .img-placeholder.has-photo,
 .galeria-item.has-photo,
