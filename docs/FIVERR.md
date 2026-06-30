@@ -1,155 +1,108 @@
-# Guía Fiverr – Cómo crear tu perfil y primer gig
+# Perfil de Fiverr — listo para copiar/pegar
+
+> Fiverr es global y en inglés. Cobra **20% de comisión** (si publicás US$100, cobrás US$80).
+> **Fórmula de precio:** precio publicado = lo que querés ganar ÷ 0,80.
+> Portfolio para linkear: **https://paginas-web-para-empresas.vercel.app/**
 
 ---
 
-## Tu perfil (lo que ven los clientes primero)
+## 1) Datos del perfil
 
-### Foto de perfil
-- Foto tuya, bien iluminada, fondo neutro, cara visible
-- NO uses logos ni avatares — Fiverr penaliza los perfiles sin foto real
+**Username sugerido:** `teopalatini` o `teoweb.studio`
 
-### Descripción del perfil (copia y adaptá)
+**Professional title (headline):**
+> Modern websites for restaurants, shops & small businesses
 
-```
-I'm a web designer specializing in beautiful, conversion-focused websites for local businesses.
+**Description (bio) — pegá esto en "Description":**
+> Hi! I'm Teo, a web designer focused on small and local businesses.
+> I build modern, fast, mobile-first websites that actually bring customers:
+> online menus, reservation forms, WhatsApp ordering and Mercado Pago / card
+> payments — ready to operate from day one.
+>
+> What you get with me:
+> • Clean, professional design tailored to your business
+> • 100% responsive (perfect on mobile)
+> • Contact / reservation forms that reach you by email or WhatsApp
+> • Optional online payments (Mercado Pago, cards)
+> • Fast delivery and clear communication
+>
+> Check my live demos (restaurant, store, hardware shop, professional):
+> https://paginas-web-para-empresas.vercel.app/
+>
+> Let's talk — first consultation is free. 🚀
 
-I build restaurant websites, professional service pages, and small e-commerce stores with modern design, contact forms, appointment scheduling, and payment integrations (Stripe, MercadoPago).
-
-Every site I deliver is:
-✅ Mobile-responsive
-✅ Fast loading
-✅ SEO-ready
-✅ Easy for clients to update
-
-I work mainly with HTML/CSS/JS and integrate tools like Calendly, Brevo, and payment gateways to make each site fully functional from day one.
-
-Let's build something great together. 🚀
-```
-
----
-
-## Tu primer gig (publicación de servicio)
-
-### Título del gig (copiá uno de estos):
-- `I will design a professional website for your local business`
-- `I will build a restaurant or service website with contact form and payment`
-- `I will create a small business website with appointment booking and payments`
-
-### Categoría:
-- Graphics & Design → Web & App Design → Website Design
-  ó
-- Programming & Tech → Website Builders & CMS → Website Builders
-
-### Descripción del gig (copia y editá):
-
-```
-Are you a restaurant, professional, or small business owner who needs a modern, beautiful website? You're in the right place.
-
-I specialize in building websites that look great AND work — with contact forms, appointment booking, payment buttons, and newsletter signups all set up and ready to go.
+**Skills / tags:** website design, landing page, responsive web design, small business website, restaurant website, html css javascript, mercado pago, web developer
 
 ---
 
-🍽️ RESTAURANT / BAR SITES
-• Full menu with categories and prices
-• Online reservation form (automated email to owner)
-• Google Maps embed + WhatsApp button
-• Photo gallery section
+## 2) GIG #1 — Restaurant website (tu gig estrella)
 
-👩‍⚕️ PROFESSIONAL / SERVICE PAGES
-• Calendly appointment booking (embedded)
-• Contact form with auto-confirmation email
-• Services + about + testimonials sections
-• Beautiful, trustworthy design
+**Gig title:**
+> I will create a modern website for your restaurant with online reservations
 
-🛒 SMALL STORE / E-COMMERCE
-• Product catalog with categories and filters
-• Cart + MercadoPago / Stripe checkout
-• Newsletter signup (Brevo integration)
-• WhatsApp customer support button
+**Category:** Programming & Tech → Website Development (o Website Builders)
 
----
+**Search tags:** restaurant website, food menu website, reservation website, responsive website, small business website
 
-📦 WHAT YOU GET:
-✅ Fully responsive (mobile, tablet, desktop)
-✅ All forms connected and working
-✅ Payment gateway integrated
-✅ SEO basic setup (meta tags, descriptions)
-✅ Delivery in 5–7 business days
-✅ 2 rounds of revisions included
-✅ Source files
+**Packages** (precios netos pensados con la fórmula ÷0,80):
 
-📬 MESSAGE ME before ordering so I can understand your business and give you a custom quote.
-```
+| | BASIC — "Starter" | STANDARD — "Complete" | PREMIUM — "Pro" |
+|---|---|---|---|
+| Precio publicado | **US$120** | **US$280** | **US$500** |
+| Vos cobrás (≈80%) | ~US$96 | ~US$224 | ~US$400 |
+| Páginas / secciones | 1 página (landing) | Hasta 5 secciones | Sitio completo + extras |
+| Menú online | ✅ | ✅ | ✅ editable |
+| Reservas / WhatsApp | Botón WhatsApp | Formulario de reservas | Reservas + confirmación |
+| Galería | — | ✅ | ✅ |
+| Pagos (Mercado Pago) | — | — | ✅ (seña/pedido) |
+| Mobile responsive | ✅ | ✅ | ✅ |
+| Revisiones | 1 | 2 | 3 |
+| Entrega | 4 días | 6 días | 9 días |
 
-### Tags (palabras clave):
-```
-web design, local business website, restaurant website, professional website,
-small business, MercadoPago, Stripe, contact form, appointment booking, Calendly
-```
+**Gig description (pegá esto):**
+> Get a modern, mobile-first website for your restaurant that turns visitors into
+> customers. Beautiful menu, photo gallery, reservation form and a one-tap WhatsApp
+> button — plus optional online payments with Mercado Pago.
+>
+> ✅ Custom design for your brand
+> ✅ Works perfectly on phones
+> ✅ Reservations reach you by WhatsApp or email
+> ✅ Google Maps, hours, social links
+> ✅ Fast, lightweight, easy to update
+>
+> See a live demo: https://paginas-web-para-empresas.vercel.app/01-restaurante/
+>
+> Message me before ordering and I'll tell you exactly what fits your restaurant. 🍽️
 
----
+**Requirements (lo que le pedís al cliente al comprar):**
+> 1) Your logo (or business name + colors you like)
+> 2) Your menu (text or photo is fine)
+> 3) Photos of your place/dishes (or I use professional stock)
+> 4) Address, hours, phone/WhatsApp, social links
 
-## Paquetes de precios sugeridos
-
-| Plan     | Precio  | Qué incluye                                                          |
-|----------|---------|----------------------------------------------------------------------|
-| Basic    | $150    | Landing page 1 sección + formulario de contacto básico               |
-| Standard | $250    | Sitio completo 4–5 páginas + formulario + integración de calendario   |
-| Premium  | $400    | Tienda o sitio complejo + pagos + newsletter + Brevo automations      |
-
-> Tip: al principio podés empezar en $100–$150 para conseguir las primeras reseñas, y subir el precio en 1–2 meses.
-
----
-
-## Imágenes del gig (lo que más impacta en conversiones)
-
-Crear 3 imágenes para el gig (con Canva):
-1. **Mockup del sitio restaurante** — captura el demo en un dispositivo (Mac/iPhone)
-2. **Mockup del sitio profesional** — captura en tablet
-3. **Banner con texto** — "Modern Business Websites | Contact Forms | Payment Integration"
-
-### Herramienta para mockups gratis:
-- **https://mockupbro.com** — subís una captura de pantalla y te genera el mockup con dispositivo
+**FAQ:**
+- *Do I need to provide photos?* No — I can use high-quality stock photos if you don't have your own.
+- *Will it work on mobile?* Yes, every site is mobile-first.
+- *Can customers pay online?* Yes, on the Premium package via Mercado Pago.
 
 ---
 
-## Checklist antes de publicar
+## 3) GIG #2 — Local shop / store website
 
-- [ ] Foto de perfil real subida
-- [ ] Descripción del perfil completa en inglés
-- [ ] Habilidades agregadas (Web Design, HTML, CSS, JavaScript, Figma, etc.)
-- [ ] Portafolio: subir capturas de los 3 demos al portafolio de Fiverr
-- [ ] Gig completo: título, descripción, 3 paquetes, FAQs, imágenes
-- [ ] Idiomas: marcá Español (native) e Inglés (conversational o fluent)
-- [ ] Tiempo de respuesta: activar "Quick Response" respondiendo mensajes en menos de 1h
+**Gig title:**
+> I will build a website for your shop with WhatsApp ordering and payments
 
----
+Mismos 3 paquetes; ajustá el contenido a comercio:
+- Basic US$120: catálogo de hasta 6 productos + WhatsApp.
+- Standard US$300: catálogo + categorías + pedido por WhatsApp.
+- Premium US$550: + pago online (Mercado Pago) y más productos.
 
-## Primeros días: cómo conseguir las primeras reviews
-
-1. **Bajá el precio inicialmente** — $80–100 USD por un sitio estándar. Valé más una review que $50 extra.
-2. **Respondé en menos de 1 hora** — el algoritmo de Fiverr premia la velocidad de respuesta
-3. **Usá Buyer Requests** — Fiverr tiene una sección donde compradores piden servicios. Postulate con propuestas personalizadas.
-4. **Promote on social** — Compartí los demos en LinkedIn, Instagram, grupos de Facebook de emprendedores locales
-5. **Ofrecé a conocidos** — El primer cliente puede ser alguien cercano. Hacelo bien y pedile una review en Google + Fiverr.
+**Demo para linkear:** https://paginas-web-para-empresas.vercel.app/04-ferreteria/
 
 ---
 
-## Para clientes locales (Argentina)
-
-Para no depender solo de Fiverr, también podés ofrecer a negocios locales:
-- Cafés, restaurantes, bares
-- Médicos, psicólogos, abogados, contadores
-- Gimnasios, peluquerías, spas
-- PyMEs con presencia solo en Instagram (sin web)
-
-**Precio sugerido para mercado local:** AR$80.000 – $200.000 por sitio completo
-(ajustar según el tipo de negocio y la complejidad)
-
-**Mensaje de prospección para DM de Instagram:**
-```
-Hola [nombre]! Vi tu [restaurante/negocio] en Instagram y quería consultarte —
-¿tienen página web? Soy diseñador web y armé sitios para varios negocios como el tuyo.
-Si te interesa, puedo mostrarte un demo gratis similar al tipo de sitio que te haría.
-¡Saludos!
-```
+## 4) Estrategia para las primeras ventas
+1. **Arrancá con precios un poco más bajos** las primeras 2 semanas para conseguir las primeras 3–5 reseñas (son oro).
+2. Respondé **rápido** (Fiverr premia la velocidad de respuesta).
+3. Subí **fotos/capturas reales** de tus demos a cada gig (gallery del gig).
+4. Una vez que tengas 5 reseñas, **subí los precios** a los de la tabla.
