@@ -57,7 +57,7 @@ tabBtns.forEach(btn => {
    - WHATSAPP_NUMERO: número en formato internacional, sin +, espacios ni guiones.
      Ej: Argentina +54 9 11 1234-5678  →  '5491112345678'
    ============================================================ */
-const WHATSAPP_NUMERO = '5491145678910';
+const WHATSAPP_NUMERO = '5491151526104';
 
 // ---- Reservation form → envía la reserva por WhatsApp ----
 const form        = document.getElementById('reservas-form');

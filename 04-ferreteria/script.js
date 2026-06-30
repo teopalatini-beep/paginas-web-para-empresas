@@ -5,7 +5,7 @@
 /* ---- CONFIGURACIÓN DEL NEGOCIO ----
    👉 EDITÁ el número por el del cliente (formato internacional, sin + ni espacios).
       Ej: +54 9 11 1234-5678  →  '5491112345678' */
-const WHATSAPP_NUMERO = '5491145678910';
+const WHATSAPP_NUMERO = '5491151526104';
 
 /* ---- Catálogo (precios orientativos de demo) ---- */
 const PRODUCTOS = [
