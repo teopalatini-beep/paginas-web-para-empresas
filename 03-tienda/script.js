@@ -24,19 +24,20 @@ function mpDemo() {
 
 // ---- Catalog data ----
 const PRODUCTS = [
-  { id: 1,  name: 'Hoodie Oversized Negro',   cat: 'hoodies',    price: 18500, emoji: '👕', badge: 'new',  badgeText: 'Nuevo' },
-  { id: 2,  name: 'Pantalón Cargo Kaki',       cat: 'pantalones', price: 22000, emoji: '👖', badge: 'new',  badgeText: 'Nuevo' },
-  { id: 3,  name: 'Remera Básica Blanca',      cat: 'remeras',    price: 9800,  emoji: '👚', badge: 'sale', badgeText: '-20%', oldPrice: 12200 },
-  { id: 4,  name: 'Campera Bomber Azul',       cat: 'camperas',   price: 35000, emoji: '🧥', badge: 'hot',  badgeText: '⭐ Hot' },
-  { id: 5,  name: 'Remera Oversize Gris',      cat: 'remeras',    price: 11200, emoji: '👕', badge: null },
-  { id: 6,  name: 'Buzo Canguro Verde',        cat: 'hoodies',    price: 16800, emoji: '🩱', badge: null },
-  { id: 7,  name: 'Jean Slim Azul',            cat: 'pantalones', price: 24500, emoji: '👖', badge: 'sale', badgeText: '-15%', oldPrice: 28800 },
-  { id: 8,  name: 'Campera Cortaviento',       cat: 'camperas',   price: 28000, emoji: '🧥', badge: 'new',  badgeText: 'Nuevo' },
-  { id: 9,  name: 'Gorra Snapback',            cat: 'accesorios', price: 7500,  emoji: '🧢', badge: null },
-  { id: 10, name: 'Riñonera Urbana',           cat: 'accesorios', price: 12000, emoji: '👜', badge: 'hot',  badgeText: '⭐ Hot' },
-  { id: 11, name: 'Remera Gráfica Print',      cat: 'remeras',    price: 13500, emoji: '👕', badge: null },
-  { id: 12, name: 'Pantalón Jogger Negro',     cat: 'pantalones', price: 19800, emoji: '👖', badge: null },
+  { id: 1,  name: 'Hoodie Oversized Negro',   cat: 'hoodies',    price: 18500, img: '1556821840-3a63f95609a7', badge: 'new',  badgeText: 'Nuevo' },
+  { id: 2,  name: 'Pantalón Cargo Kaki',       cat: 'pantalones', price: 22000, img: '1473966968600-fa801b869a1a', badge: 'new',  badgeText: 'Nuevo' },
+  { id: 3,  name: 'Remera Básica Blanca',      cat: 'remeras',    price: 9800,  img: '1521572163474-6864f9cf17ab', badge: 'sale', badgeText: '-20%', oldPrice: 12200 },
+  { id: 4,  name: 'Campera Bomber Azul',       cat: 'camperas',   price: 35000, img: '1551028719-00167b16eac5', badge: 'hot',  badgeText: '★ Hot' },
+  { id: 5,  name: 'Remera Oversize Gris',      cat: 'remeras',    price: 11200, img: '1576566588028-4147f3842f27', badge: null },
+  { id: 6,  name: 'Buzo Canguro Verde',        cat: 'hoodies',    price: 16800, img: '1620799140408-edc6dcb6d633', badge: null },
+  { id: 7,  name: 'Jean Slim Azul',            cat: 'pantalones', price: 24500, img: '1542272604-787c3835535d', badge: 'sale', badgeText: '-15%', oldPrice: 28800 },
+  { id: 8,  name: 'Campera Cortaviento',       cat: 'camperas',   price: 28000, img: '1591047139829-d91aecb6caea', badge: 'new',  badgeText: 'Nuevo' },
+  { id: 9,  name: 'Gorra Snapback',            cat: 'accesorios', price: 7500,  img: '1588850561407-ed78c282e89b', badge: null },
+  { id: 10, name: 'Riñonera Urbana',           cat: 'accesorios', price: 12000, img: '1553062407-98eeb64c6a62', badge: 'hot',  badgeText: '★ Hot' },
+  { id: 11, name: 'Remera Gráfica Print',      cat: 'remeras',    price: 13500, img: '1503341504253-dff4815485f1', badge: null },
+  { id: 12, name: 'Pantalón Jogger Negro',     cat: 'pantalones', price: 19800, img: '1552902865-b72c031ac5ea', badge: null },
 ];
+const imgUrl = (id) => `https://images.unsplash.com/photo-${id}?w=600&q=80`;
 
 function formatPrice(n) {
   return '$' + n.toLocaleString('es-AR');
@@ -50,7 +51,7 @@ function buildProductCard(p) {
   return `
     <div class="product-card" data-id="${p.id}" data-cat="${p.cat}">
       <div class="product-img">
-        <div class="product-img-placeholder">${p.emoji}</div>
+        <div class="product-img-photo" style="background-image:url('${imgUrl(p.img)}')" role="img" aria-label="${p.name}"></div>
         ${badge}
         <button class="quick-add" data-id="${p.id}" data-name="${p.name}" data-price="${p.price}">+ Agregar</button>
       </div>
@@ -101,7 +102,7 @@ function renderCart() {
 
   itemsEl.innerHTML = cart.map(item => `
     <div class="cart-item">
-      <div class="cart-item-img">${item.emoji}</div>
+      <div class="cart-item-img" style="background-image:url('${imgUrl(item.img)}')"></div>
       <div class="cart-item-info">
         <div class="cart-item-name">${item.name}</div>
         <div class="cart-item-price">${formatPrice(item.price)} × ${item.qty} = <strong>${formatPrice(item.price * item.qty)}</strong></div>
@@ -124,10 +125,10 @@ function renderCart() {
 }
 
 function addToCart(id, name, price) {
-  const emoji = PRODUCTS.find(p => p.id === id)?.emoji || '📦';
+  const img = PRODUCTS.find(p => p.id === id)?.img || '';
   const existing = cart.find(i => i.id === id);
   if (existing) { existing.qty++; }
-  else { cart.push({ id, name, price, qty: 1, emoji }); }
+  else { cart.push({ id, name, price, qty: 1, img }); }
   renderCart();
   openCart();
 }
