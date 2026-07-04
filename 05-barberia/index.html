@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buffalos Barbershop — Barbería en Palermo, Buenos Aires</title>
+  <meta name="description" content="Buffalos Barbershop, Palermo. Cortes a tijera y máquina, barba y diseño. 5,0★ con 101 reseñas. Reservá tu turno por WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="topbar">★ 5,0 en Google · 101 reseñas · Humboldt 2308, Palermo — Buenos Aires</div>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav">
+    <div class="wrap nav-in">
+      <a href="#top" class="brand">BUFFALOS<span>.</span></a>
+      <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+      <div class="links" id="links">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#galeria">Galería</a>
+        <a href="#resenas">Reseñas</a>
+        <a href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno%20en%20Buffalos%20Barbershop" target="_blank" class="nav-cta">Reservar turno</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="top">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1600&q=80')"></div>
+    <div class="hero-overlay"></div>
+    <div class="wrap hero-in">
+      <span class="eyebrow rv">Barbería · Palermo desde el barrio</span>
+      <h1 class="rv">Buffalos<br>Barbershop</h1>
+      <p class="rv">Cortes a tijera y máquina, barba y diseño. El lugar donde salís <em>fachero</em>.</p>
+      <div class="hero-actions rv">
+        <a href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno%20en%20Buffalos%20Barbershop" target="_blank" class="btn btn-red">Reservar por WhatsApp</a>
+        <a href="tel:+541173611574" class="btn btn-line">Llamar · 011 7361-1574</a>
+      </div>
+      <div class="hero-rating rv">
+        <span class="stars">★★★★★</span>
+        <strong>5,0</strong>
+        <span class="rcount">101 reseñas en Google</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== INFO STRIP ===== -->
+  <section class="strip">
+    <div class="wrap strip-grid">
+      <div class="strip-item"><span>📍</span><div><strong>Dónde</strong><p>Humboldt 2308, Palermo</p></div></div>
+      <div class="strip-item"><span>🕐</span><div><strong>Horarios</strong><p>Lun a Sáb · 10 a 21 hs</p></div></div>
+      <div class="strip-item"><span>✂️</span><div><strong>Especialidad</strong><p>Tijera, máquina y barba</p></div></div>
+      <div class="strip-item"><span>💳</span><div><strong>Pagos</strong><p>Efectivo y Mercado Pago</p></div></div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICIOS ===== -->
+  <section class="section" id="servicios">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag rv">La carta</span>
+        <h2 class="rv">Servicios</h2>
+      </div>
+      <div class="svc-list">
+        <div class="svc rv"><div class="svc-main"><h3>Corte de pelo</h3><p>Máquina y tijera, lavado y peinado.</p></div><span class="svc-price">$18.000</span></div>
+        <div class="svc rv"><div class="svc-main"><h3>Corte + Barba</h3><p>El combo completo. Corte, perfilado y toalla caliente.</p></div><span class="svc-price">$25.000</span></div>
+        <div class="svc rv"><div class="svc-main"><h3>Barba / Perfilado</h3><p>Diseño de barba con navaja y contornos definidos.</p></div><span class="svc-price">$12.000</span></div>
+        <div class="svc rv"><div class="svc-main"><h3>Diseño / líneas</h3><p>Detalles, líneas y diseños a máquina.</p></div><span class="svc-price">$20.000</span></div>
+        <div class="svc rv"><div class="svc-main"><h3>Corte niño</h3><p>Para los más chicos, con paciencia y buena onda.</p></div><span class="svc-price">$14.000</span></div>
+        <div class="svc rv"><div class="svc-main"><h3>Corte + diseño</h3><p>Corte completo con diseño personalizado.</p></div><span class="svc-price">$24.000</span></div>
+      </div>
+      <div class="reservar-cta rv">
+        <div>
+          <h3>¿Listo para tu próximo corte?</h3>
+          <p>Reservá tu turno por WhatsApp o dejá la seña online.</p>
+        </div>
+        <div class="reservar-btns">
+          <a href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno%20en%20Buffalos%20Barbershop" target="_blank" class="btn btn-red">Reservar turno</a>
+          <button type="button" class="btn-mp" onclick="mpDemo()">
+            <svg width="20" height="20" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#009EE3"/><path d="M14 20c0-5.523 4.477-10 10-10s10 4.477 10 10c0 3.5-1.79 6.59-4.5 8.39L28 34H20l-1.5-5.61C15.79 26.59 14 23.5 14 20z" fill="white"/></svg>
+            Señar con Mercado Pago
+          </button>
+          <span class="mp-demo-tag">Demostración · no cobra</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOSOTROS ===== -->
+  <section class="section nosotros" id="nosotros">
+    <div class="wrap nos-grid">
+      <div class="nos-img" style="background-image:url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1100&q=80')" role="img" aria-label="Interior de Buffalos Barbershop"></div>
+      <div class="nos-text">
+        <span class="sec-tag rv">Quiénes somos</span>
+        <h2 class="rv">Más que un corte,<br>un <em>lugar</em></h2>
+        <p class="rv">En Buffalos no venís sólo a cortarte el pelo. Venís a un espacio donde los chicos te reciben con buena onda, te asesoran y se toman el tiempo para que salgas como querés.</p>
+        <p class="rv">Trabajamos a tijera y máquina, con detalle y profesionalismo. Por algo somos <strong>5,0★</strong> con más de 100 reseñas en el barrio.</p>
+        <div class="nos-stats rv">
+          <div class="nstat"><span class="nnum">5,0★</span><span class="nlab">en Google</span></div>
+          <div class="nstat"><span class="nnum">101</span><span class="nlab">reseñas</span></div>
+          <div class="nstat"><span class="nnum">Palermo</span><span class="nlab">Humboldt 2308</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALERÍA ===== -->
+  <section class="section galeria" id="galeria">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag rv">El local &amp; los cortes</span>
+        <h2 class="rv">Galería</h2>
+      </div>
+      <div class="gal-grid">
+        <div class="gal-item big rv" style="background-image:url('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=80')"></div>
+        <div class="gal-item rv" style="background-image:url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=700&q=80')"></div>
+        <div class="gal-item rv" style="background-image:url('https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=700&q=80')"></div>
+        <div class="gal-item rv" style="background-image:url('https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?w=700&q=80')"></div>
+        <div class="gal-item rv" style="background-image:url('https://images.unsplash.com/photo-1596728325488-58c87691e9af?w=700&q=80')"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESEÑAS ===== -->
+  <section class="section resenas" id="resenas">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag rv">Lo que dicen en Google</span>
+        <h2 class="rv">5,0 ★ · 101 reseñas</h2>
+      </div>
+      <div class="rev-grid">
+        <div class="rev rv">
+          <div class="stars">★★★★★</div>
+          <p>"Un lujo la barbería, la atención y el corte. Los chicos todos muy buena onda. Kevin es un barbero muy profesional, muy bueno en lo que hace."</p>
+          <div class="rev-by"><span class="av">V</span><div><strong>Valentín L.</strong><span>Local Guide · Google</span></div></div>
+        </div>
+        <div class="rev rv">
+          <div class="stars">★★★★★</div>
+          <p>"Excelente atención por parte de los chicos, todos muy capacitados. Si querés estar fachero, tenés que venir aquí."</p>
+          <div class="rev-by"><span class="av">A</span><div><strong>Alejandro A.</strong><span>14 reseñas · Google</span></div></div>
+        </div>
+        <div class="rev rv">
+          <div class="stars">★★★★★</div>
+          <p>"Excelente servicio y muy buena atención. Me arreglé la barba y quedó tremenda. Híper recomendado."</p>
+          <div class="rev-by"><span class="av">M</span><div><strong>Martín G.</strong><span>Google</span></div></div>
+        </div>
+      </div>
+      <a href="https://www.google.com/search?q=Buffalos+Barbershop+Palermo" target="_blank" class="btn btn-line rv" style="margin-top:34px">Ver todas en Google →</a>
+    </div>
+  </section>
+
+  <!-- ===== UBICACIÓN ===== -->
+  <section class="section ubic" id="contacto">
+    <div class="wrap ubic-grid">
+      <div class="ubic-info">
+        <span class="sec-tag rv">Cómo llegar</span>
+        <h2 class="rv">Te esperamos<br>en Palermo</h2>
+        <div class="ubic-rows rv">
+          <a class="urow" href="https://maps.google.com/?q=Humboldt+2308+CABA" target="_blank"><span>📍</span><div><strong>Dirección</strong><p>Humboldt 2308, C1425 · CABA</p></div></a>
+          <a class="urow" href="tel:+541173611574"><span>📞</span><div><strong>Teléfono</strong><p>011 7361-1574</p></div></a>
+          <div class="urow"><span>🕐</span><div><strong>Horarios</strong><p>Lun a Sáb · 10 a 21 hs · Dom cerrado</p></div></div>
+          <a class="urow" href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno" target="_blank"><span>💬</span><div><strong>WhatsApp</strong><p>Reservá tu turno directo</p></div></a>
+        </div>
+        <a href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno%20en%20Buffalos%20Barbershop" target="_blank" class="btn btn-red rv">Reservar turno</a>
+      </div>
+      <iframe class="mapa rv" src="https://www.google.com/maps?q=Humboldt%202308%2C%20CABA&output=embed" loading="lazy" title="Ubicación Buffalos Barbershop"></iframe>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-brand"><span class="brand">BUFFALOS<span>.</span></span><p>Barbería en Palermo · Humboldt 2308 · Cortes a tijera y máquina.</p></div>
+      <div class="foot-cta">
+        <a href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno" target="_blank" class="btn btn-red">Reservar turno</a>
+      </div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Buffalos Barbershop</span><span>Sitio por Teo Palatini</span></div>
+  </footer>
+
+  <a href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno%20en%20Buffalos%20Barbershop" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
