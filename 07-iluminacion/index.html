@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina — Casa de Iluminación | Lámparas, colgantes y deco</title>
+  <meta name="description" content="Lumina, casa de iluminación. Lámparas colgantes, veladores, apliques, deco y LED. Asesoramiento y envío. Pedí por WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="topbar">Envíos a todo el país · Asesoramiento de iluminación sin cargo · Showroom en el barrio</div>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav">
+    <div class="wrap nav-in">
+      <a href="#top" class="brand">Lumina<span>·</span></a>
+      <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+      <div class="links" id="links">
+        <a href="#categorias">Categorías</a>
+        <a href="#destacados">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a href="https://wa.me/5491151526104?text=Hola!%20Quisiera%20consultar%20por%20iluminaci%C3%B3n" target="_blank" class="nav-cta">Pedir por WhatsApp</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="top">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?w=1600&q=80')"></div>
+    <div class="hero-glow"></div>
+    <div class="wrap hero-in">
+      <span class="eyebrow rv">Casa de iluminación</span>
+      <h1 class="rv">La luz correcta<br><em>cambia todo</em></h1>
+      <p class="rv">Lámparas colgantes, veladores, apliques y deco para darle calidez y carácter a cada ambiente. Te asesoramos para que elijas la luz justa.</p>
+      <div class="hero-actions rv">
+        <a href="#destacados" class="btn btn-gold">Ver productos</a>
+        <a href="https://wa.me/5491151526104?text=Hola!%20Quiero%20asesoramiento%20de%20iluminaci%C3%B3n" target="_blank" class="btn btn-line">Pedir asesoramiento</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CATEGORÍAS ===== -->
+  <section class="section" id="categorias">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag rv">Recorré</span>
+        <h2 class="rv">Por categoría</h2>
+      </div>
+      <div class="cat-grid">
+        <a href="#destacados" class="cat rv"><span class="cat-n">01</span><h3>Colgantes</h3><p>Para comedor, cocina y living</p></a>
+        <a href="#destacados" class="cat rv"><span class="cat-n">02</span><h3>Veladores</h3><p>Luz de mesa y de noche</p></a>
+        <a href="#destacados" class="cat rv"><span class="cat-n">03</span><h3>Apliques</h3><p>De pared, para acentos</p></a>
+        <a href="#destacados" class="cat rv"><span class="cat-n">04</span><h3>De pie</h3><p>Presencia en cualquier rincón</p></a>
+        <a href="#destacados" class="cat rv"><span class="cat-n">05</span><h3>Deco &amp; vintage</h3><p>Filamento y estilo Edison</p></a>
+        <a href="#destacados" class="cat rv"><span class="cat-n">06</span><h3>LED &amp; técnica</h3><p>Bajo consumo y exterior</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DESTACADOS ===== -->
+  <section class="section destacados" id="destacados">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-tag rv">Selección</span>
+        <h2 class="rv">Nuestros favoritos</h2>
+        <p class="rv">Precios orientativos. Consultá stock, colores y envío por WhatsApp.</p>
+      </div>
+      <div class="prod-grid">
+        <article class="prod rv">
+          <div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1524634126442-357e0eac3c14?w=700&q=80')" role="img" aria-label="Lámpara colgante nórdica"></div>
+          <div class="prod-body"><span class="prod-cat">Colgante</span><h3>Colgante Nórdica</h3><div class="prod-foot"><span class="prod-price">$32.000</span><button class="btn-wsp" type="button" onclick="pedir('Colgante Nórdica')"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg> Consultar</button></div></div>
+        </article>
+        <article class="prod rv">
+          <div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=700&q=80')" role="img" aria-label="Colgante moderna"></div>
+          <div class="prod-body"><span class="prod-cat">Colgante</span><h3>Colgante Moderna</h3><div class="prod-foot"><span class="prod-price">$38.000</span><button class="btn-wsp" type="button" onclick="pedir('Colgante Moderna')"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg> Consultar</button></div></div>
+        </article>
+        <article class="prod rv">
+          <div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=700&q=80')" role="img" aria-label="Velador de mesa"></div>
+          <div class="prod-body"><span class="prod-cat">Velador</span><h3>Velador de Mesa</h3><div class="prod-foot"><span class="prod-price">$18.500</span><button class="btn-wsp" type="button" onclick="pedir('Velador de Mesa')"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg> Consultar</button></div></div>
+        </article>
+        <article class="prod rv">
+          <div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=700&q=80')" role="img" aria-label="Lámpara deco Edison"></div>
+          <div class="prod-body"><span class="prod-cat">Deco</span><h3>Deco Edison</h3><div class="prod-foot"><span class="prod-price">$24.000</span><button class="btn-wsp" type="button" onclick="pedir('Deco Edison')"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg> Consultar</button></div></div>
+        </article>
+        <article class="prod rv">
+          <div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80')" role="img" aria-label="Aplique de pared"></div>
+          <div class="prod-body"><span class="prod-cat">Aplique</span><h3>Aplique de Pared</h3><div class="prod-foot"><span class="prod-price">$14.500</span><button class="btn-wsp" type="button" onclick="pedir('Aplique de Pared')"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg> Consultar</button></div></div>
+        </article>
+        <article class="prod rv">
+          <div class="prod-img" style="background-image:url('https://images.unsplash.com/photo-1550985543-49bee3167284?w=700&q=80')" role="img" aria-label="Araña de techo"></div>
+          <div class="prod-body"><span class="prod-cat">Premium</span><h3>Araña de Techo</h3><div class="prod-foot"><span class="prod-price">$75.000</span><button class="btn-wsp" type="button" onclick="pedir('Araña de Techo')"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg> Consultar</button></div></div>
+        </article>
+      </div>
+      <div class="pay-note rv">
+        <p>¿Compra grande? Podés dejar la seña online.</p>
+        <button type="button" class="btn-mp" onclick="mpDemo()">
+          <svg width="18" height="18" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#009EE3"/><path d="M14 20c0-5.523 4.477-10 10-10s10 4.477 10 10c0 3.5-1.79 6.59-4.5 8.39L28 34H20l-1.5-5.61C15.79 26.59 14 23.5 14 20z" fill="white"/></svg>
+          Señar con Mercado Pago
+        </button>
+        <span class="mp-demo-tag">Demostración · no cobra</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOSOTROS ===== -->
+  <section class="section nosotros" id="nosotros">
+    <div class="wrap nos-grid">
+      <div class="nos-text">
+        <span class="sec-tag rv">Sobre Lumina</span>
+        <h2 class="rv">Iluminar es <em>diseñar</em><br>cómo se vive un espacio</h2>
+        <p class="rv">No vendemos solo lámparas: te ayudamos a elegir la temperatura, la potencia y el estilo justo para cada ambiente. Cálida para el living, funcional para la cocina, suave para el dormitorio.</p>
+        <p class="rv">Vení al showroom, contanos tu proyecto y te asesoramos sin cargo. Trabajamos con las mejores marcas y también con piezas de diseño.</p>
+        <div class="nos-stats rv">
+          <div><span class="nnum">+800</span><span class="nlab">modelos</span></div>
+          <div><span class="nnum">Envíos</span><span class="nlab">a todo el país</span></div>
+          <div><span class="nnum">Asesor.</span><span class="nlab">sin cargo</span></div>
+        </div>
+      </div>
+      <div class="nos-img" style="background-image:url('https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=1000&q=80')" role="img" aria-label="Lámparas deco encendidas"></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="section contacto" id="contacto">
+    <div class="wrap cont-grid">
+      <div class="cont-info">
+        <span class="sec-tag rv">Visitanos</span>
+        <h2 class="rv">Contacto &amp;<br>showroom</h2>
+        <div class="cont-rows rv">
+          <a class="crow" href="https://wa.me/5491151526104?text=Hola!%20Quisiera%20consultar%20por%20iluminaci%C3%B3n" target="_blank"><span class="ci">◆</span><div><strong>WhatsApp</strong><span>Pedidos y consultas</span></div></a>
+          <div class="crow"><span class="ci">◆</span><div><strong>Showroom</strong><span>Av. del barrio 1234 · CABA</span></div></div>
+          <div class="crow"><span class="ci">◆</span><div><strong>Horarios</strong><span>Lun a Sáb · 9 a 19 hs</span></div></div>
+        </div>
+        <a href="https://wa.me/5491151526104?text=Hola!%20Quisiera%20consultar%20por%20iluminaci%C3%B3n" target="_blank" class="btn btn-gold rv">Escribinos por WhatsApp</a>
+      </div>
+      <div class="cont-visual rv" style="background-image:url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=900&q=80')" role="img" aria-label="Ambiente cálido iluminado"></div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-brand"><span class="brand">Lumina<span>·</span></span><p>Casa de iluminación. Lámparas, colgantes, veladores y deco. Asesoramiento y envíos.</p></div>
+      <a href="https://wa.me/5491151526104?text=Hola!%20Quisiera%20consultar%20por%20iluminaci%C3%B3n" target="_blank" class="btn btn-gold">Pedir por WhatsApp</a>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Lumina · Casa de iluminación</span><span>Sitio por Teo Palatini</span></div>
+  </footer>
+
+  <a href="https://wa.me/5491151526104?text=Hola!%20Quisiera%20consultar%20por%20iluminaci%C3%B3n" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
