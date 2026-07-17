@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #f4f0e8;
+  background: #010101;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+.font-garamond {
+  font-family: 'Garamond', 'Times New Roman', serif;
+}
+
+/* Reduce motion honors user preference */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---- Liquid glass CTA (per spec, verbatim) ---- */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: background 300ms cubic-bezier(.2,.7,.3,1), box-shadow 300ms cubic-bezier(.2,.7,.3,1), transform 150ms ease;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%,
+    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.liquid-glass:hover {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+.liquid-glass:active {
+  transform: scale(0.98);
+}
+
+/* ---- Mobile menu glass (per spec) ---- */
+.mobile-menu-glass {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ---- Section base ---- */
+.section-inner {
+  width: min(1180px, 92%);
+  margin-inline: auto;
+}
+
+/* ---- Ember accent underline (used sparingly, replaces side-stripe ban) ---- */
+.ember-underline {
+  background-image: linear-gradient(to right, rgba(232, 163, 74, 0.5), rgba(232, 163, 74, 0));
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+
+/* ---- Ambient noise texture on dark surfaces (subtle grain, purely CSS) ---- */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.85'/></svg>");
+}
+
+/* ---- Selection ---- */
+::selection { background: rgba(232, 163, 74, 0.3); color: #fff; }
+
+/* ---- Skip link ---- */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  background: #e8a34a;
+  color: #17140f;
+  padding: 10px 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  transition: top 150ms ease;
+}
+.skip-link:focus { top: 12px; }
+
+/* ---- Focus ring ---- */
+:focus-visible {
+  outline: 2px solid #e8a34a;
+  outline-offset: 3px;
+}
