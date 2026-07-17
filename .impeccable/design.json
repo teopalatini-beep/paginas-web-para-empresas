@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-13T00:00:00.000Z",
+  "title": "Design System: Teo Palatini · Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper":          { "role": "neutral",  "displayName": "Papel Hueso",        "canonical": "oklch(94.5% 0.014 74)",  "tonalRamp": ["oklch(20% 0.010 74)","oklch(30% 0.011 74)","oklch(42% 0.012 74)","oklch(55% 0.013 74)","oklch(68% 0.014 74)","oklch(80% 0.014 74)","oklch(89% 0.014 74)","oklch(94.5% 0.014 74)"] },
+      "paper-2":        { "role": "neutral",  "displayName": "Papel Ceniza",       "canonical": "oklch(91% 0.017 76)",    "tonalRamp": ["oklch(20% 0.010 76)","oklch(30% 0.012 76)","oklch(42% 0.014 76)","oklch(55% 0.016 76)","oklch(68% 0.017 76)","oklch(80% 0.017 76)","oklch(87% 0.017 76)","oklch(91% 0.017 76)"] },
+      "ink":            { "role": "neutral",  "displayName": "Tinta Negra Cálida", "canonical": "oklch(19% 0.012 55)",    "tonalRamp": ["oklch(12% 0.010 55)","oklch(19% 0.012 55)","oklch(26% 0.013 55)","oklch(34% 0.014 55)","oklch(43% 0.014 55)","oklch(55% 0.013 55)","oklch(68% 0.012 55)","oklch(82% 0.010 55)"] },
+      "ink-soft":       { "role": "neutral",  "displayName": "Tinta Suave",        "canonical": "oklch(43% 0.013 60)",    "tonalRamp": ["oklch(15% 0.010 60)","oklch(22% 0.011 60)","oklch(30% 0.012 60)","oklch(38% 0.013 60)","oklch(43% 0.013 60)","oklch(56% 0.013 60)","oklch(68% 0.012 60)","oklch(82% 0.010 60)"] },
+      "line":           { "role": "neutral",  "displayName": "Hairline Hueso",     "canonical": "oklch(85% 0.017 75)",    "tonalRamp": ["oklch(50% 0.014 75)","oklch(60% 0.015 75)","oklch(68% 0.016 75)","oklch(75% 0.017 75)","oklch(80% 0.017 75)","oklch(85% 0.017 75)","oklch(90% 0.016 75)","oklch(94% 0.015 75)"] },
+      "bermellon":      { "role": "primary",  "displayName": "Bermellón",          "canonical": "oklch(60% 0.185 32)",    "tonalRamp": ["oklch(28% 0.100 32)","oklch(36% 0.130 32)","oklch(45% 0.160 32)","oklch(52% 0.180 32)","oklch(60% 0.185 32)","oklch(70% 0.170 32)","oklch(80% 0.140 32)","oklch(90% 0.080 32)"] },
+      "bermellon-deep": { "role": "primary",  "displayName": "Bermellón Profundo", "canonical": "oklch(48% 0.170 30)",    "tonalRamp": ["oklch(22% 0.090 30)","oklch(30% 0.120 30)","oklch(38% 0.145 30)","oklch(48% 0.170 30)","oklch(56% 0.180 30)","oklch(66% 0.170 30)","oklch(78% 0.140 30)","oklch(88% 0.080 30)"] },
+      "wsp":            { "role": "tertiary", "displayName": "Verde WhatsApp",     "canonical": "oklch(65% 0.170 150)",   "tonalRamp": ["oklch(30% 0.100 150)","oklch(40% 0.130 150)","oklch(50% 0.155 150)","oklch(58% 0.170 150)","oklch(65% 0.170 150)","oklch(74% 0.150 150)","oklch(84% 0.120 150)","oklch(92% 0.070 150)"] }
+    },
+    "typographyMeta": {
+      "display":  { "displayName": "Display",  "purpose": "Hero h1 únicamente. Fraunces variable con opsz 144 y SOFT 60 en italic." },
+      "headline": { "displayName": "Headline", "purpose": "h2 de secciones ('Trabajos seleccionados', 'Cómo trabajamos'). text-wrap: balance obligatorio." },
+      "title":    { "displayName": "Title",    "purpose": "h3 de work rows y service cards. Cambia a bermellón en hover." },
+      "body":     { "displayName": "Body",     "purpose": "Copy de secciones. Sobre paper usa ink-soft; nunca sub-ink-soft en cuerpo." },
+      "label":    { "displayName": "Label",    "purpose": "Kicker uppercase con hairline ::before, sec-num, categorías de work." }
+    },
+    "shadows": [
+      { "name": "drawer-mobile", "value": "-20px 0 60px rgba(0,0,0,0.10)", "purpose": "Única sombra del sistema. Se aplica al mobile nav drawer al salir desde derecha. No usar en botones, cards, ni cualquier superficie en reposo." }
+    ],
+    "motion": [
+      { "name": "ease-editorial", "value": "cubic-bezier(0.2, 0.7, 0.2, 1)", "purpose": "Curva única del sistema. Ease-out con overshoot mínimo — el ritmo de pasar página, no de rebote elástico." },
+      { "name": "duration-fast",  "value": "0.4s",  "purpose": "Todas las transiciones de estado (hover, focus, nav.scrolled). Un solo tempo." },
+      { "name": "duration-reveal","value": "0.7s",  "purpose": "Fade-in-up de elementos .rv al entrar en viewport. Único movimiento de scroll del home." },
+      { "name": "marquee-loop",   "value": "26s linear infinite", "purpose": "Duración del ciclo del marquee editorial. Lento suficiente para leer al pasar; se detiene con prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "mobile",  "value": "540px",  "purpose": "Punto donde svc-grid, steps y hero-low colapsan a columna única." },
+      { "name": "tablet",  "value": "860px",  "purpose": "Punto donde nav pasa a drawer, work grid pasa a 2 columnas, y svc-grid a 2 columnas." },
+      { "name": "desktop", "value": "1240px", "purpose": "max-width del wrap. Ancho de contenido pensado para lectura editorial (no dashboard-wide)." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "CTA primario de superficies claras. Fondo ink, hover a bermellón con lift de 2px.",
+      "html": "<a href=\"#\" class=\"ds-btn ds-btn-solid\">Ver trabajos</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 9px; padding: 15px 26px; border-radius: 50px; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.98rem; font-weight: 600; cursor: pointer; text-decoration: none; border: 1.5px solid #1A1612; transition: transform 0.4s cubic-bezier(0.2,0.7,0.2,1), background 0.4s cubic-bezier(0.2,0.7,0.2,1), color 0.4s cubic-bezier(0.2,0.7,0.2,1); } .ds-btn-solid { background: #1A1612; color: #F3EEE4; } .ds-btn-solid:hover { background: #E5481F; border-color: #E5481F; transform: translateY(-2px); } .ds-btn-solid:focus-visible { outline: 2px solid #E5481F; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "CTA secundario al lado del solid. Es el negativo exacto: hover invierte a fondo ink.",
+      "html": "<a href=\"#\" class=\"ds-btn ds-btn-line\">Pedir presupuesto</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 9px; padding: 15px 26px; border-radius: 50px; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.98rem; font-weight: 600; cursor: pointer; text-decoration: none; border: 1.5px solid #1A1612; transition: transform 0.4s cubic-bezier(0.2,0.7,0.2,1), background 0.4s cubic-bezier(0.2,0.7,0.2,1), color 0.4s cubic-bezier(0.2,0.7,0.2,1); } .ds-btn-line { background: transparent; color: #1A1612; } .ds-btn-line:hover { background: #1A1612; color: #F3EEE4; transform: translateY(-2px); } .ds-btn-line:focus-visible { outline: 2px solid #E5481F; outline-offset: 3px; }"
+    },
+    {
+      "name": "WhatsApp Conversion Button",
+      "kind": "button",
+      "refersTo": "button-wsp",
+      "description": "CTA-de-conversión reservado a WhatsApp. Padding más generoso que solid/line. Verde WhatsApp aislado, nunca en otro contexto.",
+      "html": "<a href=\"https://wa.me/5491151526104?text=Hola%20Teo!\" target=\"_blank\" rel=\"noopener\" class=\"ds-btn-wsp\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z\"/></svg> Escribinos por WhatsApp</a>",
+      "css": ".ds-btn-wsp { display: inline-flex; align-items: center; gap: 9px; padding: 17px 32px; border-radius: 50px; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 1.05rem; font-weight: 600; cursor: pointer; text-decoration: none; border: 1.5px solid #1FA855; background: #1FA855; color: #ffffff; transition: transform 0.4s cubic-bezier(0.2,0.7,0.2,1), background 0.4s cubic-bezier(0.2,0.7,0.2,1); } .ds-btn-wsp:hover { background: #178c45; border-color: #178c45; transform: translateY(-2px); } .ds-btn-wsp:focus-visible { outline: 2px solid #E5481F; outline-offset: 3px; }"
+    },
+    {
+      "name": "Chip Tag",
+      "kind": "chip",
+      "refersTo": "chip-tag",
+      "description": "Etiqueta informativa (no interactiva) para tags de work rows: 'Menú', 'Reservas', 'WhatsApp'.",
+      "html": "<span class=\"ds-tag\">WhatsApp</span>",
+      "css": ".ds-tag { display: inline-flex; align-items: center; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.74rem; font-weight: 600; padding: 5px 11px; border: 1px solid #D8CFBE; border-radius: 50px; color: #5C5347; background: transparent; }"
+    },
+    {
+      "name": "Editorial Kicker",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "Eyebrow uppercase con hairline ::before de 26px. La firma tipográfica del sistema.",
+      "html": "<span class=\"ds-eyebrow\">Diseño web para comercios y pymes</span>",
+      "css": ".ds-eyebrow { display: inline-flex; align-items: center; gap: 9px; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #B5360F; } .ds-eyebrow::before { content: \"\"; width: 26px; height: 1px; background: #E5481F; }"
+    },
+    {
+      "name": "Work Row (Signature Index)",
+      "kind": "custom",
+      "refersTo": "work-row",
+      "description": "Fila editorial de tres columnas para el índice de trabajos. La firma cinética del sistema: hover corre 16px hacia adentro y rota el arrow -45° al bermellón.",
+      "html": "<a href=\"#\" class=\"ds-work\"><div class=\"ds-work-no\">01</div><div class=\"ds-work-main\"><div class=\"ds-work-kind\">Restaurante</div><h3 class=\"ds-work-title\">La Parrilla del Centro</h3><p class=\"ds-work-desc\">Menú con fotos, reservas por WhatsApp, galería y mapa. Pensado para llenar mesas.</p><div class=\"ds-work-tags\"><span class=\"ds-tag\">Menú</span><span class=\"ds-tag\">Reservas</span></div></div><div class=\"ds-work-go\">Ver demo <span class=\"ds-work-arrow\">→</span></div></a>",
+      "css": ".ds-work { display: grid; grid-template-columns: 90px 1fr auto; gap: 28px; align-items: center; padding: 34px 8px; border-top: 1px solid #D8CFBE; border-bottom: 1px solid #D8CFBE; text-decoration: none; color: #1A1612; transition: padding 0.4s cubic-bezier(0.2,0.7,0.2,1), background 0.4s cubic-bezier(0.2,0.7,0.2,1); } .ds-work:hover { background: #EBE4D6; padding-left: 24px; padding-right: 24px; } .ds-work-no { font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; font-style: italic; color: #E5481F; } .ds-work-kind { font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5C5347; margin-bottom: 6px; } .ds-work-title { font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.5rem); font-weight: 560; line-height: 1.02; letter-spacing: -0.02em; margin: 0; transition: color 0.4s cubic-bezier(0.2,0.7,0.2,1); } .ds-work:hover .ds-work-title { color: #E5481F; } .ds-work-desc { font-family: 'Hanken Grotesk', system-ui, sans-serif; color: #5C5347; max-width: 62ch; margin: 10px 0 14px; font-size: 0.98rem; line-height: 1.6; } .ds-work-tags { display: flex; flex-wrap: wrap; gap: 7px; } .ds-tag { font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.74rem; font-weight: 600; padding: 5px 11px; border: 1px solid #D8CFBE; border-radius: 50px; color: #5C5347; } .ds-work-go { display: inline-flex; align-items: center; gap: 8px; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-weight: 600; font-size: 0.92rem; white-space: nowrap; } .ds-work-arrow { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid #1A1612; display: grid; place-items: center; transition: background 0.4s cubic-bezier(0.2,0.7,0.2,1), border-color 0.4s cubic-bezier(0.2,0.7,0.2,1), color 0.4s cubic-bezier(0.2,0.7,0.2,1), transform 0.4s cubic-bezier(0.2,0.7,0.2,1); } .ds-work:hover .ds-work-arrow { background: #E5481F; border-color: #E5481F; color: #F3EEE4; transform: rotate(-45deg); } .ds-work:focus-visible { outline: 2px solid #E5481F; outline-offset: 3px; }"
+    },
+    {
+      "name": "Nav CTA (Compact Solid)",
+      "kind": "button",
+      "refersTo": "nav-cta",
+      "description": "Solid mini para el nav sticky. Hover pasa a bermellón. Nunca dos nav-cta juntos.",
+      "html": "<a href=\"#\" class=\"ds-nav-cta\">Hablemos</a>",
+      "css": ".ds-nav-cta { display: inline-flex; align-items: center; gap: 7px; background: #1A1612; color: #F3EEE4; padding: 10px 18px; border-radius: 50px; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.86rem; font-weight: 600; text-decoration: none; transition: transform 0.4s cubic-bezier(0.2,0.7,0.2,1), background 0.4s cubic-bezier(0.2,0.7,0.2,1); } .ds-nav-cta:hover { background: #E5481F; transform: translateY(-1px); } .ds-nav-cta:focus-visible { outline: 2px solid #E5481F; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Diario del Barrio",
+    "overview": "Un diario editorial impreso en papel color hueso, hecho por alguien que aprendió imprenta de un tío tipógrafo y ahora diseña las webs de los comercios de su barrio. La vidriera de Teo Palatini se lee como una revista dominical: tipografía cuidada, columnas anchas, un solo rojo bermellón que aparece con reverencia, y suficiente aire para que cada trabajo respire. La cadencia es la de un editor que sabe que menos titulares gritan más fuerte. El sistema es intencionalmente heterogéneo hacia adentro y coherente hacia afuera: la home carga la voz-madre (Fraunces italic + Hanken Grotesk sobre crema); los siete demos internos usan cada uno un archetype distinto elegido por rubro. Esa diversidad es el argumento de venta: cada demo defiende su rubro, no el gusto del diseñador. Lo que unifica es el nivel de craft, no la paleta.",
+    "keyCharacteristics": [
+      "Cream editorial paper + un único bermellón como rareza ceremonial",
+      "Fraunces variable (opsz + SOFT) para display, con italic reservado para énfasis semántico",
+      "Hairlines de 1px y bordes-pill de 50px conviven como decisión editorial",
+      "Motion medido: fade+translate en scroll, hover-shift horizontal en filas de índice, cero parallax",
+      "El WhatsApp es color-de-estado, no color-de-marca — vive apartado en su verde WhatsApp"
+    ],
+    "rules": [
+      { "name": "La Regla del Único Rojo", "body": "El bermellón aparece en ≤10% de la superficie visible en cualquier scroll. Un <em> italic, un arrow-hover, la selección de texto. Nunca en un botón hero, jamás en un background de sección, nunca en dos elementos vecinos. Su rareza es el argumento.", "section": "colors" },
+      { "name": "La Regla del No-Gris-Frío", "body": "Todos los neutrales van hacia el hueso / warm-taupe / cálido. Nunca un #F5F5F5 o #E5E5E5 estándar. Si un color parece 'neutral genérico', está mal calibrado. El calor del papel es lo que separa el sistema de un template.", "section": "colors" },
+      { "name": "La Regla del Verde Aislado", "body": "El verde WhatsApp #1FA855 solo aparece en componentes que llevan a WhatsApp. No es color de marca. No se usa en badges, alerts, íconos de 'éxito', ni en ningún estado que no sea literal-WhatsApp.", "section": "colors" },
+      { "name": "La Regla del Italic Semántico", "body": "El italic en Fraunces solo se usa en la palabra que carga la promesa. 'Sitios que te hacen vender' — el italic ES el argumento. Nunca italic decorativo, nunca en un párrafo, nunca en un subtítulo entero.", "section": "typography" },
+      { "name": "La Regla del opsz 144", "body": "El eje opsz de Fraunces cambia el dibujo tipográfico según el tamaño óptico. Titulares display llevan 'opsz' 144. Body texto en Fraunces (raro, pero pasa en captions) usaría 'opsz' 14. No mezclar.", "section": "typography" },
+      { "name": "La Regla del Flat-Por-Default", "body": "Ninguna superficie tiene sombra en reposo. La jerarquía vertical se lee por tipografía y espaciado, no por sombras acumulándose. Si una card 'necesita' sombra para leerse, la jerarquía está mal.", "section": "elevation" },
+      { "name": "La Regla del Estado-Cambia-Fondo", "body": "El hover no eleva; corre. Una work-row hover cambia de paper a paper-2 y se desplaza 16px hacia adentro (padding-left 24px). Un botón solid hover cambia de ink a bermellón y sube 2px — el 2px es afordancia táctil, no sombra.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar <em> italic en Fraunces solo en la palabra-argumento del titular ('Sitios que te hacen vender'). El italic es semántico, no decorativo.",
+      "Do mantener el bermellón #E5481F como voz única, aparición ≤10% de la superficie, jamás como fondo de sección.",
+      "Do usar hairlines de 1px en #D8CFBE como el único delimitador estructural. Un 2px es un error del sistema.",
+      "Do partir del papel hueso #F3EEE4 para cualquier vista clara del sistema. Si un tono blanco parece frío, está mal calibrado.",
+      "Do aislar el verde WhatsApp #1FA855 a componentes que van a WhatsApp. En cualquier otro lugar, es contaminación.",
+      "Do presentar los siete demos con la voz honesta de PRODUCT.md: seis como demos representativos por rubro, Buffalos como caso real en curso. Nunca como 'clientes cerrados'.",
+      "Do mantener el work-row-hover con desplazamiento horizontal (padding-left/right shift) — es la firma cinética del sistema.",
+      "Do respetar prefers-reduced-motion en marquees, reveals de scroll y el hover-shift de filas de trabajo."
+    ],
+    "donts": [
+      "Don't usar gradiente en texto (background-clip: text) — el gradient text es cliché AI y decorativo. Emphasis va por weight, size, o el <em> bermellón.",
+      "Don't montar un bloque hero-métrica ('+50 clientes felices' con stats grid). Es el template SaaS Silicon Valley clonado. Portfolio anti-referencia explícita.",
+      "Don't usar side-stripe borders (border-left: 4px solid var(--accent)) en cards, callouts, o list items. Nunca.",
+      "Don't usar sombras decorativas en cards o botones. El sistema es flat-por-default. Sombras solo para overlays.",
+      "Don't usar #000 puro para texto. Toda tinta es cálida (#1A1612 como piso).",
+      "Don't usar #FFF puro o #F5F5F5 genérico para fondos claros. La única superficie clara es #F3EEE4 o #EBE4D6.",
+      "Don't poner icons emoji como decoración de sección. Es de estudiante o freelancer barato. SVG inline o nada.",
+      "Don't clonar hero-shape del template Vercel / Linear (big number + gradient orb + stats). Portfolio anti-referencia explícita.",
+      "Don't poner testimonios stock, 5-estrellas gigantes, badges de 'top rated seller', o 'desde $X USD'. Portfolio anti-referencia.",
+      "Don't agregar particles.js, starfield, o 'Hi I'm Teo' — es portfolio de junior.",
+      "Don't unificar la paleta de los siete demos con la del home. Cada demo defiende su rubro; la coherencia es de nivel de craft, no de color."
+    ]
+  }
+}

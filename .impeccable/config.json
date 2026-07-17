@@ -1,0 +1,9 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [
+      "07-iluminacion/styles.css"
+    ],
+    "ignoreValues": []
+  }
+}

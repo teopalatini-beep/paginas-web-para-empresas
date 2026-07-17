@@ -1,0 +1,16 @@
+{
+  "files": [
+    "index.html",
+    "01-restaurante/index.html",
+    "02-profesional/index.html",
+    "03-tienda/index.html",
+    "04-ferreteria/index.html",
+    "05-barberia/index.html",
+    "06-cerrajeria/index.html",
+    "07-iluminacion/index.html",
+    "buffalos-premium/index.html"
+  ],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}
