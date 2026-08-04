@@ -41,6 +41,7 @@ paginas-web-para-empresas/
 ├── 06-cerrajeria-src/        → Demo cerrajería, código fuente (React + Vite)
 ├── 06-cerrajeria/             → Build compilado de la cerrajería
 ├── 07-iluminacion/            → Demo tienda de iluminación (HTML/CSS/JS)
+├── 08-air-cover/              → Demo cubiertas premium para aire acondicionado (HTML/CSS/JS)
 ├── buffalos-premium/          → Variante de la demo de barbería
 ├── _archive/                  → Versiones descartadas / en desuso
 └── docs/                      → Guías de deploy, integraciones y estrategia comercial
