@@ -12,27 +12,34 @@
   <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bone: #f3f0ea;
-      --sand: #e7e2d9;
-      --ink: #171616;
-      --muted: #655f57;
-      --clay: #8f684b;
-      --line: #d6cec1;
-      --accent: #0e3c75;
-      --accent-2: #2b6cb0;
+      --font-display: "Bricolage Grotesque", "Hanken Grotesk", system-ui, sans-serif;
+      --font-body: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+
+      --bone: #e9ebe4;      /* stone-sage background */
+      --sand: #dfe1d8;      /* light stone */
+      --surface: #f4f5ef;   /* card surface */
+      --ink: #1b241f;       /* warm green-black */
+      --muted: #555d53;     /* green-grey text */
+      --forest: #294634;    /* brand anchor */
+      --forest-2: #325640;  /* forest hover */
+      --clay: #a85a3c;      /* terracotta accent */
+      --line: #d0d3c8;
+      --accent: #a85a3c;    /* accent = clay: WhatsApp, hovers, focus */
+      --accent-2: #8f4a30;  /* clay hover */
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: "Instrument Sans", system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       color: var(--ink);
       background: var(--bone);
       line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
 
     img { max-width: 100%; display: block; }
@@ -58,9 +65,10 @@
       gap: 20px;
     }
     .brand {
-      font-family: "Newsreader", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 1.5rem;
-      font-style: italic;
+      font-weight: 700;
+      letter-spacing: -.03em;
     }
     .nav-links {
       display: flex;
@@ -91,11 +99,11 @@
     }
     .btn:hover { transform: translateY(-1px); }
     .btn-solid {
-      background: var(--ink);
+      background: var(--forest);
       color: var(--bone);
-      border-color: var(--ink);
+      border-color: var(--forest);
     }
-    .btn-solid:hover { background: var(--accent); border-color: var(--accent); }
+    .btn-solid:hover { background: var(--forest-2); border-color: var(--forest-2); }
     .btn-blue { background: var(--accent); border-color: var(--accent); color: #fff; }
     .btn-blue:hover { background: var(--accent-2); border-color: var(--accent-2); }
 
@@ -129,17 +137,28 @@
       max-width: 780px;
     }
     .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
       text-transform: uppercase;
-      letter-spacing: .16em;
+      letter-spacing: .2em;
       font-size: .72rem;
-      opacity: .85;
-      margin-bottom: 16px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 2px;
+      background: var(--clay);
+      display: inline-block;
     }
     h1, h2, h3 {
-      font-family: "Newsreader", Georgia, serif;
+      font-family: var(--font-display);
       margin: 0;
-      line-height: 1.05;
-      letter-spacing: -.01em;
+      line-height: 1.04;
+      letter-spacing: -.025em;
+      text-wrap: balance;
     }
     h1 { font-size: clamp(2.4rem, 7vw, 5.2rem); margin-bottom: 18px; }
     .hero p { font-size: clamp(1rem, 2vw, 1.25rem); margin: 0 0 26px; max-width: 54ch; }
@@ -149,7 +168,7 @@
     .strip {
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-      background: #ece7de;
+      background: #e3e6dd;
     }
     .strip-grid {
       display: grid;
@@ -192,7 +211,7 @@
     }
     .card {
       border: 1px solid var(--line);
-      background: #f8f5ef;
+      background: var(--surface);
       border-radius: 12px;
       overflow: hidden;
       display: flex;
@@ -224,15 +243,16 @@
       align-items: flex-start;
     }
     .card-title h3 {
-      font-family: "Instrument Sans", sans-serif;
+      font-family: var(--font-body);
       font-size: 1.06rem;
       line-height: 1.25;
       font-weight: 600;
+      letter-spacing: -.01em;
     }
     .price {
-      font-size: .88rem;
+      font-size: .9rem;
       color: var(--clay);
-      font-style: italic;
+      font-weight: 600;
       white-space: nowrap;
     }
     .material {
@@ -271,7 +291,7 @@
       border: 1px solid var(--line);
       border-radius: 12px;
       padding: 20px;
-      background: #faf8f3;
+      background: #eef1e9;
     }
     .offer h3 {
       font-size: 1.36rem;
@@ -292,7 +312,7 @@
     }
 
     .compare {
-      background: var(--ink);
+      background: var(--forest);
       color: #fff;
     }
     .compare-grid {
@@ -360,7 +380,7 @@
       border-radius: 999px;
     }
     .compare-label.before { left: 14px; background: rgba(17, 16, 16, .68); }
-    .compare-label.after { right: 14px; background: rgba(255, 255, 255, .82); color: #171616; }
+    .compare-label.after { right: 14px; background: rgba(255, 255, 255, .82); color: var(--ink); }
 
     .process-grid {
       display: grid;
@@ -368,17 +388,19 @@
       gap: 14px;
     }
     .step {
-      border-top: 2px solid var(--ink);
+      border-top: 2px solid var(--forest);
       padding-top: 14px;
     }
     .step .n {
       color: var(--clay);
-      font-family: "Newsreader", serif;
+      font-family: var(--font-display);
+      font-weight: 700;
       font-size: 2rem;
       line-height: 1;
+      letter-spacing: -.02em;
     }
     .step h3 {
-      font-family: "Instrument Sans", sans-serif;
+      font-family: var(--font-body);
       font-weight: 600;
       font-size: 1.06rem;
       margin: 7px 0 6px;
@@ -399,14 +421,14 @@
       border: 1px solid var(--line);
       border-radius: 12px;
       padding: 20px;
-      background: #faf8f3;
+      background: #eef1e9;
     }
     .lead-box p { color: var(--muted); margin: 10px 0 0; }
     .lead-form {
       border: 1px solid var(--line);
       border-radius: 12px;
       padding: 20px;
-      background: #faf8f3;
+      background: #eef1e9;
     }
     .form-grid {
       display: grid;
@@ -427,8 +449,8 @@
     }
     textarea { min-height: 90px; resize: vertical; }
     input:focus, select:focus, textarea:focus {
-      outline: 2px solid rgba(14, 60, 117, .25);
-      border-color: var(--accent);
+      outline: 2px solid rgba(41, 70, 52, .3);
+      border-color: var(--forest);
     }
     .form-note {
       margin-top: 10px;
