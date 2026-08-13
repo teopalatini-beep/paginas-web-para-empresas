@@ -1,27 +1,9 @@
 import { motion } from 'framer-motion'
-
-const reviews = [
-  {
-    quote:
-      'Se me cerró la puerta con el bebé adentro. Llamé llorando y en 20 minutos lo tenían resuelto, sin romper nada.',
-    author: 'Carla M.',
-    context: 'Palermo · Apertura urgente',
-  },
-  {
-    quote:
-      'Me mudé y cambié las dos cerraduras. Me pasaron el precio por WhatsApp antes de venir y fue exactamente eso.',
-    author: 'Diego F.',
-    context: 'Colegiales · Cambio de cerraduras',
-  },
-  {
-    quote:
-      'Perdí la única llave del auto un domingo. La copiaron con el chip ahí mismo y salió bastante menos que en la concesionaria.',
-    author: 'Sofía R.',
-    context: 'Villa Crespo · Llave codificada',
-  },
-]
+import { useLang } from '../i18n'
 
 export default function Resenas() {
+  const { t } = useLang()
+  const reviews = t.resenas.reviews
   return (
     <section className="relative py-24 sm:py-32 bg-[#050505] border-t border-white/5">
       <div className="section-inner">
@@ -33,7 +15,7 @@ export default function Resenas() {
           className="block text-center text-[0.7rem] text-[#e8a34a] uppercase font-light mb-5"
           style={{ letterSpacing: '0.35em' }}
         >
-          Nos recomiendan
+          {t.resenas.eyebrow}
         </motion.span>
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
@@ -43,7 +25,7 @@ export default function Resenas() {
           className="text-center font-garamond text-white text-4xl sm:text-5xl font-normal mb-16 sm:mb-20"
           style={{ lineHeight: 1.06, textWrap: 'balance' as 'balance', letterSpacing: '-0.01em' }}
         >
-          Historias reales, del barrio.
+          {t.resenas.title}
         </motion.h2>
 
         <ul className="grid md:grid-cols-3 gap-10 md:gap-14">

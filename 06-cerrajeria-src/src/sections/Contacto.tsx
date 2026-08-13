@@ -1,34 +1,18 @@
 import { motion } from 'framer-motion'
 import { Phone, MessageCircle, MapPin, Clock } from 'lucide-react'
+import { useLang } from '../i18n'
 
-const rows = [
-  {
-    icon: Phone,
-    label: 'Teléfono · Urgencias',
-    value: '11 0000-0000',
-    href: 'tel:+5491100000000',
-  },
-  {
-    icon: MessageCircle,
-    label: 'WhatsApp',
-    value: 'Respondemos al toque',
-    href: 'https://wa.me/5491100000000?text=Hola!%20Necesito%20un%20cerrajero',
-  },
-  {
-    icon: MapPin,
-    label: 'Zona',
-    value: 'Palermo y alrededores · CABA',
-    href: null,
-  },
-  {
-    icon: Clock,
-    label: 'Horario',
-    value: '24 hs · Los 365 días',
-    href: null,
-  },
+const icons = [Phone, MessageCircle, MapPin, Clock]
+const hrefs = [
+  'tel:+5491100000000',
+  'https://wa.me/5491100000000?text=Hola!%20Necesito%20un%20cerrajero',
+  null,
+  null,
 ]
 
 export default function Contacto() {
+  const { t } = useLang()
+  const rows = t.contacto.rows.map((r, i) => ({ ...r, icon: icons[i], href: hrefs[i] }))
   return (
     <section id="contacto" className="relative py-24 sm:py-32 bg-[#050505] border-t border-white/5">
       <div className="section-inner grid md:grid-cols-2 gap-16 md:gap-20 items-start">
@@ -41,7 +25,7 @@ export default function Contacto() {
             className="block text-[0.7rem] text-[#e8a34a] uppercase font-light mb-5"
             style={{ letterSpacing: '0.35em' }}
           >
-            Contacto
+            {t.contacto.eyebrow}
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
@@ -51,7 +35,7 @@ export default function Contacto() {
             className="font-garamond text-white text-4xl sm:text-5xl md:text-6xl font-normal mb-8"
             style={{ lineHeight: 1.06, textWrap: 'balance' as 'balance', letterSpacing: '-0.01em' }}
           >
-            Contanos qué te pasó.
+            {t.contacto.title}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -60,8 +44,7 @@ export default function Contacto() {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.2, 0.7, 0.2, 1] }}
             className="text-white/70 font-light leading-relaxed max-w-md mb-10"
           >
-            Estamos las 24 horas, todos los días. Escribinos por WhatsApp o llamanos ahora —
-            te pasamos el precio antes de ir.
+            {t.contacto.body}
           </motion.p>
 
           <motion.a
@@ -78,7 +61,7 @@ export default function Contacto() {
             style={{ letterSpacing: '0.2em' }}
           >
             <MessageCircle size={16} strokeWidth={1.5} aria-hidden="true" />
-            Pedir cerrajero por WhatsApp
+            {t.contacto.cta}
           </motion.a>
         </div>
 

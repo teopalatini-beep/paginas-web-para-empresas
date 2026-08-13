@@ -29,11 +29,15 @@
       <a href="#top" class="logo">Buffalos <span>Barbershop</span></a>
       <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
       <nav class="nav-links" id="navLinks">
-        <a href="#servicios" data-magnetic data-magnetic-strength="0.15">Servicios</a>
-        <a href="#galeria" data-magnetic data-magnetic-strength="0.15">Galería</a>
-        <a href="#nosotros" data-magnetic data-magnetic-strength="0.15">Nosotros</a>
-        <a href="#resenas" data-magnetic data-magnetic-strength="0.15">Reseñas</a>
-        <a class="nav-cta" data-magnetic data-magnetic-strength="0.25" href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno%20en%20Buffalos%20Barbershop" target="_blank" rel="noopener">Reservar turno</a>
+        <a href="#servicios" data-magnetic data-magnetic-strength="0.15" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="#galeria" data-magnetic data-magnetic-strength="0.15" data-es="Galería" data-en="Gallery">Galería</a>
+        <a href="#nosotros" data-magnetic data-magnetic-strength="0.15" data-es="Nosotros" data-en="About">Nosotros</a>
+        <a href="#resenas" data-magnetic data-magnetic-strength="0.15" data-es="Reseñas" data-en="Reviews">Reseñas</a>
+        <a class="nav-cta" data-magnetic data-magnetic-strength="0.25" href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno%20en%20Buffalos%20Barbershop" target="_blank" rel="noopener" data-es="Reservar turno" data-en="Book now">Reservar turno</a>
+        <div class="lang-switch" id="langToggle" role="group" aria-label="Idioma / Language">
+          <button type="button" data-set-lang="es" class="active" aria-pressed="true">ES</button>
+          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -42,16 +46,16 @@
   <section class="hero" id="top">
     <div class="hero-bg"><img src="assets/img/hero.jpg" alt="Barbero trabajando en Buffalos Barbershop" /><div class="hero-bg-tint"></div></div>
     <div class="container hero-inner">
-      <div class="hero-meta reveal"><span class="dot"></span><span>Palermo · Buenos Aires · Abierto</span></div>
+      <div class="hero-meta reveal"><span class="dot"></span><span data-es="Palermo · Buenos Aires · Abierto" data-en="Palermo · Buenos Aires · Open">Palermo · Buenos Aires · Abierto</span></div>
       <span class="hero-mono reveal" aria-hidden="true">B</span>
-      <h1 class="hero-title" data-split="chars">Cortes con oficio.</h1>
-      <p class="hero-script reveal">de barrio, para todos</p>
-      <p class="hero-loc reveal">Tijera, máquina y barba · Humboldt 2308</p>
+      <h1 class="hero-title" data-split="chars" data-es="Cortes con oficio." data-en="Cuts, done right.">Cortes con oficio.</h1>
+      <p class="hero-script reveal" data-es="de barrio, para todos" data-en="neighborhood barbershop, for everyone">de barrio, para todos</p>
+      <p class="hero-loc reveal" data-es="Tijera, máquina y barba · Humboldt 2308" data-en="Scissors, clippers &amp; beard · Humboldt 2308">Tijera, máquina y barba · Humboldt 2308</p>
       <div class="hero-foot reveal">
-        <div class="hero-rating"><strong data-count-to="5">5,0</strong> ★ · <strong data-count-to="101">101</strong> reseñas en Google</div>
+        <div class="hero-rating"><strong data-count-to="5">5,0</strong> ★ · <strong data-count-to="101">101</strong> <span data-es="reseñas en Google" data-en="reviews on Google">reseñas en Google</span></div>
         <div class="hero-actions">
-          <a class="btn btn-primary" data-magnetic data-magnetic-strength="0.35" href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener">Reservar turno</a>
-          <a class="btn btn-ghost" data-magnetic data-magnetic-strength="0.2" href="#servicios">Ver servicios</a>
+          <a class="btn btn-primary" data-magnetic data-magnetic-strength="0.35" href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno" target="_blank" rel="noopener" data-es="Reservar turno" data-en="Book now">Reservar turno</a>
+          <a class="btn btn-ghost" data-magnetic data-magnetic-strength="0.2" href="#servicios" data-es="Ver servicios" data-en="See services">Ver servicios</a>
         </div>
       </div>
     </div>
@@ -61,7 +65,7 @@
   <!-- ===== MARQUEE ===== -->
   <div class="marquee">
     <div class="marquee-track" data-marquee>
-      <span>Corte</span><span>·</span><span>Barba</span><span>·</span><span>Diseño</span><span>·</span><span>Tijera</span><span>·</span><span>Máquina</span><span>·</span><span>Palermo</span><span>·</span><span>5,0★</span><span>·</span>
+      <span data-es="Corte" data-en="Cut">Corte</span><span>·</span><span data-es="Barba" data-en="Beard">Barba</span><span>·</span><span data-es="Diseño" data-en="Design">Diseño</span><span>·</span><span data-es="Tijera" data-en="Scissors">Tijera</span><span>·</span><span data-es="Máquina" data-en="Clippers">Máquina</span><span>·</span><span>Palermo</span><span>·</span><span>5,0★</span><span>·</span>
     </div>
   </div>
 
@@ -69,16 +73,16 @@
   <section class="section servicios" id="servicios">
     <div class="container">
       <div class="sec-head">
-        <span class="kicker reveal">La carta</span>
-        <h2 class="reveal" data-split="words">Servicios</h2>
+        <span class="kicker reveal" data-es="La carta" data-en="The menu">La carta</span>
+        <h2 class="reveal" data-split="words" data-es="Servicios" data-en="Services">Servicios</h2>
       </div>
       <div class="svc-list">
-        <div class="svc reveal has-halo"><div class="svc-l"><h3>Corte de pelo</h3><p>Máquina y tijera, lavado y peinado.</p></div><span class="svc-p">$18.000</span></div>
-        <div class="svc reveal has-halo"><div class="svc-l"><h3>Corte + Barba</h3><p>El combo completo. Perfilado y toalla caliente.</p></div><span class="svc-p">$25.000</span></div>
-        <div class="svc reveal has-halo"><div class="svc-l"><h3>Barba / Perfilado</h3><p>Diseño con navaja y contornos definidos.</p></div><span class="svc-p">$12.000</span></div>
-        <div class="svc reveal has-halo"><div class="svc-l"><h3>Diseño / líneas</h3><p>Detalles y diseños a máquina.</p></div><span class="svc-p">$20.000</span></div>
-        <div class="svc reveal has-halo"><div class="svc-l"><h3>Corte niño</h3><p>Para los más chicos, con paciencia.</p></div><span class="svc-p">$14.000</span></div>
-        <div class="svc reveal has-halo"><div class="svc-l"><h3>Corte + diseño</h3><p>Corte completo con diseño personalizado.</p></div><span class="svc-p">$24.000</span></div>
+        <div class="svc reveal has-halo"><div class="svc-l"><h3 data-es="Corte de pelo" data-en="Haircut">Corte de pelo</h3><p data-es="Máquina y tijera, lavado y peinado." data-en="Clippers &amp; scissors, wash and style.">Máquina y tijera, lavado y peinado.</p></div><span class="svc-p" data-es="$18.000" data-en="$18,000">$18.000</span></div>
+        <div class="svc reveal has-halo"><div class="svc-l"><h3 data-es="Corte + Barba" data-en="Cut + Beard">Corte + Barba</h3><p data-es="El combo completo. Perfilado y toalla caliente." data-en="The full combo. Line-up and hot towel.">El combo completo. Perfilado y toalla caliente.</p></div><span class="svc-p" data-es="$25.000" data-en="$25,000">$25.000</span></div>
+        <div class="svc reveal has-halo"><div class="svc-l"><h3 data-es="Barba / Perfilado" data-en="Beard / Line-up">Barba / Perfilado</h3><p data-es="Diseño con navaja y contornos definidos." data-en="Razor design with sharp, defined lines.">Diseño con navaja y contornos definidos.</p></div><span class="svc-p" data-es="$12.000" data-en="$12,000">$12.000</span></div>
+        <div class="svc reveal has-halo"><div class="svc-l"><h3 data-es="Diseño / líneas" data-en="Design / Line work">Diseño / líneas</h3><p data-es="Detalles y diseños a máquina." data-en="Clipper detailing and line art.">Detalles y diseños a máquina.</p></div><span class="svc-p" data-es="$20.000" data-en="$20,000">$20.000</span></div>
+        <div class="svc reveal has-halo"><div class="svc-l"><h3 data-es="Corte niño" data-en="Kids' cut">Corte niño</h3><p data-es="Para los más chicos, con paciencia." data-en="For the little ones, with patience.">Para los más chicos, con paciencia.</p></div><span class="svc-p" data-es="$14.000" data-en="$14,000">$14.000</span></div>
+        <div class="svc reveal has-halo"><div class="svc-l"><h3 data-es="Corte + diseño" data-en="Cut + design">Corte + diseño</h3><p data-es="Corte completo con diseño personalizado." data-en="Full cut with custom line work.">Corte completo con diseño personalizado.</p></div><span class="svc-p" data-es="$24.000" data-en="$24,000">$24.000</span></div>
       </div>
     </div>
   </section>
@@ -87,7 +91,7 @@
   <section class="giant">
     <div class="giant-inner">
       <span class="giant-num" data-split="chars">101</span>
-      <span class="giant-cap reveal">personas confían en nosotros cada mes</span>
+      <span class="giant-cap reveal" data-es="personas confían en nosotros cada mes" data-en="people trust us every month">personas confían en nosotros cada mes</span>
     </div>
   </section>
 
@@ -96,15 +100,15 @@
     <div class="showcase-pin" id="showcasePin">
       <div class="showcase-track" id="showcaseTrack">
         <div class="show-intro">
-          <span class="kicker">El local &amp; los cortes</span>
-          <h2>Un lugar<br>donde salís<br><em>fachero</em>.</h2>
-          <p>Deslizá →</p>
+          <span class="kicker" data-es="El local &amp; los cortes" data-en="The shop &amp; the cuts">El local &amp; los cortes</span>
+          <h2 data-html-es="Un lugar&lt;br&gt;donde salís&lt;br&gt;&lt;em&gt;fachero&lt;/em&gt;." data-html-en="A place&lt;br&gt;where you leave&lt;br&gt;&lt;em&gt;looking sharp&lt;/em&gt;.">Un lugar<br>donde salís<br><em>fachero</em>.</h2>
+          <p data-es="Deslizá →" data-en="Scroll →">Deslizá →</p>
         </div>
-        <figure class="show-card"><img src="assets/img/interior.jpg" alt="Interior de la barbería" /><figcaption>El salón</figcaption></figure>
-        <figure class="show-card"><img src="assets/img/chair.jpg" alt="Sillón de barbero" /><figcaption>La silla</figcaption></figure>
-        <figure class="show-card"><img src="assets/img/beard.jpg" alt="Perfilado de barba" /><figcaption>La barba</figcaption></figure>
-        <figure class="show-card"><img src="assets/img/tools.jpg" alt="Herramientas del barbero" /><figcaption>El oficio</figcaption></figure>
-        <figure class="show-card"><img src="assets/img/modern.jpg" alt="Barbería moderna" /><figcaption>El estilo</figcaption></figure>
+        <figure class="show-card"><img src="assets/img/interior.jpg" alt="Interior de la barbería" data-alt-es="Interior de la barbería" data-alt-en="Barbershop interior" /><figcaption data-es="El salón" data-en="The shop">El salón</figcaption></figure>
+        <figure class="show-card"><img src="assets/img/chair.jpg" alt="Sillón de barbero" data-alt-es="Sillón de barbero" data-alt-en="Barber chair" /><figcaption data-es="La silla" data-en="The chair">La silla</figcaption></figure>
+        <figure class="show-card"><img src="assets/img/beard.jpg" alt="Perfilado de barba" data-alt-es="Perfilado de barba" data-alt-en="Beard line-up" /><figcaption data-es="La barba" data-en="The beard">La barba</figcaption></figure>
+        <figure class="show-card"><img src="assets/img/tools.jpg" alt="Herramientas del barbero" data-alt-es="Herramientas del barbero" data-alt-en="Barber's tools" /><figcaption data-es="El oficio" data-en="The craft">El oficio</figcaption></figure>
+        <figure class="show-card"><img src="assets/img/modern.jpg" alt="Barbería moderna" data-alt-es="Barbería moderna" data-alt-en="Modern barbershop" /><figcaption data-es="El estilo" data-en="The style">El estilo</figcaption></figure>
       </div>
     </div>
   </section>
@@ -112,15 +116,15 @@
   <!-- ===== NOSOTROS ===== -->
   <section class="section nosotros" id="nosotros">
     <div class="container nos-grid">
-      <figure class="nos-fig" data-tilt><img src="assets/img/portrait.jpg" alt="Cliente de Buffalos Barbershop" data-reveal-mask /></figure>
+      <figure class="nos-fig" data-tilt><img src="assets/img/portrait.jpg" alt="Cliente de Buffalos Barbershop" data-alt-es="Cliente de Buffalos Barbershop" data-alt-en="Buffalos Barbershop client" data-reveal-mask /></figure>
       <div class="nos-text">
-        <span class="kicker reveal">Quiénes somos</span>
-        <h2 class="reveal" data-split="words">Más que un corte, un lugar.</h2>
-        <p class="reveal">En Buffalos no venís sólo a cortarte el pelo. Venís a un espacio donde los chicos te reciben con buena onda, te asesoran y se toman el tiempo para que salgas como querés.</p>
-        <p class="reveal">Trabajamos a tijera y máquina, con detalle y profesionalismo. Por algo somos 5,0★ con más de 100 reseñas en el barrio.</p>
+        <span class="kicker reveal" data-es="Quiénes somos" data-en="Who we are">Quiénes somos</span>
+        <h2 class="reveal" data-split="words" data-es="Más que un corte, un lugar." data-en="More than a cut. A place.">Más que un corte, un lugar.</h2>
+        <p class="reveal" data-es="En Buffalos no venís sólo a cortarte el pelo. Venís a un espacio donde los chicos te reciben con buena onda, te asesoran y se toman el tiempo para que salgas como querés." data-en="At Buffalos you don't just come for a haircut. You come to a space where the guys welcome you, guide you, and take the time to get you exactly what you want.">En Buffalos no venís sólo a cortarte el pelo. Venís a un espacio donde los chicos te reciben con buena onda, te asesoran y se toman el tiempo para que salgas como querés.</p>
+        <p class="reveal" data-es="Trabajamos a tijera y máquina, con detalle y profesionalismo. Por algo somos 5,0★ con más de 100 reseñas en el barrio." data-en="We work with scissors and clippers, with care and professionalism. That's why we're rated 5.0★ with over 100 reviews in the neighborhood.">Trabajamos a tijera y máquina, con detalle y profesionalismo. Por algo somos 5,0★ con más de 100 reseñas en el barrio.</p>
         <div class="nos-stats reveal">
-          <div><strong>5,0★</strong><span>en Google</span></div>
-          <div><strong>101</strong><span>reseñas</span></div>
+          <div><strong data-es="5,0★" data-en="5.0★">5,0★</strong><span data-es="en Google" data-en="on Google">en Google</span></div>
+          <div><strong>101</strong><span data-es="reseñas" data-en="reviews">reseñas</span></div>
           <div><strong>Palermo</strong><span>Humboldt 2308</span></div>
         </div>
       </div>
@@ -131,13 +135,13 @@
   <section class="section resenas" id="resenas">
     <div class="container">
       <div class="sec-head">
-        <span class="kicker reveal">Lo que dicen en Google</span>
-        <h2 class="reveal" data-split="words">5,0 ★ · 101 reseñas</h2>
+        <span class="kicker reveal" data-es="Lo que dicen en Google" data-en="What people say on Google">Lo que dicen en Google</span>
+        <h2 class="reveal" data-split="words" data-es="5,0 ★ · 101 reseñas" data-en="5.0 ★ · 101 reviews">5,0 ★ · 101 reseñas</h2>
       </div>
       <div class="rev-grid">
-        <blockquote class="rev reveal" data-tilt><p>"Un lujo la barbería, la atención y el corte. Los chicos todos muy buena onda. Kevin es un barbero muy profesional."</p><cite>Valentín L. · Local Guide</cite></blockquote>
-        <blockquote class="rev reveal" data-tilt><p>"Excelente atención por parte de los chicos, todos muy capacitados. Si querés estar fachero, tenés que venir aquí."</p><cite>Alejandro A. · 14 reseñas</cite></blockquote>
-        <blockquote class="rev reveal" data-tilt><p>"Excelente servicio y muy buena atención. Me arreglé la barba y quedó tremenda. Híper recomendado."</p><cite>Martín G. · Google</cite></blockquote>
+        <blockquote class="rev reveal" data-tilt><p data-es="&quot;Un lujo la barbería, la atención y el corte. Los chicos todos muy buena onda. Kevin es un barbero muy profesional.&quot;" data-en="&quot;A real treat — the shop, the service, the cut. All the guys have great energy. Kevin is a very professional barber.&quot;">"Un lujo la barbería, la atención y el corte. Los chicos todos muy buena onda. Kevin es un barbero muy profesional."</p><cite>Valentín L. · Local Guide</cite></blockquote>
+        <blockquote class="rev reveal" data-tilt><p data-es="&quot;Excelente atención por parte de los chicos, todos muy capacitados. Si querés estar fachero, tenés que venir aquí.&quot;" data-en="&quot;Excellent service from the guys, all highly skilled. If you want to look sharp, you have to come here.&quot;">"Excelente atención por parte de los chicos, todos muy capacitados. Si querés estar fachero, tenés que venir aquí."</p><cite>Alejandro A. · <span data-es="14 reseñas" data-en="14 reviews">14 reseñas</span></cite></blockquote>
+        <blockquote class="rev reveal" data-tilt><p data-es="&quot;Excelente servicio y muy buena atención. Me arreglé la barba y quedó tremenda. Híper recomendado.&quot;" data-en="&quot;Excellent service and great attention to detail. Got my beard done and it turned out amazing. Highly recommended.&quot;">"Excelente servicio y muy buena atención. Me arreglé la barba y quedó tremenda. Híper recomendado."</p><cite>Martín G. · Google</cite></blockquote>
       </div>
     </div>
   </section>
@@ -146,14 +150,14 @@
   <section class="section reserva" id="reserva">
     <div class="container res-grid">
       <div class="res-info">
-        <span class="kicker reveal">Reservá tu lugar</span>
-        <h2 class="reveal" data-split="words">Te esperamos en Palermo.</h2>
+        <span class="kicker reveal" data-es="Reservá tu lugar" data-en="Reserve your spot">Reservá tu lugar</span>
+        <h2 class="reveal" data-split="words" data-es="Te esperamos en Palermo." data-en="See you in Palermo.">Te esperamos en Palermo.</h2>
         <div class="res-rows reveal">
-          <a class="res-row" href="tel:+541173611574"><span>Teléfono</span><strong>011 7361-1574</strong></a>
-          <div class="res-row"><span>Dirección</span><strong>Humboldt 2308, CABA</strong></div>
-          <div class="res-row"><span>Horarios</span><strong>Lun a Sáb · 10 a 21 hs</strong></div>
+          <a class="res-row" href="tel:+541173611574"><span data-es="Teléfono" data-en="Phone">Teléfono</span><strong>011 7361-1574</strong></a>
+          <div class="res-row"><span data-es="Dirección" data-en="Address">Dirección</span><strong>Humboldt 2308, CABA</strong></div>
+          <div class="res-row"><span data-es="Horarios" data-en="Hours">Horarios</span><strong data-es="Lun a Sáb · 10 a 21 hs" data-en="Mon–Sat · 10am–9pm">Lun a Sáb · 10 a 21 hs</strong></div>
         </div>
-        <a class="btn btn-primary reveal" data-magnetic data-magnetic-strength="0.3" href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno%20en%20Buffalos%20Barbershop" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+        <a class="btn btn-primary reveal" data-magnetic data-magnetic-strength="0.3" href="https://wa.me/5491173611574?text=Hola!%20Quiero%20reservar%20un%20turno%20en%20Buffalos%20Barbershop" target="_blank" rel="noopener" data-es="Reservar por WhatsApp" data-en="Book via WhatsApp">Reservar por WhatsApp</a>
       </div>
       <div class="res-map reveal">
         <iframe src="https://www.google.com/maps?q=Humboldt%202308%2C%20CABA&output=embed" loading="lazy" title="Ubicación de Buffalos Barbershop"></iframe>
@@ -165,7 +169,7 @@
   <footer class="footer">
     <div class="container foot-in">
       <span class="logo">Buffalos <span>Barbershop</span></span>
-      <p>Barbería en Palermo · Humboldt 2308 · Cortes a tijera y máquina.</p>
+      <p data-es="Barbería en Palermo · Humboldt 2308 · Cortes a tijera y máquina." data-en="Barbershop in Palermo · Humboldt 2308 · Scissor &amp; clipper cuts.">Barbería en Palermo · Humboldt 2308 · Cortes a tijera y máquina.</p>
       <p class="foot-cred">© 2026 Buffalos Barbershop · Sitio por Teo Palatini</p>
     </div>
   </footer>
@@ -174,6 +178,54 @@
     <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
+  <script>
+    (function () {
+      var LANG_KEY = "buffalos_lang";
+      var TITLE = {
+        es: "Buffalos Barbershop — Barbería en Palermo, Buenos Aires",
+        en: "Buffalos Barbershop — Barbershop in Palermo, Buenos Aires"
+      };
+
+      function applyLang(lang) {
+        lang = lang === "en" ? "en" : "es";
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-es]").forEach(function (el) {
+          var v = lang === "en" ? el.getAttribute("data-en") : el.getAttribute("data-es");
+          if (v !== null) el.textContent = v;
+        });
+        document.querySelectorAll("[data-html-es]").forEach(function (el) {
+          var v = lang === "en" ? el.getAttribute("data-html-en") : el.getAttribute("data-html-es");
+          if (v !== null) el.innerHTML = v;
+        });
+        document.querySelectorAll("[data-alt-es]").forEach(function (el) {
+          var v = lang === "en" ? el.getAttribute("data-alt-en") : el.getAttribute("data-alt-es");
+          if (v !== null) el.setAttribute("alt", v);
+        });
+        var toggle = document.getElementById("langToggle");
+        if (toggle) {
+          toggle.querySelectorAll("button").forEach(function (b) {
+            var isActive = b.getAttribute("data-set-lang") === lang;
+            b.classList.toggle("active", isActive);
+            b.setAttribute("aria-pressed", isActive ? "true" : "false");
+          });
+        }
+        document.title = TITLE[lang];
+        localStorage.setItem(LANG_KEY, lang);
+      }
+
+      var initialLang = localStorage.getItem(LANG_KEY) === "en" ? "en" : "es";
+      applyLang(initialLang);
+
+      var toggleEl = document.getElementById("langToggle");
+      if (toggleEl) {
+        toggleEl.querySelectorAll("button[data-set-lang]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            applyLang(btn.getAttribute("data-set-lang"));
+          });
+        });
+      }
+    })();
+  </script>
   <script defer src="lib/gsap.min.js?v=20260711"></script>
   <script defer src="lib/ScrollTrigger.min.js?v=20260711"></script>
   <script defer src="main.js?v=20260711"></script>

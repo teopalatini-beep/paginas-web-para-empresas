@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
 import { Phone, MessageCircle } from 'lucide-react'
+import { useLang } from '../i18n'
 
 const PHONE = '+5491100000000'
 const WSP = '5491100000000'
 
 export default function FloatingActions() {
+  const { t } = useLang()
   return (
     <div
       className="fixed right-4 bottom-4 z-40 flex flex-col gap-3"
@@ -17,7 +19,7 @@ export default function FloatingActions() {
         href={`https://wa.me/${WSP}?text=${encodeURIComponent('Hola! Necesito un cerrajero')}`}
         target="_blank"
         rel="noopener"
-        aria-label="Contactar por WhatsApp"
+        aria-label={t.floating.whatsapp}
         className="mobile-menu-glass rounded-full w-12 h-12 flex items-center justify-center text-white/90 hover:text-white transition-colors"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -29,7 +31,7 @@ export default function FloatingActions() {
       </motion.a>
       <motion.a
         href={`tel:${PHONE}`}
-        aria-label="Llamar al cerrajero 24 hs"
+        aria-label={t.floating.call}
         className="liquid-glass rounded-full w-12 h-12 flex items-center justify-center text-white/90 hover:text-white"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}

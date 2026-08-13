@@ -1,32 +1,13 @@
 import { motion } from 'framer-motion'
 import { CircleDollarSign, Clock, ShieldCheck, FileText } from 'lucide-react'
+import { useLang } from '../i18n'
 
-const pillars = [
-  {
-    icon: CircleDollarSign,
-    title: 'Precio cerrado',
-    body: 'Lo sabés antes de que toquemos nada. No hay sorpresas al final del trabajo.',
-  },
-  {
-    icon: FileText,
-    title: 'Presupuesto sin cargo',
-    body: 'Consultás sin compromiso por WhatsApp o teléfono. Presupuestamos, después decidís.',
-  },
-  {
-    icon: Clock,
-    title: 'Llegamos rápido',
-    body: '20–40 minutos promedio en Palermo y zonas linderas. Trabajamos 24 hs los 365 días.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Trabajo con garantía',
-    body: 'Matrícula habilitante y quince años de oficio en el barrio. Técnicos con experiencia real.',
-  },
-]
-
+const icons = [CircleDollarSign, FileText, Clock, ShieldCheck]
 const brands = ['Trabex', 'Kallay', 'Prive', 'Acytra', 'Roto']
 
 export default function Confianza() {
+  const { t } = useLang()
+  const pillars = t.confianza.pillars.map((p, i) => ({ ...p, icon: icons[i] }))
   return (
     <section id="confianza" className="relative py-24 sm:py-32 bg-[#050505] border-t border-white/5">
       <div className="section-inner grid md:grid-cols-[0.9fr_1.1fr] gap-16 md:gap-24 items-start">
@@ -39,7 +20,7 @@ export default function Confianza() {
             className="block text-[0.7rem] text-[#e8a34a] uppercase font-light mb-5"
             style={{ letterSpacing: '0.35em' }}
           >
-            Por qué elegirnos
+            {t.confianza.eyebrow}
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
@@ -49,7 +30,9 @@ export default function Confianza() {
             className="font-garamond text-white text-4xl sm:text-5xl font-normal mb-8"
             style={{ lineHeight: 1.06, textWrap: 'balance' as 'balance', letterSpacing: '-0.01em' }}
           >
-            Cerrajería seria, <em className="text-[#e8a34a] not-italic">sin sorpresas</em>.
+            {t.confianza.titlePre}
+            <em className="text-[#e8a34a] not-italic">{t.confianza.titleEm}</em>
+            {t.confianza.titlePost}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -58,9 +41,8 @@ export default function Confianza() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
             className="text-white/70 font-light leading-relaxed max-w-md mb-10 text-[0.98rem]"
           >
-            <strong className="text-white font-normal">Más de 15 años</strong> resolviendo emergencias
-            en el barrio, con matrícula habilitante y transparencia en cada trabajo. Te decimos el
-            precio antes de empezar y no arrancamos hasta que estés de acuerdo.
+            <strong className="text-white font-normal">{t.confianza.bodyStrong}</strong>
+            {t.confianza.bodyRest}
           </motion.p>
 
           <div>
@@ -68,7 +50,7 @@ export default function Confianza() {
               className="block text-[0.66rem] text-white/40 uppercase font-light mb-4"
               style={{ letterSpacing: '0.28em' }}
             >
-              Trabajamos con
+              {t.confianza.workWith}
             </span>
             <ul className="flex flex-wrap gap-x-8 gap-y-3">
               {brands.map((b) => (

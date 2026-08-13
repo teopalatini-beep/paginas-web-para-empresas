@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-
-const links = [
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#confianza', label: 'Confianza' },
-  { href: '#zonas', label: 'Zonas' },
-  { href: '#contacto', label: 'Contacto' },
-] as const
+import { useLang } from '../i18n'
 
 export default function Nav() {
+  const { lang, setLang, t } = useLang()
+  const links = t.nav.links
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -48,7 +44,7 @@ export default function Nav() {
         <button
           type="button"
           className="md:hidden text-white/90 hover:text-white transition-colors"
-          aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+          aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
@@ -56,6 +52,35 @@ export default function Nav() {
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
+
+      <div
+        className="absolute top-6 sm:top-8 right-16 sm:right-8 z-30 flex border border-white/20 rounded-full overflow-hidden"
+        role="group"
+        aria-label="Idioma / Language"
+      >
+        <button
+          type="button"
+          onClick={() => setLang('es')}
+          className={`px-3 py-1.5 text-[0.68rem] font-light uppercase transition-colors ${
+            lang === 'es' ? 'bg-[#e8a34a] text-[#010101]' : 'text-white/70 hover:text-white'
+          }`}
+          style={{ letterSpacing: '0.08em' }}
+          aria-pressed={lang === 'es'}
+        >
+          ES
+        </button>
+        <button
+          type="button"
+          onClick={() => setLang('en')}
+          className={`px-3 py-1.5 text-[0.68rem] font-light uppercase transition-colors ${
+            lang === 'en' ? 'bg-[#e8a34a] text-[#010101]' : 'text-white/70 hover:text-white'
+          }`}
+          style={{ letterSpacing: '0.08em' }}
+          aria-pressed={lang === 'en'}
+        >
+          EN
+        </button>
+      </div>
 
       <AnimatePresence>
         {open && (

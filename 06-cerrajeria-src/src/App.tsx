@@ -7,11 +7,13 @@ import FAQ from './sections/FAQ'
 import Contacto from './sections/Contacto'
 import Footer from './sections/Footer'
 import FloatingActions from './components/FloatingActions'
+import { useLang } from './i18n'
 
 export default function App() {
+  const { t } = useLang()
   return (
     <div className="min-h-screen bg-[#010101] text-white">
-      <a href="#servicios" className="skip-link">Saltar al contenido</a>
+      <a href="#servicios" className="skip-link">{t.skipLink}</a>
       <Hero />
       <main>
         <Servicios />

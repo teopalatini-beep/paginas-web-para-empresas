@@ -2,11 +2,13 @@ import { motion } from 'framer-motion'
 import { Phone } from 'lucide-react'
 import StaggeredFade from '../components/StaggeredFade'
 import Nav from '../components/Nav'
+import { useLang } from '../i18n'
 
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4'
 
 export default function Hero() {
+  const { t } = useLang()
   return (
     <header id="top" className="relative h-screen w-full overflow-hidden bg-[#010101]">
       <video
@@ -48,15 +50,15 @@ export default function Hero() {
           className="mb-6 sm:mb-8 text-[0.68rem] sm:text-[0.72rem] text-[#e8a34a] uppercase font-light"
           style={{ letterSpacing: '0.4em' }}
         >
-          Palermo · 24 hs · Desde 2010
+          {t.hero.eyebrow}
         </motion.span>
 
         <h1
           className="w-full font-garamond text-white font-normal mb-6 sm:mb-8 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7.5rem] text-center"
           style={{ lineHeight: 1.06, letterSpacing: '-0.02em' }}
         >
-          <StaggeredFade text="CUANDO NADIE" as="div" className="block" delayOffset={0.35} />
-          <StaggeredFade text="ATIENDE, LLEGAMOS" as="div" className="block" delayOffset={0.75} />
+          <StaggeredFade text={t.hero.titleLine1} as="div" className="block" delayOffset={0.35} />
+          <StaggeredFade text={t.hero.titleLine2} as="div" className="block" delayOffset={0.75} />
         </h1>
 
         <motion.p
@@ -65,8 +67,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.4, ease: [0.2, 0.7, 0.2, 1] }}
           className="text-sm sm:text-base lg:text-lg text-white/70 font-light leading-relaxed max-w-xs sm:max-w-md mb-8 sm:mb-10"
         >
-          Cerrajería 24 horas en Palermo y alrededores.
-          <br className="hidden sm:inline" /> Aperturas sin romper, precio cerrado antes de empezar.
+          {t.hero.body1}
+          <br className="hidden sm:inline" /> {t.hero.body2}
         </motion.p>
 
         <motion.a
@@ -80,7 +82,7 @@ export default function Hero() {
           style={{ letterSpacing: '0.2em' }}
         >
           <Phone size={16} strokeWidth={1.5} aria-hidden="true" />
-          Llamar 24 hs
+          {t.hero.cta}
         </motion.a>
 
         <motion.div
@@ -93,7 +95,7 @@ export default function Hero() {
             className="text-[0.62rem] text-white/40 uppercase font-light"
             style={{ letterSpacing: '0.35em' }}
           >
-            Explorá
+            {t.hero.scroll}
           </span>
           <div className="w-px h-8 bg-gradient-to-b from-white/40 to-transparent" />
         </motion.div>

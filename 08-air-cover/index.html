@@ -96,9 +96,36 @@
     }
     .cta-cluster {
       display: flex;
+      align-items: center;
       gap: 10px;
       flex-wrap: wrap;
       justify-content: flex-end;
+    }
+    .lang-switch {
+      display: flex;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-switch button {
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .lang-switch button.active {
+      background: var(--forest);
+      color: #fff;
+    }
+    .lang-switch button:focus-visible {
+      outline: 2px solid var(--clay);
+      outline-offset: 2px;
     }
     .btn {
       border: 1px solid var(--ink);
@@ -564,29 +591,33 @@
     <div class="container topbar-inner">
       <div class="brand">Palma</div>
       <nav class="nav-links">
-        <a href="#coleccion">Colección</a>
-        <a href="#ofertas">Preventa</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#coleccion" data-es="Colección" data-en="Collection">Colección</a>
+        <a href="#ofertas" data-es="Preventa" data-en="Presale">Preventa</a>
+        <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
       </nav>
       <div class="cta-cluster">
-        <a class="btn btn-solid js-track-contact" data-contact-source="topbar-cotizacion" href="#contacto">Pedir cotización</a>
+        <a class="btn btn-solid js-track-contact" data-contact-source="topbar-cotizacion" href="#contacto" data-es="Pedir cotización" data-en="Get a quote">Pedir cotización</a>
         <a class="btn btn-blue js-track-contact" data-contact-source="topbar-whatsapp" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20cotizar%20una%20cubierta%20para%20mi%20split" target="_blank" rel="noopener">WhatsApp</a>
+        <div class="lang-switch" id="langToggle" role="group" aria-label="Idioma / Language">
+          <button type="button" data-set-lang="es" class="active" aria-pressed="true">ES</button>
+          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
     </div>
   </header>
 
   <section class="hero">
-    <img src="./assets/hero-Bmt-yWko.jpg" alt="Living moderno con aire acondicionado oculto con una cubierta premium" width="1920" height="1088" />
+    <img src="./assets/hero-Bmt-yWko.jpg" alt="Living moderno con aire acondicionado oculto con una cubierta premium" data-alt-es="Living moderno con aire acondicionado oculto con una cubierta premium" data-alt-en="Modern living room with a premium cover hiding the AC unit" width="1920" height="1088" />
     <div class="container hero-content">
-      <p class="eyebrow">Primera edición · Cupos limitados</p>
-      <h1>Arquitectura que absorbe el aire.</h1>
-      <p>
+      <p class="eyebrow" data-es="Primera edición · Cupos limitados" data-en="First edition · Limited spots">Primera edición · Cupos limitados</p>
+      <h1 data-es="Arquitectura que absorbe el aire." data-en="Architecture that absorbs the air.">Arquitectura que absorbe el aire.</h1>
+      <p data-es="Cubiertas premium para integrar el split al ambiente sin resignar rendimiento. Reservá una de la primera edición con precio de lanzamiento." data-en="Premium covers that blend your split AC into the room without giving up airflow. Reserve one from the first edition at launch pricing.">
         Cubiertas premium para integrar el split al ambiente sin resignar rendimiento.
         Reservá una de la primera edición con precio de lanzamiento.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-solid js-track-contact" data-contact-source="hero-cotizacion" href="#contacto">Quiero mi cotización</a>
-        <a class="btn js-track-begin-checkout" data-offer="reserva" href="#ofertas">Reservar mi lugar</a>
+        <a class="btn btn-solid js-track-contact" data-contact-source="hero-cotizacion" href="#contacto" data-es="Quiero mi cotización" data-en="Get my quote">Quiero mi cotización</a>
+        <a class="btn js-track-begin-checkout" data-offer="reserva" href="#ofertas" data-es="Reservar mi lugar" data-en="Reserve my spot">Reservar mi lugar</a>
       </div>
     </div>
   </section>
@@ -595,19 +626,19 @@
     <div class="container strip-grid">
       <div class="strip-item">
         <span>01</span>
-        <p>Flujo de aire libre, sin forzar el equipo.</p>
+        <p data-es="Flujo de aire libre, sin forzar el equipo." data-en="Free airflow, no strain on the unit.">Flujo de aire libre, sin forzar el equipo.</p>
       </div>
       <div class="strip-item">
         <span>02</span>
-        <p>Instalación en 15 minutos con guía incluida.</p>
+        <p data-es="Instalación en 15 minutos con guía incluida." data-en="15-minute install with a step-by-step guide.">Instalación en 15 minutos con guía incluida.</p>
       </div>
       <div class="strip-item">
         <span>03</span>
-        <p>Compatibilidad multi-marca (split estándar pared).</p>
+        <p data-es="Compatibilidad multi-marca (split estándar pared)." data-en="Multi-brand compatible (standard wall split).">Compatibilidad multi-marca (split estándar pared).</p>
       </div>
       <div class="strip-item">
         <span>04</span>
-        <p>Diseño premium pensado para interiorismo.</p>
+        <p data-es="Diseño premium pensado para interiorismo." data-en="Premium design made for interiors.">Diseño premium pensado para interiorismo.</p>
       </div>
     </div>
   </div>
@@ -616,99 +647,99 @@
     <section id="coleccion">
       <div class="container">
         <div class="section-head">
-          <h2>La colección</h2>
-          <p>
+          <h2 data-es="La colección" data-en="The collection">La colección</h2>
+          <p data-es="Elegí el modelo que más te guste y marcá interés para que prioricemos medidas, acabados y disponibilidad de la primera tanda." data-en="Pick the model you like most and flag your interest so we can prioritize sizing, finishes, and availability for the first batch.">
             Elegí el modelo que más te guste y marcá interés para que prioricemos medidas,
             acabados y disponibilidad de la primera tanda.
           </p>
         </div>
         <div class="models">
           <article class="card" data-model="Meridiano Grafito">
-            <figure><img src="./assets/meridiano-Cu9dFygp.jpg" alt="Cubierta Meridiano color Grafito" loading="lazy" width="800" height="1000" /></figure>
+            <figure><img src="./assets/meridiano-Cu9dFygp.jpg" alt="Cubierta Meridiano color Grafito" data-alt-es="Cubierta Meridiano color Grafito" data-alt-en="Meridiano cover, Graphite" loading="lazy" width="800" height="1000" /></figure>
             <div class="card-body">
               <div class="card-title">
                 <h3>Meridiano — Grafito</h3>
-                <span class="price">ARS 148.000</span>
+                <span class="price" data-es="ARS 148.000" data-en="ARS 148,000">ARS 148.000</span>
               </div>
-              <p class="material">Fieltro de lana</p>
+              <p class="material" data-es="Fieltro de lana" data-en="Wool felt">Fieltro de lana</p>
               <div class="card-actions">
-                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Meridiano Grafito">Me interesa este modelo</button>
-                <a class="btn btn-block js-track-contact" data-contact-source="modelo-meridiano" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Meridiano%20Grafito">Consultar por WhatsApp</a>
+                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Meridiano Grafito" data-es="Me interesa este modelo" data-en="I'm interested in this model">Me interesa este modelo</button>
+                <a class="btn btn-block js-track-contact" data-contact-source="modelo-meridiano" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Meridiano%20Grafito" data-es="Consultar por WhatsApp" data-en="Ask via WhatsApp">Consultar por WhatsApp</a>
               </div>
             </div>
           </article>
 
           <article class="card" data-model="Meridiano Arena">
-            <figure><img src="./assets/hexa-s6DqopUG.jpg" alt="Cubierta Meridiano color Arena" loading="lazy" width="800" height="1000" /></figure>
+            <figure><img src="./assets/hexa-s6DqopUG.jpg" alt="Cubierta Meridiano color Arena" data-alt-es="Cubierta Meridiano color Arena" data-alt-en="Meridiano cover, Sand" loading="lazy" width="800" height="1000" /></figure>
             <div class="card-body">
               <div class="card-title">
                 <h3>Meridiano — Arena</h3>
-                <span class="price">ARS 148.000</span>
+                <span class="price" data-es="ARS 148.000" data-en="ARS 148,000">ARS 148.000</span>
               </div>
-              <p class="material">Fieltro de lana</p>
+              <p class="material" data-es="Fieltro de lana" data-en="Wool felt">Fieltro de lana</p>
               <div class="card-actions">
-                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Meridiano Arena">Me interesa este modelo</button>
-                <a class="btn btn-block js-track-contact" data-contact-source="modelo-meridiano-arena" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Meridiano%20Arena">Consultar por WhatsApp</a>
+                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Meridiano Arena" data-es="Me interesa este modelo" data-en="I'm interested in this model">Me interesa este modelo</button>
+                <a class="btn btn-block js-track-contact" data-contact-source="modelo-meridiano-arena" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Meridiano%20Arena" data-es="Consultar por WhatsApp" data-en="Ask via WhatsApp">Consultar por WhatsApp</a>
               </div>
             </div>
           </article>
 
           <article class="card" data-model="Textil Hav">
-            <figure><img src="./assets/cana-B3RPA7Gc.jpg" alt="Cubierta Textil color Hav" loading="lazy" width="800" height="1000" /></figure>
+            <figure><img src="./assets/cana-B3RPA7Gc.jpg" alt="Cubierta Textil color Hav" data-alt-es="Cubierta Textil color Hav" data-alt-en="Textil cover, Hav" loading="lazy" width="800" height="1000" /></figure>
             <div class="card-body">
               <div class="card-title">
                 <h3>Textil — Hav</h3>
-                <span class="price">ARS 156.000</span>
+                <span class="price" data-es="ARS 156.000" data-en="ARS 156,000">ARS 156.000</span>
               </div>
-              <p class="material">Lino técnico</p>
+              <p class="material" data-es="Lino técnico" data-en="Technical linen">Lino técnico</p>
               <div class="card-actions">
-                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Textil Hav">Me interesa este modelo</button>
-                <a class="btn btn-block js-track-contact" data-contact-source="modelo-textil-hav" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Textil%20Hav">Consultar por WhatsApp</a>
+                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Textil Hav" data-es="Me interesa este modelo" data-en="I'm interested in this model">Me interesa este modelo</button>
+                <a class="btn btn-block js-track-contact" data-contact-source="modelo-textil-hav" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Textil%20Hav" data-es="Consultar por WhatsApp" data-en="Ask via WhatsApp">Consultar por WhatsApp</a>
               </div>
             </div>
           </article>
 
           <article class="card" data-model="Textil Jord">
-            <figure><img src="./assets/renglon-S-k01C6u.jpg" alt="Cubierta Textil color Jord" loading="lazy" width="800" height="1000" /></figure>
+            <figure><img src="./assets/renglon-S-k01C6u.jpg" alt="Cubierta Textil color Jord" data-alt-es="Cubierta Textil color Jord" data-alt-en="Textil cover, Jord" loading="lazy" width="800" height="1000" /></figure>
             <div class="card-body">
               <div class="card-title">
                 <h3>Textil — Jord</h3>
-                <span class="price">ARS 156.000</span>
+                <span class="price" data-es="ARS 156.000" data-en="ARS 156,000">ARS 156.000</span>
               </div>
-              <p class="material">Lino técnico</p>
+              <p class="material" data-es="Lino técnico" data-en="Technical linen">Lino técnico</p>
               <div class="card-actions">
-                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Textil Jord">Me interesa este modelo</button>
-                <a class="btn btn-block js-track-contact" data-contact-source="modelo-textil-jord" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Textil%20Jord">Consultar por WhatsApp</a>
+                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Textil Jord" data-es="Me interesa este modelo" data-en="I'm interested in this model">Me interesa este modelo</button>
+                <a class="btn btn-block js-track-contact" data-contact-source="modelo-textil-jord" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Textil%20Jord" data-es="Consultar por WhatsApp" data-en="Ask via WhatsApp">Consultar por WhatsApp</a>
               </div>
             </div>
           </article>
 
           <article class="card" data-model="Roble Natural">
-            <figure><img src="./assets/malla-Brkoj-5M.jpg" alt="Cubierta Roble color Natural" loading="lazy" width="800" height="1000" /></figure>
+            <figure><img src="./assets/malla-Brkoj-5M.jpg" alt="Cubierta Roble color Natural" data-alt-es="Cubierta Roble color Natural" data-alt-en="Roble cover, Natural" loading="lazy" width="800" height="1000" /></figure>
             <div class="card-body">
               <div class="card-title">
                 <h3>Roble — Natural</h3>
-                <span class="price">ARS 162.000</span>
+                <span class="price" data-es="ARS 162.000" data-en="ARS 162,000">ARS 162.000</span>
               </div>
-              <p class="material">Enchapado macizo</p>
+              <p class="material" data-es="Enchapado macizo" data-en="Solid wood veneer">Enchapado macizo</p>
               <div class="card-actions">
-                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Roble Natural">Me interesa este modelo</button>
-                <a class="btn btn-block js-track-contact" data-contact-source="modelo-roble-natural" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Roble%20Natural">Consultar por WhatsApp</a>
+                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Roble Natural" data-es="Me interesa este modelo" data-en="I'm interested in this model">Me interesa este modelo</button>
+                <a class="btn btn-block js-track-contact" data-contact-source="modelo-roble-natural" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Roble%20Natural" data-es="Consultar por WhatsApp" data-en="Ask via WhatsApp">Consultar por WhatsApp</a>
               </div>
             </div>
           </article>
 
           <article class="card" data-model="Liso Hueso">
-            <figure><img src="./assets/liso-DeiLJDBQ.jpg" alt="Cubierta Liso color Hueso" loading="lazy" width="800" height="1000" /></figure>
+            <figure><img src="./assets/liso-DeiLJDBQ.jpg" alt="Cubierta Liso color Hueso" data-alt-es="Cubierta Liso color Hueso" data-alt-en="Liso cover, Hueso" loading="lazy" width="800" height="1000" /></figure>
             <div class="card-body">
               <div class="card-title">
                 <h3>Liso — Hueso</h3>
-                <span class="price">ARS 158.000</span>
+                <span class="price" data-es="ARS 158.000" data-en="ARS 158,000">ARS 158.000</span>
               </div>
-              <p class="material">Panel mate</p>
+              <p class="material" data-es="Panel mate" data-en="Matte panel">Panel mate</p>
               <div class="card-actions">
-                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Liso Hueso">Me interesa este modelo</button>
-                <a class="btn btn-block js-track-contact" data-contact-source="modelo-liso-hueso" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Liso%20Hueso">Consultar por WhatsApp</a>
+                <button class="btn btn-block btn-solid js-model-interest" type="button" data-model="Liso Hueso" data-es="Me interesa este modelo" data-en="I'm interested in this model">Me interesa este modelo</button>
+                <a class="btn btn-block js-track-contact" data-contact-source="modelo-liso-hueso" target="_blank" rel="noopener" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20informaci%C3%B3n%20del%20modelo%20Liso%20Hueso" data-es="Consultar por WhatsApp" data-en="Ask via WhatsApp">Consultar por WhatsApp</a>
               </div>
             </div>
           </article>
@@ -719,39 +750,39 @@
     <section class="offers" id="ofertas">
       <div class="container">
         <div class="section-head">
-          <h2>Asegurá tu lugar en la primera edición</h2>
-          <p>Tres formas de reservar tu cubierta antes del lanzamiento oficial. Elegí la que mejor se ajuste a vos.</p>
+          <h2 data-es="Asegurá tu lugar en la primera edición" data-en="Secure your spot in the first edition">Asegurá tu lugar en la primera edición</h2>
+          <p data-es="Tres formas de reservar tu cubierta antes del lanzamiento oficial. Elegí la que mejor se ajuste a vos." data-en="Three ways to reserve your cover before the official launch. Pick the one that fits you best.">Tres formas de reservar tu cubierta antes del lanzamiento oficial. Elegí la que mejor se ajuste a vos.</p>
         </div>
         <div class="offer-grid">
           <article class="offer">
-            <h3>Lista de espera prioritaria</h3>
-            <p>Accedés al primer lote y al precio de lanzamiento.</p>
+            <h3 data-es="Lista de espera prioritaria" data-en="Priority waitlist">Lista de espera prioritaria</h3>
+            <p data-es="Accedés al primer lote y al precio de lanzamiento." data-en="Get access to the first batch and launch pricing.">Accedés al primer lote y al precio de lanzamiento.</p>
             <ul>
-              <li>Reserva sin pago.</li>
-              <li>Acceso anticipado por modelo.</li>
-              <li>Confirmación por WhatsApp/email.</li>
+              <li data-es="Reserva sin pago." data-en="No-payment reservation.">Reserva sin pago.</li>
+              <li data-es="Acceso anticipado por modelo." data-en="Early access by model.">Acceso anticipado por modelo.</li>
+              <li data-es="Confirmación por WhatsApp/email." data-en="Confirmation via WhatsApp/email.">Confirmación por WhatsApp/email.</li>
             </ul>
-            <button class="btn btn-solid js-offer-select" type="button" data-offer="lista-espera">Unirme a lista de espera</button>
+            <button class="btn btn-solid js-offer-select" type="button" data-offer="lista-espera" data-es="Unirme a lista de espera" data-en="Join the waitlist">Unirme a lista de espera</button>
           </article>
           <article class="offer">
-            <h3>Seña reembolsable</h3>
-            <p>Ideal para quienes quieren asegurar stock temprano.</p>
+            <h3 data-es="Seña reembolsable" data-en="Refundable deposit">Seña reembolsable</h3>
+            <p data-es="Ideal para quienes quieren asegurar stock temprano." data-en="Ideal if you want to lock in early stock.">Ideal para quienes quieren asegurar stock temprano.</p>
             <ul>
-              <li>ARS 15.000 reembolsables.</li>
-              <li>Prioridad de producción.</li>
-              <li>Descuento en compra final.</li>
+              <li data-es="ARS 15.000 reembolsables." data-en="ARS 15,000, fully refundable.">ARS 15.000 reembolsables.</li>
+              <li data-es="Prioridad de producción." data-en="Production priority.">Prioridad de producción.</li>
+              <li data-es="Descuento en compra final." data-en="Discount on final purchase.">Descuento en compra final.</li>
             </ul>
-            <button class="btn btn-blue js-offer-select js-track-begin-checkout" type="button" data-offer="sena-reembolsable">Reservar con seña</button>
+            <button class="btn btn-blue js-offer-select js-track-begin-checkout" type="button" data-offer="sena-reembolsable" data-es="Reservar con seña" data-en="Reserve with deposit">Reservar con seña</button>
           </article>
           <article class="offer">
-            <h3>Muestra para estudio</h3>
-            <p>Para arquitectos e interioristas que quieren validar materialidad.</p>
+            <h3 data-es="Muestra para estudio" data-en="Sample for studios">Muestra para estudio</h3>
+            <p data-es="Para arquitectos e interioristas que quieren validar materialidad." data-en="For architects and interior designers who want to check materials firsthand.">Para arquitectos e interioristas que quieren validar materialidad.</p>
             <ul>
-              <li>Muestrario físico de acabados.</li>
-              <li>Asesoría de compatibilidad.</li>
-              <li>Descuento por volumen.</li>
+              <li data-es="Muestrario físico de acabados." data-en="Physical swatch set of finishes.">Muestrario físico de acabados.</li>
+              <li data-es="Asesoría de compatibilidad." data-en="Compatibility guidance.">Asesoría de compatibilidad.</li>
+              <li data-es="Descuento por volumen." data-en="Volume discount.">Descuento por volumen.</li>
             </ul>
-            <button class="btn js-offer-select" type="button" data-offer="muestra-estudio">Pedir muestra</button>
+            <button class="btn js-offer-select" type="button" data-offer="muestra-estudio" data-es="Pedir muestra" data-en="Request a sample">Pedir muestra</button>
           </article>
         </div>
       </div>
@@ -760,18 +791,18 @@
     <section class="compare">
       <div class="container compare-grid">
         <div>
-          <h2>Antes y después del split a la vista</h2>
-          <p>Mové el control para comparar y ver el cambio de percepción en el ambiente.</p>
+          <h2 data-es="Antes y después del split a la vista" data-en="Before and after the exposed AC unit">Antes y después del split a la vista</h2>
+          <p data-es="Mové el control para comparar y ver el cambio de percepción en el ambiente." data-en="Drag the handle to compare and see how the room's feel changes.">Mové el control para comparar y ver el cambio de percepción en el ambiente.</p>
         </div>
         <div class="compare-frame" id="compareFrame">
-          <img class="after-image" src="./assets/despues-DCXjqZWd.jpg" alt="Ambiente con cubierta instalada" loading="lazy" width="1600" height="1008" />
+          <img class="after-image" src="./assets/despues-DCXjqZWd.jpg" alt="Ambiente con cubierta instalada" data-alt-es="Ambiente con cubierta instalada" data-alt-en="Room with the cover installed" loading="lazy" width="1600" height="1008" />
           <div class="before-wrap" id="beforeWrap">
-            <img class="before-image" src="./assets/antes-DiOz90HZ.jpg" alt="Ambiente con split blanco expuesto" loading="lazy" width="1600" height="1008" />
-            <span class="compare-label before">Antes</span>
+            <img class="before-image" src="./assets/antes-DiOz90HZ.jpg" alt="Ambiente con split blanco expuesto" data-alt-es="Ambiente con split blanco expuesto" data-alt-en="Room with the white AC unit exposed" loading="lazy" width="1600" height="1008" />
+            <span class="compare-label before" data-es="Antes" data-en="Before">Antes</span>
           </div>
-          <span class="compare-label after">Después</span>
+          <span class="compare-label after" data-es="Después" data-en="After">Después</span>
           <div class="divider" id="compareDivider"><span class="knob">↔</span></div>
-          <input type="range" min="0" max="100" value="50" step="1" id="compareRange" class="compare-range" aria-label="Deslizá para comparar el antes y el después de la cubierta" />
+          <input type="range" min="0" max="100" value="50" step="1" id="compareRange" class="compare-range" aria-label="Deslizá para comparar el antes y el después de la cubierta" data-aria-es="Deslizá para comparar el antes y el después de la cubierta" data-aria-en="Drag to compare the cover's before and after" />
         </div>
       </div>
     </section>
@@ -779,24 +810,24 @@
     <section id="proceso">
       <div class="container">
         <div class="section-head">
-          <h2>Proceso simple</h2>
-          <p>Sin obra pesada ni intervención técnica compleja.</p>
+          <h2 data-es="Proceso simple" data-en="Simple process">Proceso simple</h2>
+          <p data-es="Sin obra pesada ni intervención técnica compleja." data-en="No heavy work, no complex technical intervention.">Sin obra pesada ni intervención técnica compleja.</p>
         </div>
         <div class="process-grid">
           <article class="step">
             <div class="n">01</div>
-            <h3>Medición</h3>
-            <p>Nos compartís alto, ancho y profundidad del equipo con una guía visual.</p>
+            <h3 data-es="Medición" data-en="Measure">Medición</h3>
+            <p data-es="Nos compartís alto, ancho y profundidad del equipo con una guía visual." data-en="Send us the unit's height, width, and depth with our visual guide.">Nos compartís alto, ancho y profundidad del equipo con una guía visual.</p>
           </article>
           <article class="step">
             <div class="n">02</div>
-            <h3>Selección</h3>
-            <p>Elegís modelo, color y nivel de urgencia (lista, seña o muestra).</p>
+            <h3 data-es="Selección" data-en="Choose">Selección</h3>
+            <p data-es="Elegís modelo, color y nivel de urgencia (lista, seña o muestra)." data-en="Pick your model, color, and how you want to reserve (waitlist, deposit, or sample).">Elegís modelo, color y nivel de urgencia (lista, seña o muestra).</p>
           </article>
           <article class="step">
             <div class="n">03</div>
-            <h3>Entrega</h3>
-            <p>Producimos tu cubierta y la despachamos con seguimiento hasta tu casa.</p>
+            <h3 data-es="Entrega" data-en="Delivery">Entrega</h3>
+            <p data-es="Producimos tu cubierta y la despachamos con seguimiento hasta tu casa." data-en="We produce your cover and ship it to your door with tracking.">Producimos tu cubierta y la despachamos con seguimiento hasta tu casa.</p>
           </article>
         </div>
       </div>
@@ -805,11 +836,11 @@
     <section class="lead" id="contacto">
       <div class="container lead-wrap">
         <div class="lead-box">
-          <h2>Solicitá cotización o reservá tu lugar</h2>
-          <p>Completá el formulario y te respondemos en menos de 24 horas. También podés avanzar directo por WhatsApp.</p>
-          <p><strong>Primera edición:</strong> reservás tu modelo y color con precio de lanzamiento y prioridad de entrega.</p>
+          <h2 data-es="Solicitá cotización o reservá tu lugar" data-en="Request a quote or reserve your spot">Solicitá cotización o reservá tu lugar</h2>
+          <p data-es="Completá el formulario y te respondemos en menos de 24 horas. También podés avanzar directo por WhatsApp." data-en="Fill out the form and we'll reply within 24 hours. You can also go straight to WhatsApp.">Completá el formulario y te respondemos en menos de 24 horas. También podés avanzar directo por WhatsApp.</p>
+          <p><strong data-es="Primera edición:" data-en="First edition:">Primera edición:</strong> <span data-es="reservás tu modelo y color con precio de lanzamiento y prioridad de entrega." data-en="reserve your model and color with launch pricing and priority delivery.">reservás tu modelo y color con precio de lanzamiento y prioridad de entrega.</span></p>
           <p style="margin-top:16px;">
-            <a class="btn btn-blue js-track-contact" data-contact-source="lead-whatsapp" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20avanzar%20con%20una%20cubierta" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+            <a class="btn btn-blue js-track-contact" data-contact-source="lead-whatsapp" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20avanzar%20con%20una%20cubierta" target="_blank" rel="noopener" data-es="Hablar por WhatsApp" data-en="Chat on WhatsApp">Hablar por WhatsApp</a>
           </p>
         </div>
         <form class="lead-form" id="leadForm" action="https://formspree.io/f/mblkewop" method="POST">
@@ -823,25 +854,25 @@
 
           <div class="form-grid">
             <div class="field">
-              <label for="name">Nombre</label>
+              <label for="name" data-es="Nombre" data-en="Name">Nombre</label>
               <input id="name" name="name" autocomplete="name" required />
             </div>
             <div class="field">
-              <label for="email">Email</label>
+              <label for="email" data-es="Email" data-en="Email">Email</label>
               <input id="email" name="email" type="email" autocomplete="email" required />
             </div>
             <div class="field">
-              <label for="phone">WhatsApp</label>
+              <label for="phone" data-es="WhatsApp" data-en="WhatsApp">WhatsApp</label>
               <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
             </div>
             <div class="field">
-              <label for="city">Ciudad</label>
+              <label for="city" data-es="Ciudad" data-en="City">Ciudad</label>
               <input id="city" name="city" autocomplete="address-level2" />
             </div>
             <div class="field">
-              <label for="model">Modelo preferido</label>
+              <label for="model" data-es="Modelo preferido" data-en="Preferred model">Modelo preferido</label>
               <select id="model" name="model" required>
-                <option value="">Elegir…</option>
+                <option value="" data-es="Elegir…" data-en="Choose…">Elegir…</option>
                 <option>Meridiano Grafito</option>
                 <option>Meridiano Arena</option>
                 <option>Textil Hav</option>
@@ -851,22 +882,22 @@
               </select>
             </div>
             <div class="field">
-              <label for="offer">Tipo de interés</label>
+              <label for="offer" data-es="Tipo de interés" data-en="Type of interest">Tipo de interés</label>
               <select id="offer" name="offer" required>
-                <option value="">Elegir…</option>
-                <option value="lista-espera">Lista de espera</option>
-                <option value="sena-reembolsable">Seña reembolsable</option>
-                <option value="muestra-estudio">Muestra para estudio</option>
-                <option value="cotizacion">Cotización general</option>
+                <option value="" data-es="Elegir…" data-en="Choose…">Elegir…</option>
+                <option value="lista-espera" data-es="Lista de espera" data-en="Waitlist">Lista de espera</option>
+                <option value="sena-reembolsable" data-es="Seña reembolsable" data-en="Refundable deposit">Seña reembolsable</option>
+                <option value="muestra-estudio" data-es="Muestra para estudio" data-en="Sample for studios">Muestra para estudio</option>
+                <option value="cotizacion" data-es="Cotización general" data-en="General quote">Cotización general</option>
               </select>
             </div>
             <div class="field field-full">
-              <label for="message">Comentario técnico (opcional)</label>
-              <textarea id="message" name="message" placeholder="Marca del split, medidas aproximadas, tipo de ambiente..."></textarea>
+              <label for="message" data-es="Comentario técnico (opcional)" data-en="Technical notes (optional)">Comentario técnico (opcional)</label>
+              <textarea id="message" name="message" placeholder="Marca del split, medidas aproximadas, tipo de ambiente..." data-ph-es="Marca del split, medidas aproximadas, tipo de ambiente..." data-ph-en="AC brand, approximate size, type of room..."></textarea>
             </div>
             <div class="field field-full">
-              <button class="btn btn-solid btn-block" type="submit" id="submitLead">Enviar solicitud</button>
-              <p class="form-note">Este formulario está conectado a Formspree. Si hay error de red, te abrimos un mensaje prearmado de WhatsApp para no perder el lead.</p>
+              <button class="btn btn-solid btn-block" type="submit" id="submitLead" data-es="Enviar solicitud" data-en="Send request">Enviar solicitud</button>
+              <p class="form-note" data-es="Este formulario está conectado a Formspree. Si hay error de red, te abrimos un mensaje prearmado de WhatsApp para no perder el lead." data-en="This form is connected to Formspree. If there's a network error, we'll open a pre-filled WhatsApp message so your request isn't lost.">Este formulario está conectado a Formspree. Si hay error de red, te abrimos un mensaje prearmado de WhatsApp para no perder el lead.</p>
               <p class="form-feedback" id="formFeedback" aria-live="polite"></p>
             </div>
           </div>
@@ -877,20 +908,20 @@
     <section class="faq">
       <div class="container">
         <div class="section-head">
-          <h2>Consultas frecuentes</h2>
-          <p>Resolvemos las dudas más comunes antes de que reserves.</p>
+          <h2 data-es="Consultas frecuentes" data-en="Frequently asked questions">Consultas frecuentes</h2>
+          <p data-es="Resolvemos las dudas más comunes antes de que reserves." data-en="We answer the most common questions before you reserve.">Resolvemos las dudas más comunes antes de que reserves.</p>
         </div>
         <details>
-          <summary>¿La cubierta afecta el rendimiento del aire?</summary>
-          <p>No. Diseñamos aperturas y tejidos para mantener el flujo de aire útil sin forzar compresor ni consumo fuera de parámetros normales.</p>
+          <summary data-es="¿La cubierta afecta el rendimiento del aire?" data-en="Does the cover affect the AC's performance?">¿La cubierta afecta el rendimiento del aire?</summary>
+          <p data-es="No. Diseñamos aperturas y tejidos para mantener el flujo de aire útil sin forzar compresor ni consumo fuera de parámetros normales." data-en="No. We design the openings and fabrics to keep proper airflow without straining the compressor or increasing power use.">No. Diseñamos aperturas y tejidos para mantener el flujo de aire útil sin forzar compresor ni consumo fuera de parámetros normales.</p>
         </details>
         <details>
-          <summary>¿Qué pasa si la medida no coincide?</summary>
-          <p>Confirmamos las medidas antes de fabricar: coordinamos todo por WhatsApp con una guía visual para evitar errores.</p>
+          <summary data-es="¿Qué pasa si la medida no coincide?" data-en="What if the measurements don't match?">¿Qué pasa si la medida no coincide?</summary>
+          <p data-es="Confirmamos las medidas antes de fabricar: coordinamos todo por WhatsApp con una guía visual para evitar errores." data-en="We confirm measurements before manufacturing: we coordinate everything over WhatsApp with a visual guide to avoid mistakes.">Confirmamos las medidas antes de fabricar: coordinamos todo por WhatsApp con una guía visual para evitar errores.</p>
         </details>
         <details>
-          <summary>¿Cómo funciona la seña reembolsable?</summary>
-          <p>La seña reserva prioridad de lote y se descuenta del valor final. Si no avanzás con la compra durante la preventa, se reintegra.</p>
+          <summary data-es="¿Cómo funciona la seña reembolsable?" data-en="How does the refundable deposit work?">¿Cómo funciona la seña reembolsable?</summary>
+          <p data-es="La seña reserva prioridad de lote y se descuenta del valor final. Si no avanzás con la compra durante la preventa, se reintegra." data-en="The deposit locks in your production priority and is deducted from the final price. If you don't go ahead with the purchase during presale, it's refunded.">La seña reserva prioridad de lote y se descuenta del valor final. Si no avanzás con la compra durante la preventa, se reintegra.</p>
         </details>
       </div>
     </section>
@@ -898,7 +929,7 @@
 
   <footer>
     <div class="container foot">
-      <span>© 2026 PALMA · Cubiertas premium para split</span>
+      <span data-es="© 2026 PALMA · Cubiertas premium para split" data-en="© 2026 PALMA · Premium covers for split ACs">© 2026 PALMA · Cubiertas premium para split</span>
       <div class="foot-links">
         <a class="js-track-contact" data-contact-source="footer-whatsapp" href="https://wa.me/5491151526104?text=Hola%20PALMA!%20Quiero%20consultar%20por%20una%20cubierta" target="_blank" rel="noopener">WhatsApp</a>
       </div>
@@ -944,6 +975,58 @@
         if (typeof window.gtag === "function") window.gtag("event", eventName, data);
       }
 
+      var PALMA_LANG_KEY = "palma_lang";
+      var PALMA_TITLE = {
+        es: "PALMA — Cubiertas de diseño para aire acondicionado",
+        en: "PALMA — Design covers for air conditioners"
+      };
+      var palmaLang = localStorage.getItem(PALMA_LANG_KEY) === "en" ? "en" : "es";
+
+      function applyPalmaLang(lang) {
+        lang = lang === "en" ? "en" : "es";
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-es]").forEach(function (el) {
+          var v = lang === "en" ? el.getAttribute("data-en") : el.getAttribute("data-es");
+          if (v !== null) el.textContent = v;
+        });
+        document.querySelectorAll("[data-alt-es]").forEach(function (el) {
+          var v = lang === "en" ? el.getAttribute("data-alt-en") : el.getAttribute("data-alt-es");
+          if (v !== null) el.setAttribute("alt", v);
+        });
+        document.querySelectorAll("[data-ph-es]").forEach(function (el) {
+          var v = lang === "en" ? el.getAttribute("data-ph-en") : el.getAttribute("data-ph-es");
+          if (v !== null) el.setAttribute("placeholder", v);
+        });
+        document.querySelectorAll("[data-aria-es]").forEach(function (el) {
+          var v = lang === "en" ? el.getAttribute("data-aria-en") : el.getAttribute("data-aria-es");
+          if (v !== null) el.setAttribute("aria-label", v);
+        });
+        var toggle = document.getElementById("langToggle");
+        if (toggle) {
+          toggle.querySelectorAll("button").forEach(function (b) {
+            var isActive = b.getAttribute("data-set-lang") === lang;
+            b.classList.toggle("active", isActive);
+            b.setAttribute("aria-pressed", isActive ? "true" : "false");
+          });
+        }
+        document.title = PALMA_TITLE[lang];
+        localStorage.setItem(PALMA_LANG_KEY, lang);
+        palmaLang = lang;
+      }
+
+      var langToggleEl = document.getElementById("langToggle");
+      if (langToggleEl) {
+        langToggleEl.querySelectorAll("button[data-set-lang]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var lang = btn.getAttribute("data-set-lang");
+            if (lang === palmaLang) return;
+            applyPalmaLang(lang);
+            track("language_change", { lang: lang });
+          });
+        });
+      }
+      applyPalmaLang(palmaLang);
+
       var utm = parseUtm();
       ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach(function (name) {
         var el = document.getElementById(name);
@@ -954,7 +1037,7 @@
       var firstTouchInput = document.getElementById("first_touch");
       if (firstTouchInput) firstTouchInput.value = getFirstTouch();
 
-      track("view_content", { page: "air-cover-landing", lang: "es", ...utm });
+      track("view_content", { page: "air-cover-landing", lang: palmaLang, ...utm });
 
       document.querySelectorAll(".card").forEach(function (card) {
         var model = card.getAttribute("data-model");
@@ -1035,10 +1118,16 @@
         return "https://wa.me/5491151526104?text=" + encodeURIComponent(lines.join("\n"));
       }
 
+      var PALMA_FORM_MSG = {
+        sending: { es: "Enviando...", en: "Sending..." },
+        success: { es: "Listo. Recibimos tu solicitud y te contactamos en menos de 24h.", en: "Done. We received your request and will reach out within 24h." },
+        error: { es: "No pudimos enviar por red. Te abrimos WhatsApp para no perder la consulta.", en: "We couldn't send it over the network. Opening WhatsApp so we don't lose your request." }
+      };
+
       leadForm.addEventListener("submit", async function (event) {
         event.preventDefault();
         submitBtn.disabled = true;
-        feedback.textContent = "Enviando...";
+        feedback.textContent = PALMA_FORM_MSG.sending[palmaLang];
         var formData = new FormData(leadForm);
         var data = Object.fromEntries(formData.entries());
 
@@ -1052,11 +1141,11 @@
 
           track("lead", { model: data.model, offer: data.offer, source: data.utm_source || "direct" });
           if (data.offer === "sena-reembolsable") track("begin_checkout", { offer: data.offer, status: "lead_captured" });
-          feedback.textContent = "Listo. Recibimos tu solicitud y te contactamos en menos de 24h.";
+          feedback.textContent = PALMA_FORM_MSG.success[palmaLang];
           leadForm.reset();
           setTimeout(function () { feedback.textContent = ""; }, 7000);
         } catch (error) {
-          feedback.textContent = "No pudimos enviar por red. Te abrimos WhatsApp para no perder la consulta.";
+          feedback.textContent = PALMA_FORM_MSG.error[palmaLang];
           track("contact", { source: "form_fallback_whatsapp" });
           window.open(buildWhatsappFallback(data), "_blank", "noopener");
         } finally {

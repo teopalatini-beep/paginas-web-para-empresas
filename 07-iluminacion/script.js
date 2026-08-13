@@ -73,11 +73,16 @@
     t.id = "mp-demo-toast";
     t.className = "mp-toast";
     t.setAttribute("role", "status");
-    t.innerHTML =
-      '<div class="mp-toast-body"><strong>Demo de pago</strong><br>' +
-      'En el sitio real, este botón abre el checkout seguro de <b>Mercado Pago</b> ' +
-      '(tarjeta, débito, dinero en cuenta o efectivo).</div>' +
-      '<button type="button" class="mp-toast-close" aria-label="Cerrar aviso">×</button>';
+    var isEn = window.__luminaLang === "en";
+    t.innerHTML = isEn
+      ? '<div class="mp-toast-body"><strong>Payment demo</strong><br>' +
+        'On the live site, this button opens the secure <b>Mercado Pago</b> checkout ' +
+        '(card, debit, account balance or cash).</div>' +
+        '<button type="button" class="mp-toast-close" aria-label="Close notice">×</button>'
+      : '<div class="mp-toast-body"><strong>Demo de pago</strong><br>' +
+        'En el sitio real, este botón abre el checkout seguro de <b>Mercado Pago</b> ' +
+        '(tarjeta, débito, dinero en cuenta o efectivo).</div>' +
+        '<button type="button" class="mp-toast-close" aria-label="Cerrar aviso">×</button>';
     document.body.appendChild(t);
     var close = function () {
       t.style.opacity = "0";

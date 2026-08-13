@@ -1,4 +1,7 @@
+import { useLang } from '../i18n'
+
 export default function Footer() {
+  const { t } = useLang()
   return (
     <footer className="relative bg-[#010101] border-t border-white/10 py-12 sm:py-16">
       <div className="section-inner flex flex-col md:flex-row md:items-end md:justify-between gap-8">
@@ -10,8 +13,7 @@ export default function Footer() {
             Llave Maestra
           </div>
           <p className="text-white/50 font-light text-sm leading-relaxed">
-            Cerrajería 24 horas en Palermo y alrededores. Aperturas, cerraduras, llaves y alta
-            seguridad.
+            {t.footer.body}
           </p>
         </div>
 
@@ -26,7 +28,7 @@ export default function Footer() {
             className="text-white/40 text-[0.66rem] uppercase font-light"
             style={{ letterSpacing: '0.28em' }}
           >
-            © 2026 Llave Maestra Cerrajería
+            {t.footer.copyright}
           </span>
         </div>
       </div>

@@ -84,6 +84,10 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .nav-cta { background: transparent; color: var(--cream) !important; padding: 10px 20px; border-radius: var(--radius-btn); border: 1px solid var(--gold); font-size: .8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
 .nav-cta:hover { background: var(--gold); color: var(--bg) !important; }
 .nav-toggle { display: none; background: none; border: none; color: var(--cream); font-size: 1.5rem; cursor: pointer; }
+.lang-switch { display: flex; border: 1px solid var(--line); border-radius: var(--radius-btn); overflow: hidden; }
+.lang-switch button { border: 0; background: transparent; color: var(--cream-2); font-family: var(--body); font-size: .74rem; font-weight: 600; letter-spacing: .04em; padding: 7px 11px; cursor: pointer; }
+.lang-switch button.active { background: var(--gold); color: var(--bg); }
+.lang-switch button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 /* ---- Hero: foto limpia + vignette neutra, sin blob ni grano ---- */
 .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; padding-bottom: 9vh; overflow: hidden; background: var(--bg); }

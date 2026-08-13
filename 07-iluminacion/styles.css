@@ -144,6 +144,10 @@ h1 em, h2 em { font-style: italic; font-weight: 400; }
 .nav-cta:hover { background: var(--cyan); color: #05070d !important; box-shadow: 0 0 24px rgba(0, 217, 255, .4); }
 .burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; touch-action: manipulation; }
 .burger span { width: 24px; height: 1.5px; background: var(--ink); border-radius: 2px; }
+.lang-switch { display: flex; border: 1px solid var(--line); border-radius: 50px; overflow: hidden; }
+.lang-switch button { border: 0; background: none; color: var(--ink-dim); font-family: var(--mono); font-size: .72rem; font-weight: 500; letter-spacing: .04em; padding: 7px 12px; cursor: pointer; }
+.lang-switch button.active { background: var(--cyan); color: #05070d; }
+.lang-switch button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 
 /* ---- Hero ---- */
 .hero {

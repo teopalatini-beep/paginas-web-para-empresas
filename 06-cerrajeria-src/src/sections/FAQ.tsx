@@ -1,31 +1,11 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus } from 'lucide-react'
-
-const faqs = [
-  {
-    q: '¿Rompen la puerta o la cerradura para abrir?',
-    a: 'No. En la enorme mayoría de los casos abrimos sin dañar nada, con herramienta profesional. Si la cerradura ya viene forzada o rota, te lo avisamos antes de tocar nada.',
-  },
-  {
-    q: '¿Atienden de noche y los fines de semana?',
-    a: 'Sí, trabajamos las 24 horas los 365 días. En horario nocturno o feriado puede haber un adicional, que siempre te informamos antes de salir hacia tu casa.',
-  },
-  {
-    q: '¿Cuánto tardan en llegar?',
-    a: 'Entre 20 y 40 minutos según la zona y el momento del día. Al llamar te damos un tiempo estimado real, sin vueltas.',
-  },
-  {
-    q: '¿Me dicen el precio antes de empezar?',
-    a: 'Siempre. Te pasamos el precio cerrado por teléfono o WhatsApp y no arrancamos hasta que estés de acuerdo. Sin sorpresas al final del trabajo.',
-  },
-  {
-    q: '¿Qué medios de pago aceptan?',
-    a: 'Efectivo, débito, crédito, transferencia y Mercado Pago. Emitimos comprobante del trabajo realizado.',
-  },
-]
+import { useLang } from '../i18n'
 
 export default function FAQ() {
+  const { t } = useLang()
+  const faqs = t.faq.items
   const [open, setOpen] = useState<number | null>(0)
 
   return (
@@ -40,7 +20,7 @@ export default function FAQ() {
             className="block text-[0.7rem] text-[#e8a34a] uppercase font-light mb-5"
             style={{ letterSpacing: '0.35em' }}
           >
-            Antes de llamar
+            {t.faq.eyebrow}
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
@@ -50,7 +30,7 @@ export default function FAQ() {
             className="font-garamond text-white text-4xl sm:text-5xl font-normal"
             style={{ lineHeight: 1.06, textWrap: 'balance' as 'balance', letterSpacing: '-0.01em' }}
           >
-            Preguntas frecuentes.
+            {t.faq.title}
           </motion.h2>
         </div>
 
