@@ -3,152 +3,182 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teo Palatini — Diseño web para comercios y pymes</title>
-  <meta name="description" content="Diseño páginas web modernas para restaurantes, comercios y profesionales. Con reservas, pedidos por WhatsApp y pagos. Listas para vender desde el día uno." />
+  <title>FORJA — Estudio de diseño y desarrollo web</title>
+  <meta name="description" content="FORJA. Sitios web a medida para restaurantes, comercios y profesionales, con pedidos por WhatsApp y cobros con Mercado Pago. Diseño y desarrollo, sin plantillas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FORJA — Estudio de diseño y desarrollo web" />
+  <meta property="og:description" content="Sitios web a medida que hacen vender: WhatsApp, Mercado Pago y diseño hecho a mano. Desde Buenos Aires." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23080808'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' font-weight='700' fill='%23E6E6E6' text-anchor='middle'%3EF%3C/text%3E%3Ccircle cx='78' cy='24' r='7' fill='%23CCFF00'/%3E%3C/svg%3E" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..700&family=Hanken+Grotesk:wght@300..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{
-      --paper:#F3EEE4;        /* crema cálido */
-      --paper-2:#EBE4D6;
-      --ink:#1A1612;          /* negro cálido */
-      --ink-soft:#5C5347;
-      --line:#D8CFBE;
-      --accent:#E5481F;       /* bermellón */
-      --accent-deep:#B5360F;
-      --wsp:#1FA855;
-      --serif:'Fraunces', Georgia, serif;
-      --sans:'Hanken Grotesk', system-ui, sans-serif;
+      --bg:#080808;
+      --bg-2:#0F0F0F;
+      --surface:#141414;
+      --ink:#E6E6E6;
+      --ink-soft:#9A9A9A;
+      --ink-dim:#6B6B6B;
+      --line:#404040;
+      --line-soft:#232323;
+      --lime:#CCFF00;
+      --lime-dim:#8FB300;
+      --wsp:#25D366;
+      --display:'Bricolage Grotesque','Inter',system-ui,sans-serif;
+      --sans:'Inter',system-ui,sans-serif;
       --t:.4s cubic-bezier(.2,.7,.2,1);
     }
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+    }
     body{
-      font-family:var(--sans); color:var(--ink); background:var(--paper);
+      font-family:var(--sans); color:var(--ink); background:var(--bg);
       line-height:1.6; -webkit-font-smoothing:antialiased;
       overflow-x:hidden;
     }
-    /* grano sutil */
-    body::before{
-      content:""; position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.4;
-      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-      mix-blend-mode:multiply;
-    }
-    .wrap{width:min(1240px,90%);margin:0 auto}
+    .wrap{width:min(1280px,90%);margin:0 auto}
     a{color:inherit;text-decoration:none}
-    ::selection{background:var(--accent);color:var(--paper)}
+    ::selection{background:var(--lime);color:var(--bg)}
 
-    h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.02;letter-spacing:-.02em}
-    .display{font-variation-settings:"opsz" 144}
+    h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.0;letter-spacing:-.02em}
 
     /* ---- NAV ---- */
-    nav{position:sticky;top:0;z-index:20;background:rgba(243,238,228,.82);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--t)}
-    nav.scrolled{border-color:var(--line)}
-    .nav-in{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .brand{font-family:var(--serif);font-weight:600;font-size:1.4rem;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
-    .brand .mark{width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--paper);display:grid;place-items:center;font-size:.95rem;font-weight:700;font-family:var(--sans)}
-    .nav-links{display:flex;align-items:center;gap:34px}
-    .nav-links a{font-size:.9rem;font-weight:500;color:var(--ink-soft);transition:color var(--t)}
-    .nav-links a:hover{color:var(--ink)}
-    .nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:var(--paper)!important;padding:10px 18px;border-radius:50px;font-size:.86rem;font-weight:600;transition:transform var(--t),background var(--t)}
-    .nav-cta:hover{background:var(--accent);transform:translateY(-1px)}
+    nav{position:sticky;top:0;z-index:30;background:rgba(8,8,8,.82);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--t)}
+    nav.scrolled{border-color:var(--line-soft)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;padding:20px 0;gap:20px}
+    .brand{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:-.01em;display:flex;align-items:center;gap:8px;text-transform:uppercase}
+    .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--lime)}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a:not(.nav-cta):not(.lang-switch a){font-size:.82rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);transition:color var(--t)}
+    .nav-links a:not(.nav-cta):hover{color:var(--ink)}
+    .nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--lime);color:var(--bg)!important;padding:11px 20px;font-size:.82rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;transition:transform var(--t),background var(--t)}
+    .nav-cta:hover{background:var(--ink);transform:translateY(-1px)}
     .nav-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink)}
+    .lang-switch{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex-shrink:0}
+    .lang-switch button{border:0;background:transparent;color:var(--ink-soft);font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.04em;padding:7px 12px;cursor:pointer}
+    .lang-switch button.active{background:var(--lime);color:var(--bg)}
+    .lang-switch button:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
 
     /* ---- HERO ---- */
-    .hero{position:relative;z-index:2;padding:clamp(60px,11vw,130px) 0 clamp(50px,7vw,90px)}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep)}
-    .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent)}
-    .hero h1{font-size:clamp(3rem,9.5vw,8.2rem);margin:.22em 0 .12em;font-weight:560}
-    .hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
-    .hero-low{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-top:14px}
-    .hero-low p{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:46ch;color:var(--ink-soft)}
+    .hero{position:relative;padding:clamp(70px,12vw,140px) 0 clamp(60px,8vw,100px);overflow:hidden}
+    .hero::before{
+      content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
+      background:
+        radial-gradient(60% 50% at 82% 10%, rgba(204,255,0,.08), transparent 60%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.025) 0 1px, transparent 1px 120px);
+    }
+    .hero-in{position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:.76rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+    .eyebrow::before{content:"";width:28px;height:1px;background:var(--lime)}
+    .hero h1{font-size:clamp(3.6rem,14vw,10.5rem);margin:.2em 0 0;text-transform:uppercase}
+    .hero-low{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-top:34px;padding-top:28px;border-top:1px solid var(--line-soft)}
+    .hero-low p{font-size:clamp(1.02rem,1.6vw,1.28rem);max-width:44ch;min-width:0;color:var(--ink-soft)}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 26px;border-radius:50px;font-family:var(--sans);font-size:.98rem;font-weight:600;cursor:pointer;border:1.5px solid var(--ink);transition:transform var(--t),background var(--t),color var(--t)}
-    .btn-solid{background:var(--ink);color:var(--paper)}
-    .btn-solid:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+    .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 26px;font-family:var(--sans);font-size:.9rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;cursor:pointer;border:1.5px solid var(--ink);transition:transform var(--t),background var(--t),color var(--t),border-color var(--t)}
+    .btn-solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+    .btn-solid:hover{background:var(--lime);border-color:var(--lime);color:var(--bg);transform:translateY(-2px)}
     .btn-line{background:transparent;color:var(--ink)}
-    .btn-line:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+    .btn-line:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px)}
+    .geo{position:absolute;bottom:0;left:0;font-family:var(--sans);font-size:.68rem;letter-spacing:.1em;color:var(--ink-dim);text-transform:uppercase;z-index:1}
 
     /* marquee */
-    .marquee{position:relative;z-index:2;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;overflow:hidden;background:var(--paper-2)}
-    .marquee-track{display:flex;gap:48px;white-space:nowrap;width:max-content;animation:scrollx 26s linear infinite;font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--ink-soft)}
+    .marquee{position:relative;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:16px 0;overflow:hidden;background:var(--bg-2)}
+    .marquee-track{display:flex;gap:48px;white-space:nowrap;width:max-content;animation:scrollx 30s linear infinite;font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim)}
     .marquee-track span{display:inline-flex;align-items:center;gap:48px}
-    .marquee-track b{color:var(--accent);font-style:normal;font-family:var(--sans);font-weight:700}
+    .marquee-track b{color:var(--lime);font-weight:700}
     @keyframes scrollx{to{transform:translateX(-50%)}}
 
     /* ---- SECTION SHELL ---- */
-    section{position:relative;z-index:2;padding:clamp(60px,9vw,120px) 0}
+    section{position:relative;padding:clamp(64px,9vw,120px) 0}
     .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:54px}
-    .sec-head h2{font-size:clamp(2.2rem,5vw,4rem);font-weight:560}
-    .sec-num{font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep)}
+    .sec-head h2{min-width:0}
+    .sec-head h2{font-size:clamp(2.1rem,5vw,3.6rem);text-transform:uppercase}
+    .sec-num{font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim)}
 
-    /* ---- WORKS (índice editorial) ---- */
-    .work{display:grid;grid-template-columns:90px 1fr auto;gap:28px;align-items:center;padding:34px 8px;border-top:1px solid var(--line);transition:padding var(--t),background var(--t);position:relative}
-    .works .work:last-child{border-bottom:1px solid var(--line)}
-    .work:hover{background:var(--paper-2);padding-left:24px;padding-right:24px}
-    .work-no{font-family:var(--serif);font-size:1.5rem;font-style:italic;color:var(--accent)}
-    .work-main h3{font-size:clamp(1.6rem,3vw,2.5rem);font-weight:560;transition:color var(--t)}
-    .work:hover .work-main h3{color:var(--accent)}
-    .work-main .kind{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
-    .work-main p{color:var(--ink-soft);max-width:62ch;margin-top:10px;font-size:.98rem}
+    /* ---- ABOUT / QUIÉN SOY ---- */
+    .about{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}
+    .about h2{font-size:clamp(2rem,4.6vw,3.4rem);text-transform:none;margin-bottom:24px}
+    .about-lead{font-size:clamp(1.1rem,1.9vw,1.4rem);color:var(--ink);max-width:38ch;margin-bottom:20px}
+    .about p.body-text{color:var(--ink-soft);max-width:52ch;font-size:1rem}
+    .about-facts{display:grid;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+    .fact{background:var(--bg-2);padding:26px 28px}
+    .fact .k{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:10px}
+    .fact .v{font-family:var(--display);font-size:1.3rem;font-weight:700;margin-bottom:6px}
+    .fact .d{color:var(--ink-dim);font-size:.86rem}
+
+    /* ---- WORKS (índice) ---- */
+    .work{display:grid;grid-template-columns:80px 1fr auto;gap:28px;align-items:center;padding:32px 20px;margin:0 -20px;width:calc(100% + 40px);border-top:1px solid var(--line-soft);transition:background var(--t),transform var(--t);position:relative}
+    .work-main{min-width:0}
+    .works .work:last-child{border-bottom:1px solid var(--line-soft)}
+    .work:hover{background:var(--bg-2);transform:translateX(4px)}
+    .work-no{font-family:var(--display);font-size:1.3rem;font-weight:700;color:var(--lime)}
+    .work-main h3{font-size:clamp(1.5rem,2.8vw,2.3rem);font-weight:700;transition:color var(--t);text-transform:none}
+    .work:hover .work-main h3{color:var(--lime)}
+    .work-main .kind{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:7px}
+    .work-main p{color:var(--ink-soft);max-width:62ch;margin-top:10px;font-size:.95rem}
     .work-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
-    .tag{font-size:.74rem;font-weight:600;padding:5px 11px;border:1px solid var(--line);border-radius:50px;color:var(--ink-soft)}
-    .work-go{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.92rem;white-space:nowrap}
-    .work-go .arrow{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;transition:all var(--t)}
-    .work:hover .work-go .arrow{background:var(--accent);border-color:var(--accent);color:var(--paper);transform:rotate(-45deg)}
+    .tag{font-size:.72rem;font-weight:600;padding:5px 11px;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft)}
+    .work-go{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.82rem;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+    .work-go .arrow{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;transition:all var(--t);color:var(--ink)}
+    .work:hover .work-go .arrow{background:var(--lime);border-color:var(--lime);color:var(--bg);transform:rotate(-45deg)}
 
     /* ---- SERVICES ---- */
-    .services{background:var(--ink);color:var(--paper)}
-    .services .sec-num{color:#E5A88F}
-    .services .sec-head h2{color:var(--paper)}
-    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
-    .svc{background:var(--ink);padding:34px 28px;transition:background var(--t)}
-    .svc:hover{background:#241e18}
-    .svc-ic{font-size:1.8rem;margin-bottom:16px}
-    .svc h3{font-size:1.5rem;color:var(--paper);font-weight:560;margin-bottom:10px}
-    .svc p{color:#B7AC9C;font-size:.95rem}
-    .svc .price{margin-top:16px;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:#F0B49E}
-    .svc .price span{font-family:var(--sans);font-style:normal;font-size:.8rem;color:#8C8273;display:block;margin-top:2px}
+    .services{background:var(--bg-2)}
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+    .svc{background:var(--bg-2);padding:32px 26px;transition:background var(--t)}
+    .svc:hover{background:var(--surface)}
+    .svc-ic{width:38px;height:38px;border:1.5px solid var(--lime);border-radius:50%;display:grid;place-items:center;margin-bottom:18px;color:var(--lime);font-size:1rem}
+    .svc h3{font-size:1.3rem;font-weight:700;margin-bottom:10px;text-transform:none}
+    .svc p{color:var(--ink-soft);font-size:.92rem}
+    .svc .price{margin-top:16px;font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--ink)}
+    .svc .price span{font-family:var(--sans);font-weight:400;font-size:.78rem;color:var(--ink-dim);display:block;margin-top:2px;text-transform:uppercase;letter-spacing:.06em}
 
     /* ---- PROCESS ---- */
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
-    .step{padding-top:22px;border-top:2px solid var(--ink)}
-    .step .n{font-family:var(--serif);font-style:italic;font-size:2.6rem;color:var(--accent);line-height:1}
-    .step h4{font-family:var(--serif);font-size:1.3rem;font-weight:560;margin:14px 0 8px}
-    .step p{color:var(--ink-soft);font-size:.93rem}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+    .step{background:var(--bg);padding:28px 24px}
+    .step .n{font-family:var(--display);font-weight:700;font-size:2.2rem;color:var(--lime);line-height:1}
+    .step h4{font-family:var(--display);font-size:1.15rem;font-weight:700;margin:16px 0 8px;text-transform:none}
+    .step p{color:var(--ink-soft);font-size:.9rem}
 
     /* ---- CTA ---- */
-    .cta{position:relative;z-index:2;text-align:center;padding:clamp(70px,11vw,150px) 0}
-    .cta h2{font-size:clamp(2.6rem,7vw,6rem);font-weight:560;line-height:1}
-    .cta h2 em{font-style:italic;color:var(--accent)}
-    .cta p{color:var(--ink-soft);font-size:1.15rem;margin:22px auto 36px;max-width:48ch}
-    .btn-wsp{background:var(--wsp);color:#fff;border-color:var(--wsp);font-size:1.05rem;padding:17px 32px}
-    .btn-wsp:hover{background:#178c45;border-color:#178c45;transform:translateY(-2px)}
+    .cta{position:relative;text-align:center;padding:clamp(70px,11vw,150px) 0;border-top:1px solid var(--line-soft)}
+    .cta h2{font-size:clamp(2.4rem,7.5vw,6.2rem);text-transform:uppercase;line-height:.98}
+    .cta h2 .lime{color:var(--lime)}
+    .cta p{color:var(--ink-soft);font-size:1.1rem;margin:22px auto 36px;max-width:46ch}
+    .btn-wsp{background:var(--wsp);color:#fff;border-color:var(--wsp);font-size:1rem;padding:17px 32px}
+    .btn-wsp:hover{background:#1fb356;border-color:#1fb356;transform:translateY(-2px)}
 
     /* ---- FOOTER ---- */
-    footer{position:relative;z-index:2;border-top:1px solid var(--line);padding:34px 0}
-    .foot-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:.88rem;color:var(--ink-soft)}
-    .foot-in a:hover{color:var(--accent)}
+    footer{position:relative;border-top:1px solid var(--line-soft);padding:34px 0}
+    .foot-in{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:.84rem;color:var(--ink-dim)}
+    .foot-in a:hover{color:var(--lime)}
     .foot-links{display:flex;gap:22px}
 
     /* reveal */
-    .rv{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+    .rv{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
     .rv.in{opacity:1;transform:none}
 
     @media(max-width:860px){
-      .nav-links{position:fixed;inset:0 0 0 auto;width:78%;max-width:320px;flex-direction:column;align-items:flex-start;justify-content:center;gap:22px;background:var(--paper-2);padding:40px;transform:translateX(100%);transition:transform var(--t);box-shadow:-20px 0 60px rgba(0,0,0,.1)}
+      .nav-links{position:fixed;inset:0 0 0 auto;width:78%;max-width:320px;flex-direction:column;align-items:flex-start;justify-content:center;gap:22px;background:var(--bg-2);padding:40px;transform:translateX(100%);transition:transform var(--t);box-shadow:-20px 0 60px rgba(0,0,0,.4);border-left:1px solid var(--line-soft)}
       .nav-links.open{transform:none}
-      .nav-toggle{display:block;z-index:21}
+      .nav-toggle{display:block;z-index:31}
       .svc-grid{grid-template-columns:1fr 1fr}
-      .steps{grid-template-columns:1fr 1fr;gap:24px}
-      .work{grid-template-columns:50px 1fr;gap:16px}
+      .steps{grid-template-columns:1fr 1fr}
+      .work{grid-template-columns:44px 1fr;gap:16px}
       .work-go{grid-column:2;justify-self:start;margin-top:6px}
+      .about-grid{grid-template-columns:1fr;gap:40px}
+      .geo{display:none}
     }
     @media(max-width:540px){
       .svc-grid{grid-template-columns:1fr}
       .steps{grid-template-columns:1fr}
       .hero-low{flex-direction:column;align-items:flex-start}
+      .about-facts{grid-template-columns:1fr!important}
     }
   </style>
 </head>
@@ -157,35 +187,42 @@
   <!-- ===== NAV ===== -->
   <nav id="nav">
     <div class="wrap nav-in">
-      <a href="#top" class="brand"><span class="mark">TP</span> Teo Palatini</a>
+      <a href="#top" class="brand">Forja<span class="dot"></span></a>
       <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
       <div class="nav-links" id="navLinks">
-        <a href="#trabajos">Trabajos</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Proceso</a>
-        <a href="https://wa.me/5491151526104?text=Hola%20Teo!%20Vi%20tu%20portfolio%20y%20quiero%20consultar%20por%20una%20web" target="_blank" class="nav-cta">Hablemos</a>
+        <a href="#trabajos" data-es="Trabajos" data-en="Work">Trabajos</a>
+        <a href="#estudio" data-es="Estudio" data-en="Studio">Estudio</a>
+        <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="https://wa.me/5491151526104?text=Hola%20Forja!%20Vi%20el%20portfolio%20y%20quiero%20consultar%20por%20una%20web" target="_blank" class="nav-cta" data-es="Hablemos" data-en="Let's talk">Hablemos</a>
+        <div class="lang-switch" id="langToggle" role="group" aria-label="Idioma / Language">
+          <button type="button" data-set-lang="es" class="active" aria-pressed="true">ES</button>
+          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
     </div>
   </nav>
 
   <!-- ===== HERO ===== -->
-  <header class="hero wrap" id="top">
-    <span class="eyebrow rv">Diseño web para comercios y pymes</span>
-    <h1 class="display rv">Sitios que<br>te hacen <em>vender</em></h1>
-    <div class="hero-low">
-      <p class="rv">Diseño páginas modernas y rápidas para restaurantes, comercios y profesionales — con reservas, pedidos por WhatsApp y pagos. Listas para operar desde el día uno.</p>
-      <div class="hero-actions rv">
-        <a href="#trabajos" class="btn btn-solid">Ver trabajos</a>
-        <a href="https://wa.me/5491151526104?text=Hola%20Teo!%20Quiero%20una%20web%20para%20mi%20negocio" target="_blank" class="btn btn-line">Pedir presupuesto</a>
+  <header class="hero" id="top">
+    <div class="wrap hero-in">
+      <span class="eyebrow rv" data-es="Estudio de diseño y desarrollo web" data-en="Web design & development studio">Estudio de diseño y desarrollo web</span>
+      <h1 class="rv">Forja</h1>
+      <div class="hero-low">
+        <p class="rv" data-es="Diseñamos y construimos sitios a medida para restaurantes, comercios y profesionales, con pedidos por WhatsApp y cobros con Mercado Pago. Sin plantillas, listos para vender desde el día uno." data-en="We design and build custom sites for restaurants, retailers and professionals, with WhatsApp ordering and Mercado Pago checkout. No templates, ready to sell from day one.">Diseñamos y construimos sitios a medida para restaurantes, comercios y profesionales, con pedidos por WhatsApp y cobros con Mercado Pago. Sin plantillas, listos para vender desde el día uno.</p>
+        <div class="hero-actions rv">
+          <a href="#trabajos" class="btn btn-solid" data-es="Ver trabajos" data-en="View work">Ver trabajos</a>
+          <a href="https://wa.me/5491151526104?text=Hola%20Forja!%20Quiero%20una%20web%20para%20mi%20negocio" target="_blank" class="btn btn-line" data-es="Pedir presupuesto" data-en="Get a quote">Pedir presupuesto</a>
+        </div>
       </div>
     </div>
+    <span class="geo wrap">LAT -34.6037 / LON -58.3816 · BUENOS AIRES, AR</span>
   </header>
 
   <!-- ===== MARQUEE ===== -->
   <div class="marquee">
     <div class="marquee-track">
-      <span>Restaurantes <b>·</b> Ferreterías <b>·</b> Tiendas <b>·</b> Profesionales <b>·</b> Farmacias <b>·</b> Almacenes <b>·</b> </span>
-      <span>Restaurantes <b>·</b> Ferreterías <b>·</b> Tiendas <b>·</b> Profesionales <b>·</b> Farmacias <b>·</b> Almacenes <b>·</b> </span>
+      <span data-es="Restaurantes <b>·</b> Comercios <b>·</b> Tiendas <b>·</b> Profesionales <b>·</b> Farmacias <b>·</b> Almacenes <b>·</b>" data-en="Restaurants <b>·</b> Retail <b>·</b> Shops <b>·</b> Professionals <b>·</b> Pharmacies <b>·</b> Local stores <b>·</b>" data-html="true">Restaurantes <b>·</b> Comercios <b>·</b> Tiendas <b>·</b> Profesionales <b>·</b> Farmacias <b>·</b> Almacenes <b>·</b></span>
+      <span data-es="Restaurantes <b>·</b> Comercios <b>·</b> Tiendas <b>·</b> Profesionales <b>·</b> Farmacias <b>·</b> Almacenes <b>·</b>" data-en="Restaurants <b>·</b> Retail <b>·</b> Shops <b>·</b> Professionals <b>·</b> Pharmacies <b>·</b> Local stores <b>·</b>" data-html="true">Restaurantes <b>·</b> Comercios <b>·</b> Tiendas <b>·</b> Profesionales <b>·</b> Farmacias <b>·</b> Almacenes <b>·</b></span>
     </div>
   </div>
 
@@ -193,66 +230,99 @@
   <section id="trabajos">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="rv">Trabajos seleccionados</h2>
-        <span class="sec-num rv">(01 — Portfolio)</span>
+        <h2 class="rv" data-es="Trabajos seleccionados" data-en="Selected work">Trabajos seleccionados</h2>
+        <span class="sec-num rv" data-es="(01 — Portfolio)" data-en="(01 — Portfolio)">(01 — Portfolio)</span>
       </div>
       <div class="works">
 
         <a href="05-barberia/index.html" target="_blank" class="work rv">
           <div class="work-no">01</div>
           <div class="work-main">
-            <div class="kind">Barbería · Cliente real · Premium</div>
+            <div class="kind" data-es="Barbería · Cliente real · Premium" data-en="Barbershop · Real client · Premium">Barbería · Cliente real · Premium</div>
             <h3>Buffalos Barbershop</h3>
-            <p>Barbería de Palermo (5,0★) con tratamiento premium: animaciones GSAP, mesh gradient, galería con scroll horizontal y reserva por WhatsApp. Nivel estudio.</p>
-            <div class="work-tags"><span class="tag">Animaciones GSAP</span><span class="tag">Scroll cinemático</span><span class="tag">Turnos WhatsApp</span><span class="tag">Reseñas Google</span></div>
+            <p data-es="Barbería de Palermo (5,0★) con tratamiento premium: animaciones GSAP, mesh gradient, galería con scroll horizontal y reserva por WhatsApp. Nivel estudio." data-en="Palermo barbershop (5.0★) with premium treatment: GSAP animations, mesh gradient, horizontal-scroll gallery and WhatsApp booking. Studio-grade.">Barbería de Palermo (5,0★) con tratamiento premium: animaciones GSAP, mesh gradient, galería con scroll horizontal y reserva por WhatsApp. Nivel estudio.</p>
+            <div class="work-tags"><span class="tag" data-es="Animaciones GSAP" data-en="GSAP animations">Animaciones GSAP</span><span class="tag" data-es="Scroll cinemático" data-en="Cinematic scroll">Scroll cinemático</span><span class="tag" data-es="Turnos WhatsApp" data-en="WhatsApp booking">Turnos WhatsApp</span><span class="tag" data-es="Reseñas Google" data-en="Google reviews">Reseñas Google</span></div>
           </div>
-          <div class="work-go">Ver demo <span class="arrow">→</span></div>
+          <div class="work-go" data-es="Ver demo" data-en="View demo">Ver demo <span class="arrow">→</span></div>
         </a>
 
         <a href="06-cerrajeria/index.html" target="_blank" class="work rv">
           <div class="work-no">02</div>
           <div class="work-main">
-            <div class="kind">Cerrajería · Servicio de urgencias</div>
+            <div class="kind" data-es="Cerrajería · Servicio de urgencias" data-en="Locksmith · Emergency service">Cerrajería · Servicio de urgencias</div>
             <h3>Llave Maestra 24hs</h3>
-            <p>Sitio para cerrajería de barrio con foco en urgencias: llamado y WhatsApp directo, servicios con íconos, zonas de cobertura y presupuesto sin cargo.</p>
-            <div class="work-tags"><span class="tag">Urgencias 24hs</span><span class="tag">Llamado directo</span><span class="tag">WhatsApp</span><span class="tag">Zonas</span></div>
+            <p data-es="Sitio para cerrajería de barrio con foco en urgencias: llamado y WhatsApp directo, servicios con íconos, zonas de cobertura y presupuesto sin cargo." data-en="Site for a neighborhood locksmith focused on emergencies: direct call/WhatsApp, iconized services, coverage areas and free quotes.">Sitio para cerrajería de barrio con foco en urgencias: llamado y WhatsApp directo, servicios con íconos, zonas de cobertura y presupuesto sin cargo.</p>
+            <div class="work-tags"><span class="tag" data-es="Urgencias 24hs" data-en="24hr emergencies">Urgencias 24hs</span><span class="tag" data-es="Llamado directo" data-en="Direct call">Llamado directo</span><span class="tag">WhatsApp</span><span class="tag" data-es="Zonas" data-en="Areas">Zonas</span></div>
           </div>
-          <div class="work-go">Ver demo <span class="arrow">→</span></div>
+          <div class="work-go" data-es="Ver demo" data-en="View demo">Ver demo <span class="arrow">→</span></div>
         </a>
 
         <a href="07-iluminacion/index.html" target="_blank" class="work rv">
           <div class="work-no">03</div>
           <div class="work-main">
-            <div class="kind">Iluminación · Casa de lámparas</div>
+            <div class="kind" data-es="Iluminación · Casa de lámparas" data-en="Lighting · Lamp showroom">Iluminación · Casa de lámparas</div>
             <h3>Lumina</h3>
-            <p>Showroom de iluminación con estética cálida: catálogo de lámparas con precios, pedido por WhatsApp, asesoramiento y seña online. Para casas de lámparas, deco y bazares.</p>
-            <div class="work-tags"><span class="tag">Catálogo</span><span class="tag">Pedido WhatsApp</span><span class="tag">Mercado Pago</span><span class="tag">Showroom</span></div>
+            <p data-es="Showroom de iluminación con estética cálida: catálogo de lámparas con precios, pedido por WhatsApp, asesoramiento y seña online. Para casas de lámparas, deco y bazares." data-en="Warm-toned lighting showroom: lamp catalog with prices, WhatsApp ordering, personal advice and online deposits. For lighting, decor and gift shops.">Showroom de iluminación con estética cálida: catálogo de lámparas con precios, pedido por WhatsApp, asesoramiento y seña online. Para casas de lámparas, deco y bazares.</p>
+            <div class="work-tags"><span class="tag" data-es="Catálogo" data-en="Catalog">Catálogo</span><span class="tag" data-es="Pedido WhatsApp" data-en="WhatsApp orders">Pedido WhatsApp</span><span class="tag">Mercado Pago</span><span class="tag">Showroom</span></div>
           </div>
-          <div class="work-go">Ver demo <span class="arrow">→</span></div>
+          <div class="work-go" data-es="Ver demo" data-en="View demo">Ver demo <span class="arrow">→</span></div>
         </a>
 
         <a href="08-air-cover/index.html" target="_blank" class="work rv">
           <div class="work-no">04</div>
           <div class="work-main">
-            <div class="kind">Diseño interior · Producto premium</div>
+            <div class="kind" data-es="Diseño interior · Producto premium" data-en="Interior design · Premium product">Diseño interior · Producto premium</div>
             <h3>PALMA Air Cover</h3>
-            <p>E-commerce conceptual de cubiertas de diseño para aire acondicionado: catálogo visual, comparación antes/después, preguntas técnicas y narrativa orientada a arquitectos.</p>
-            <div class="work-tags"><span class="tag">Producto premium</span><span class="tag">Before/After</span><span class="tag">FAQ técnico</span><span class="tag">Editorial</span></div>
+            <p data-es="E-commerce conceptual de cubiertas de diseño para aire acondicionado: catálogo visual, comparación antes/después, preguntas técnicas y narrativa orientada a arquitectos." data-en="Conceptual e-commerce for designer AC covers: visual catalog, before/after comparison, technical FAQ and a narrative aimed at architects.">E-commerce conceptual de cubiertas de diseño para aire acondicionado: catálogo visual, comparación antes/después, preguntas técnicas y narrativa orientada a arquitectos.</p>
+            <div class="work-tags"><span class="tag" data-es="Producto premium" data-en="Premium product">Producto premium</span><span class="tag">Before/After</span><span class="tag" data-es="FAQ técnico" data-en="Technical FAQ">FAQ técnico</span><span class="tag" data-es="Editorial" data-en="Editorial">Editorial</span></div>
           </div>
-          <div class="work-go">Ver demo <span class="arrow">→</span></div>
+          <div class="work-go" data-es="Ver demo" data-en="View demo">Ver demo <span class="arrow">→</span></div>
         </a>
 
         <a href="https://konchi-kimchi-beryl.vercel.app" target="_blank" rel="noreferrer" class="work rv">
           <div class="work-no">05</div>
           <div class="work-main">
-            <div class="kind">Alimentos · Cliente real · Premium</div>
+            <div class="kind" data-es="Alimentos · Cliente real · Premium" data-en="Food · Real client · Premium">Alimentos · Cliente real · Premium</div>
             <h3>Konchi Kimchi</h3>
-            <p>Marca de kimchi artesanal (vegano, sin TACC): hero cinematográfico con liquid glass, catálogo con fichas de producto, promos y carrito que arma el pedido por WhatsApp. Hecho en React.</p>
-            <div class="work-tags"><span class="tag">Hero cinematográfico</span><span class="tag">Liquid glass</span><span class="tag">Carrito WhatsApp</span><span class="tag">React</span></div>
+            <p data-es="Marca de kimchi artesanal (vegano, sin TACC): hero cinematográfico con liquid glass, catálogo con fichas de producto, promos y carrito que arma el pedido por WhatsApp. Hecho en React." data-en="Artisan kimchi brand (vegan, gluten-free): cinematic liquid-glass hero, product-card catalog, promos and a cart that builds the order over WhatsApp. Built in React.">Marca de kimchi artesanal (vegano, sin TACC): hero cinematográfico con liquid glass, catálogo con fichas de producto, promos y carrito que arma el pedido por WhatsApp. Hecho en React.</p>
+            <div class="work-tags"><span class="tag" data-es="Hero cinematográfico" data-en="Cinematic hero">Hero cinematográfico</span><span class="tag">Liquid glass</span><span class="tag" data-es="Carrito WhatsApp" data-en="WhatsApp cart">Carrito WhatsApp</span><span class="tag">React</span></div>
           </div>
-          <div class="work-go">Ver sitio <span class="arrow">→</span></div>
+          <div class="work-go" data-es="Ver sitio" data-en="View site">Ver sitio <span class="arrow">→</span></div>
         </a>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ESTUDIO / QUIÉN SOY ===== -->
+  <section class="about" id="estudio">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="rv" data-es="El estudio" data-en="The studio">El estudio</h2>
+        <span class="sec-num rv" data-es="(02 — Estudio)" data-en="(02 — Studio)">(02 — Estudio)</span>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p class="about-lead rv" data-es="Cada sitio se diseña y se construye a mano. Sin plantillas, sin builders genéricos." data-en="Every site is designed and built by hand. No templates, no generic builders.">Cada sitio se diseña y se construye a mano. Sin plantillas, sin builders genéricos.</p>
+          <p class="body-text rv" data-es="FORJA es un estudio de diseño y desarrollo web enfocado en negocios locales: restaurantes, comercios, profesionales independientes. El objetivo no es “una página”, es más ventas: pedidos por WhatsApp, cobros con Mercado Pago, reservas que se completan solas. Trabajo con React, Next.js y JavaScript vanilla según lo que el sitio necesite, con base en Buenos Aires." data-en="FORJA is a design and web development studio focused on local businesses: restaurants, retailers, independent professionals. The goal isn't &quot;a website&quot;, it's more sales: WhatsApp ordering, Mercado Pago checkout, bookings that complete themselves. I work with React, Next.js and vanilla JavaScript depending on what the site needs, based in Buenos Aires.">FORJA es un estudio de diseño y desarrollo web enfocado en negocios locales: restaurantes, comercios, profesionales independientes. El objetivo no es "una página", es más ventas: pedidos por WhatsApp, cobros con Mercado Pago, reservas que se completan solas. Trabajo con React, Next.js y JavaScript vanilla según lo que el sitio necesite, con base en Buenos Aires.</p>
+        </div>
+        <div class="about-facts">
+          <div class="fact rv">
+            <div class="k" data-es="Stack" data-en="Stack">Stack</div>
+            <div class="v">React · Next.js · JS</div>
+            <div class="d" data-es="Framer Motion, Tailwind y vanilla cuando es lo más rápido." data-en="Framer Motion, Tailwind and vanilla when it's the fastest path.">Framer Motion, Tailwind y vanilla cuando es lo más rápido.</div>
+          </div>
+          <div class="fact rv">
+            <div class="k" data-es="Pagos & pedidos" data-en="Payments & orders">Pagos & pedidos</div>
+            <div class="v" data-es="WhatsApp + Mercado Pago" data-en="WhatsApp + Mercado Pago">WhatsApp + Mercado Pago</div>
+            <div class="d" data-es="Integrados de fábrica, no como plugin agregado después." data-en="Built in from the start, not bolted on as an afterthought.">Integrados de fábrica, no como plugin agregado después.</div>
+          </div>
+          <div class="fact rv">
+            <div class="k" data-es="Entrega" data-en="Delivery">Entrega</div>
+            <div class="v" data-es="Días, no meses" data-en="Days, not months">Días, no meses</div>
+            <div class="d" data-es="Demo real antes de arrancar, para saber qué vas a recibir." data-en="A real demo before we start, so you know what you're getting.">Demo real antes de arrancar, para saber qué vas a recibir.</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -261,16 +331,16 @@
   <section class="services" id="servicios">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="rv">Qué incluye cada sitio</h2>
-        <span class="sec-num rv">(02 — Servicios)</span>
+        <h2 class="rv" data-es="Qué incluye cada sitio" data-en="What's included">Qué incluye cada sitio</h2>
+        <span class="sec-num rv" data-es="(03 — Servicios)" data-en="(03 — Services)">(03 — Servicios)</span>
       </div>
       <div class="svc-grid">
-        <div class="svc rv"><div class="svc-ic">🍽️</div><h3>Restaurantes &amp; bares</h3><p>Menú online, reservas automáticas, galería, mapa y botón de WhatsApp.</p><div class="price">desde US$150<span>sitio completo</span></div></div>
-        <div class="svc rv"><div class="svc-ic">🏪</div><h3>Comercios &amp; locales</h3><p>Catálogo con precios, pedido por WhatsApp y pago online. Ideal ferreterías y almacenes.</p><div class="price">desde US$200<span>sitio completo</span></div></div>
-        <div class="svc rv"><div class="svc-ic">🛍️</div><h3>Tiendas &amp; e-commerce</h3><p>Carrito, catálogo filtrable y cobro con Mercado Pago o tarjeta.</p><div class="price">desde US$250<span>tienda completa</span></div></div>
-        <div class="svc rv"><div class="svc-ic">📱</div><h3>Mobile-first</h3><p>Se ven perfectos en celular, tablet y compu. Sin excepciones.</p><div class="price">incluido<span>en todos los planes</span></div></div>
-        <div class="svc rv"><div class="svc-ic">💳</div><h3>Pagos &amp; formularios</h3><p>Mercado Pago listo para activar y formularios que te llegan al instante.</p><div class="price">incluido<span>en todos los planes</span></div></div>
-        <div class="svc rv"><div class="svc-ic">🚀</div><h3>Entrega &amp; soporte</h3><p>Online en 5–7 días, 2 rondas de revisiones y soporte por 30 días.</p><div class="price">incluido<span>en todos los planes</span></div></div>
+        <div class="svc rv"><div class="svc-ic">✦</div><h3 data-es="Restaurantes & bares" data-en="Restaurants & bars">Restaurantes & bares</h3><p data-es="Menú online, reservas automáticas, galería, mapa y botón de WhatsApp." data-en="Online menu, automatic bookings, gallery, map and WhatsApp button.">Menú online, reservas automáticas, galería, mapa y botón de WhatsApp.</p><div class="price" data-es="desde US$150" data-en="from US$150">desde US$150<span data-es="sitio completo" data-en="full site">sitio completo</span></div></div>
+        <div class="svc rv"><div class="svc-ic">✦</div><h3 data-es="Comercios & locales" data-en="Retail & local shops">Comercios & locales</h3><p data-es="Catálogo con precios, pedido por WhatsApp y pago online. Ideal ferreterías y almacenes." data-en="Priced catalog, WhatsApp ordering and online payment. Ideal for hardware stores and shops.">Catálogo con precios, pedido por WhatsApp y pago online. Ideal ferreterías y almacenes.</p><div class="price" data-es="desde US$200" data-en="from US$200">desde US$200<span data-es="sitio completo" data-en="full site">sitio completo</span></div></div>
+        <div class="svc rv"><div class="svc-ic">✦</div><h3 data-es="Tiendas & e-commerce" data-en="Shops & e-commerce">Tiendas & e-commerce</h3><p data-es="Carrito, catálogo filtrable y cobro con Mercado Pago o tarjeta." data-en="Cart, filterable catalog and checkout via Mercado Pago or card.">Carrito, catálogo filtrable y cobro con Mercado Pago o tarjeta.</p><div class="price" data-es="desde US$250" data-en="from US$250">desde US$250<span data-es="tienda completa" data-en="full store">tienda completa</span></div></div>
+        <div class="svc rv"><div class="svc-ic">✦</div><h3 data-es="Mobile-first" data-en="Mobile-first">Mobile-first</h3><p data-es="Se ven perfectos en celular, tablet y compu. Sin excepciones." data-en="Look perfect on phone, tablet and desktop. No exceptions.">Se ven perfectos en celular, tablet y compu. Sin excepciones.</p><div class="price" data-es="incluido" data-en="included">incluido<span data-es="en todos los planes" data-en="on every plan">en todos los planes</span></div></div>
+        <div class="svc rv"><div class="svc-ic">✦</div><h3 data-es="Pagos & formularios" data-en="Payments & forms">Pagos & formularios</h3><p data-es="Mercado Pago listo para activar y formularios que te llegan al instante." data-en="Mercado Pago ready to activate and forms that reach you instantly.">Mercado Pago listo para activar y formularios que te llegan al instante.</p><div class="price" data-es="incluido" data-en="included">incluido<span data-es="en todos los planes" data-en="on every plan">en todos los planes</span></div></div>
+        <div class="svc rv"><div class="svc-ic">✦</div><h3 data-es="Entrega & soporte" data-en="Delivery & support">Entrega & soporte</h3><p data-es="Online en 5–7 días, 2 rondas de revisiones y soporte por 30 días." data-en="Live in 5–7 days, 2 rounds of revisions and 30 days of support.">Online en 5–7 días, 2 rondas de revisiones y soporte por 30 días.</p><div class="price" data-es="incluido" data-en="included">incluido<span data-es="en todos los planes" data-en="on every plan">en todos los planes</span></div></div>
       </div>
     </div>
   </section>
@@ -279,36 +349,36 @@
   <section id="proceso">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="rv">Cómo trabajo</h2>
-        <span class="sec-num rv">(03 — Proceso)</span>
+        <h2 class="rv" data-es="Cómo trabajo" data-en="How I work">Cómo trabajo</h2>
+        <span class="sec-num rv" data-es="(04 — Proceso)" data-en="(04 — Process)">(04 — Proceso)</span>
       </div>
       <div class="steps">
-        <div class="step rv"><div class="n">1</div><h4>Consulta gratis</h4><p>Hablamos por WhatsApp. Me contás tu negocio y qué necesitás.</p></div>
-        <div class="step rv"><div class="n">2</div><h4>Propuesta</h4><p>Te paso presupuesto claro y un demo parecido a tu futuro sitio.</p></div>
-        <div class="step rv"><div class="n">3</div><h4>Diseño</h4><p>Construyo el sitio en 5–7 días y te muestro avances.</p></div>
-        <div class="step rv"><div class="n">4</div><h4>Online</h4><p>Lo publicamos con tu dominio y te enseño a actualizarlo.</p></div>
+        <div class="step rv"><div class="n">01</div><h4 data-es="Consulta gratis" data-en="Free consult">Consulta gratis</h4><p data-es="Hablamos por WhatsApp. Me contás tu negocio y qué necesitás." data-en="We talk on WhatsApp. Tell me about your business and what you need.">Hablamos por WhatsApp. Me contás tu negocio y qué necesitás.</p></div>
+        <div class="step rv"><div class="n">02</div><h4 data-es="Propuesta" data-en="Proposal">Propuesta</h4><p data-es="Te paso presupuesto claro y un demo parecido a tu futuro sitio." data-en="I send a clear quote and a demo close to your future site.">Te paso presupuesto claro y un demo parecido a tu futuro sitio.</p></div>
+        <div class="step rv"><div class="n">03</div><h4 data-es="Diseño" data-en="Design">Diseño</h4><p data-es="Construyo el sitio en 5–7 días y te muestro avances." data-en="I build the site in 5–7 days and show you progress.">Construyo el sitio en 5–7 días y te muestro avances.</p></div>
+        <div class="step rv"><div class="n">04</div><h4 data-es="Online" data-en="Live">Online</h4><p data-es="Lo publicamos con tu dominio y te enseño a actualizarlo." data-en="We publish it on your domain and I show you how to update it.">Lo publicamos con tu dominio y te enseño a actualizarlo.</p></div>
       </div>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
   <div class="cta wrap" id="contacto">
-    <h2 class="rv">¿Tu negocio<br>necesita una <em>web</em>?</h2>
-    <p class="rv">La primera consulta es gratis. Escribime por WhatsApp y en 24hs te mando una propuesta.</p>
-    <a href="https://wa.me/5491151526104?text=Hola%20Teo!%20Vi%20tu%20portfolio%20y%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" class="btn btn-wsp rv">
+    <h2 class="rv" data-html-es="&iquest;Tu negocio&lt;br&gt;necesita una &lt;span class=&quot;lime&quot;&gt;web&lt;/span&gt;?" data-html-en="Does your business&lt;br&gt;need a &lt;span class=&quot;lime&quot;&gt;website&lt;/span&gt;?">¿Tu negocio<br>necesita una <span class="lime">web</span>?</h2>
+    <p class="rv" data-es="La primera consulta es gratis. Escribime por WhatsApp y en 24hs te mando una propuesta." data-en="The first consult is free. Message me on WhatsApp and I'll send a proposal within 24h.">La primera consulta es gratis. Escribime por WhatsApp y en 24hs te mando una propuesta.</p>
+    <a href="https://wa.me/5491151526104?text=Hola%20Forja!%20Vi%20tu%20portfolio%20y%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" class="btn btn-wsp rv">
       <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Escribime por WhatsApp
+      <span data-es="Escribime por WhatsApp" data-en="Message me on WhatsApp">Escribime por WhatsApp</span>
     </a>
   </div>
 
   <!-- ===== FOOTER ===== -->
   <footer>
     <div class="wrap foot-in">
-      <span>© 2026 Teo Palatini · Diseño web para negocios</span>
+      <span data-es="© 2026 Forja · Diseño y desarrollo web" data-en="© 2026 Forja · Web design & development">© 2026 Forja · Diseño y desarrollo web</span>
       <div class="foot-links">
-        <a href="#trabajos">Trabajos</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#trabajos" data-es="Trabajos" data-en="Work">Trabajos</a>
+        <a href="#estudio" data-es="Estudio" data-en="Studio">Estudio</a>
+        <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
       </div>
     </div>
   </footer>
@@ -325,16 +395,62 @@
     const io = new IntersectionObserver((es) => {
       es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: .14 });
-    document.querySelectorAll('.rv').forEach((el, i) => {
+    const rvEls = document.querySelectorAll('.rv');
+    rvEls.forEach((el, i) => {
       el.style.transitionDelay = (i % 6 * 0.06) + 's';
       io.observe(el);
     });
+    // Safety net: force visible if the observer never fires (slow load, automation, etc.)
+    setTimeout(() => rvEls.forEach(el => el.classList.add('in')), 4000);
 
     // Smooth scroll for in-page anchors
     document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
       const t = document.querySelector(a.getAttribute('href'));
       if (t) { e.preventDefault(); scrollTo({ top: t.getBoundingClientRect().top + scrollY - 80, behavior: 'smooth' }); }
     }));
+
+    // ---- Idioma ES/EN ----
+    var FORJA_LANG_KEY = "forja_lang";
+    var FORJA_TITLE = {
+      es: "FORJA — Estudio de diseño y desarrollo web",
+      en: "FORJA — Web design & development studio"
+    };
+
+    function applyForjaLang(lang) {
+      lang = lang === "en" ? "en" : "es";
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-es]").forEach(function (el) {
+        var v = lang === "en" ? el.getAttribute("data-en") : el.getAttribute("data-es");
+        if (v === null) return;
+        if (el.getAttribute("data-html") === "true") { el.innerHTML = v; } else { el.textContent = v; }
+      });
+      document.querySelectorAll("[data-html-es]").forEach(function (el) {
+        var v = lang === "en" ? el.getAttribute("data-html-en") : el.getAttribute("data-html-es");
+        if (v !== null) el.innerHTML = v;
+      });
+      var toggle = document.getElementById("langToggle");
+      if (toggle) {
+        toggle.querySelectorAll("button").forEach(function (b) {
+          var isActive = b.getAttribute("data-set-lang") === lang;
+          b.classList.toggle("active", isActive);
+          b.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+      }
+      document.title = FORJA_TITLE[lang];
+      localStorage.setItem(FORJA_LANG_KEY, lang);
+    }
+
+    var forjaInitialLang = localStorage.getItem(FORJA_LANG_KEY) === "en" ? "en" : "es";
+    applyForjaLang(forjaInitialLang);
+
+    var forjaLangToggle = document.getElementById("langToggle");
+    if (forjaLangToggle) {
+      forjaLangToggle.querySelectorAll("button[data-set-lang]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          applyForjaLang(btn.getAttribute("data-set-lang"));
+        });
+      });
+    }
   </script>
 </body>
 </html>
