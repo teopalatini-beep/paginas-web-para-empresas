@@ -32,11 +32,6 @@ Pequeños comercios, profesionales independientes y pymes que necesitan una web 
 ```
 paginas-web-para-empresas/
 ├── index.html              → Portfolio principal
-├── 01-restaurante/          → Demo restaurante (HTML/CSS/JS)
-├── 02-profesional/          → Demo consultorio profesional (HTML/CSS/JS)
-├── 03-tienda-src/           → Demo e-commerce, código fuente (React + Vite)
-├── 03-tienda/                → Build compilado de la tienda
-├── 04-ferreteria/            → Demo ferretería (HTML/CSS/JS)
 ├── 05-barberia/              → Demo barbería (HTML/CSS/JS)
 ├── 06-cerrajeria-src/        → Demo cerrajería, código fuente (React + Vite)
 ├── 06-cerrajeria/             → Build compilado de la cerrajería
